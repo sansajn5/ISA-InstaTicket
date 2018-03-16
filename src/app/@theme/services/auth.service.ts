@@ -33,9 +33,10 @@ export class AuthService {
    * Method GET
    * Invoking server to remove user from session
    */
-  logout(): void {
+  logout(): Observable<any> {
     localStorage.clear();
-    this.http.get(this.BASE_URL + '/logout');
+    return null;
   }
+
 
 }
