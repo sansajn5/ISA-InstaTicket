@@ -16,7 +16,6 @@ export class LoginComponent {
   public form: FormGroup;
   public username: AbstractControl;
   public password: AbstractControl;
-  public rememberMe: AbstractControl;
   public submitted: boolean = false;
   user: User;
 
@@ -28,12 +27,10 @@ export class LoginComponent {
     this.form = this.fb.group({
       'username': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(5)])],
-      'rememberMe': [''],
     });
 
     this.username = this.form.controls['username'];
     this.password = this.form.controls['password'];
-    this.rememberMe = this.form.controls['rememberMe'];
   }
 
   signIn(): any {
@@ -41,15 +38,14 @@ export class LoginComponent {
     this.spinnerService.registerLoader(this.authService.signIn(user).toPromise()
       .then(data => {
         localStorage.setItem('token', data.id_token);
-        // localStorage.setItem('user', JSON.stringify(data.user));
-        localStorage.setItem('user', 'sansajn');
+        localStorage.setItem('user', data.user);
         this.toastr.clear();
-        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli');
+        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + data.user.username);
         return this.router.navigateByUrl('pages');
       })
       .catch(
         error => {
-          // this.toastrService.popAsync('error','Error', ''+error.message);
+          this.toastr.error('Doslo je do greske na serveru','Greska' );
         }))
     this.spinnerService.load();
   }
