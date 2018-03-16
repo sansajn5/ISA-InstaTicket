@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { User } from "../models/user.model";
 import { Router } from "@angular/router";
 
@@ -40,6 +40,15 @@ export class AuthService {
     const body = JSON.stringify(user);
     return this.http.post(`${this.BASE_URL}/sign-up`, body, httpOptions)
       .map(data => data);
+  }
+
+  activeAccount(key: string): Observable<any> {
+    const params = new HttpParams().set('key',key);
+    return this.http.get(`${this.BASE_URL}/activate`,{
+      headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
+      params
+    })
+    .map(data => data);
   }
 
   /**
