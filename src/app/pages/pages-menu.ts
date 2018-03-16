@@ -6,6 +6,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-home',
     link: '/dashboard',
     home: true,
+  },
+  {
+    title: 'Odjavi se',
+    icon: 'fa fa-sign-out',
+    link: 'logout',
   },/*
   {
     title: 'FEATURES',

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {LogoutHelperComponent} from "./logout-helper/logout-helper.component";
 
 const routes: Routes = [{
   path: '',
@@ -31,6 +32,8 @@ const routes: Routes = [{
   }, {
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
+  }, {
+    path: 'logout', component: LogoutHelperComponent,
   }, {
     path: 'dashboard',
     redirectTo: 'dashboard',
