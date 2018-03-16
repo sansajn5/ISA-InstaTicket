@@ -1,0 +1,124 @@
+<div class="auth-block">
+  <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
+  <h2 class="title">Registracija na servis</h2>
+  <form (ngSubmit)="signUp()" (keyup.enter)="form.valid && signUp()" [formGroup]="form" autocomplete="nope">
+    <div class="form-group">
+      <div class="input-group has-person-icon">
+        <input type="text" placeholder="Username" class="form-control" [formControl]="username" id="input-username"
+               class="form-control"
+               [class.form-control-danger]="username.invalid && username.touched" autofocus/>
+      </div>
+      <small class="form-text error" *ngIf="username.invalid && username.touched && username.errors?.required">
+        Korisnicko ime je obavezano!
+      </small>
+      <small
+        class="form-text error"
+        *ngIf="password.invalid && password.touched && (password.errors?.minlength || password.errors?.maxlength)">
+        Duzina korisnickog imena mora biti izmedju 3 i 12 karaktera
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="input-password" class="sr-only">Password</label>
+      <input name="password" [formControl]="password" type="password" id="input-password"
+             class="form-control" placeholder="Sifra"
+             [class.form-control-danger]="password.invalid && password.touched"
+      >
+      <small class="form-text error" *ngIf="password.invalid && password.touched && password.errors?.required">
+        Šifra je obavezna!
+      </small>
+      <small
+        class="form-text error"
+        *ngIf="password.invalid && password.touched && (password.errors?.minlength || password.errors?.maxlength)">
+        Duzina sifre mora biti izmedju 6 i 12 karaktera
+      </small>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon success">@</span>
+        <input [formControl]="email" id="input-email"
+               class="form-control" placeholder="Email"
+               [class.form-control-danger]="email.invalid && email.touched" autofocus/>
+      </div>
+      <small class="form-text error" *ngIf="email.invalid && email.touched && email.errors?.required">
+        Email je obavezan!
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="input-name" class="sr-only">Ime</label>
+      <input placeholder="Ime" [formControl]="name" id="input-name"
+               class="form-control"
+               [class.form-control-danger]="name.invalid && name.touched" autofocus/>
+      <small class="form-text error" *ngIf="name.invalid && name.touched && name.errors?.required">
+        Ime je obavezano!
+      </small>
+      <small
+        class="form-text error"
+        *ngIf="name.invalid && name.touched && (name.errors?.minlength || name.errors?.maxlength)">
+        Duzina imena mora biti izmedju 3 i 12 karaktera
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="input-lastName" class="sr-only">Prezime</label>
+      <input placeholder="Prezime" [formControl]="lastName" id="input-lastName"
+             class="form-control"
+             [class.form-control-danger]="lastName.invalid && lastName.touched" autofocus/>
+      <small class="form-text error" *ngIf="lastName.invalid && lastName.touched && lastName.errors?.required">
+        Prezime je obavezano!
+      </small>
+      <small
+        class="form-text error"
+        *ngIf="lastName.invalid && lastName.touched && (lastName.errors?.minlength || lastName.errors?.maxlength)">
+        Duzina prezimena mora biti izmedju 3 i 12 karaktera
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="input-city" class="sr-only">Grad</label>
+      <input placeholder="Grad" [formControl]="city" id="input-city"
+             class="form-control"
+             [class.form-control-danger]="city.invalid && city.touched" autofocus/>
+      <small class="form-text error" *ngIf="city.invalid && city.touched && city.errors?.required">
+        Adresa je obavezano!
+      </small>
+      <small
+        class="form-text error"
+        *ngIf="city.invalid && city.touched && (city.errors?.minlength || city.errors?.maxlength)">
+        Duzina grada mora biti izmedju 3 i 10 karaktera
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="input-address" class="sr-only">Adresa</label>
+      <input placeholder="Adresa" [formControl]="address" id="input-address"
+             class="form-control"
+             [class.form-control-danger]="address.invalid && address.touched" autofocus/>
+      <small class="form-text error" *ngIf="address.invalid && address.touched && address.errors?.required">
+        Adresa je obavezano!
+      </small>
+      <small
+        class="form-text error"
+        *ngIf="address.invalid && address.touched && (address.errors?.minlength || address.errors?.maxlength)">
+        Duzina adrese mora biti izmedju 6 i 15 karaktera
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="input-number" class="sr-only">Broj</label>
+      <input placeholder="Broj" [formControl]="number" id="input-number"
+             class="form-control"
+             [class.form-control-danger]="number.invalid && number.touched" autofocus/>
+      <small class="form-text error" *ngIf="number.invalid && number.touched && number.errors?.required">
+        Broj je obavezan!
+      </small>
+      <small
+        class="form-text error"
+        *ngIf="number.invalid && number.touched && (number.errors?.minlength || number.errors?.maxlength)">
+        Duzina broja telefona mora biti izmedju 9 i 15 brojeva
+      </small>
+    </div>
+    <button [disabled]="!form.valid" class="btn btn-block btn-hero-success"
+            [class.btn-pulse]="submitted">
+      Potvrdi
+    </button>
+  </form>
+  <div class="form-group" style="margin-top: 15px;">
+    <button class="col-md-12 btn btn-hero-success" (click)="onLogin()">Povratak na prijavu!</button>
+  </div>
+</div>

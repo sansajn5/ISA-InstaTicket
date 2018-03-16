@@ -6,7 +6,7 @@
       <div class="input-group">
         <span class="input-group-addon success">@</span>
         <input placeholder="Username" [formControl]="username" id="input-username"
-               class="form-control" placeholder="Email"
+               class="form-control"
                [class.form-control-danger]="username.invalid && username.touched" autofocus/>
     </div>
       <small class="form-text error" *ngIf="username.invalid && username.touched && username.errors?.required">
@@ -33,4 +33,8 @@
       Potvrdi
     </button>
   </form>
+  <div class="form-group" style="margin-top: 15px;">
+    <button class="col-md-12 btn btn-hero-success">Prijavi se putem google!</button>
+    <button class="col-md-12 btn btn-hero-success" style="margin-top: 10px;" (click)="onRegister()">Registruj se</button>
+  </div>
 </div>

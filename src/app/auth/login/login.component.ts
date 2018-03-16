@@ -50,4 +50,8 @@ export class LoginComponent {
     this.spinnerService.load();
   }
 
+  onRegister(): void {
+    this.router.navigateByUrl('auth/sign-up');
+  }
+
 }

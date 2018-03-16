@@ -18,7 +18,7 @@ export class AuthService {
 
 
   /**
-   * Method POST
+   * Method /POST
    * Providing server with user's login credential
    * @param {User} user object with credential
    * @returns {Observable<any>} jwt token and user object
@@ -29,8 +29,21 @@ export class AuthService {
       .map( data => data);
   }
 
+
   /**
-   * Method GET
+   * Method /POST
+   * Providing server with user's data for registration
+   * @param {User} user
+   * @returns {Observable<any>} response from server side
+   */
+  signUp(user: User): Observable<any> {
+    const body = JSON.stringify(user);
+    return this.http.post(`${this.BASE_URL}/sign-up`, body, httpOptions)
+      .map(data => data);
+  }
+
+  /**
+   * Method /GET
    * Invoking server to remove user from session
    */
   logout(): Observable<any> {
