@@ -18,17 +18,7 @@ export class LogoutHelperComponent implements OnInit {
   ngOnInit() {
     this.authService.logout();
     this.router.navigateByUrl('auth/sign-in');
-    this.toastr.success('Uspešno ste se odjavili')
-    this.spinnerService.registerLoader(this.authService.logout().toPromise()
-      .then( () => {
-        this.router.navigateByUrl('auth/sign-in');
-        this.toastr.clear();
-        this.toastr.success('Uspešno ste se odjavili')
-      })
-      .catch(
-        error => {
-        }));
-    this.spinnerService.load();
+    this.toastr.success('Uspešno ste se odjavili');
   }
 
 }

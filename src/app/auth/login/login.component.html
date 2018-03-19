@@ -1,5 +1,5 @@
 <div class="auth-block">
-  <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
+  <img class="logo" [src]="'assets/images/logo.jpg'"  alt="logo">
   <h2 class="title">Prijava na servis</h2>
   <form (ngSubmit)="signIn()" (keyup.enter)="form.valid && signIn()" [formGroup]="form" autocomplete="nope">
     <div class="form-group">
@@ -28,13 +28,13 @@
         Duzina sifre mora biti izmedju 6 i 10 karaktera
       </small>
     </div>
-    <button [disabled]="!form.valid" class="btn btn-block btn-hero-success"
+    <button [disabled]="!form.valid" class="btn btn-block btn-hero-info"
             [class.btn-pulse]="submitted">
       Potvrdi
     </button>
   </form>
   <div class="form-group" style="margin-top: 15px;">
-    <button class="col-md-12 btn btn-hero-success">Prijavi se putem google!</button>
-    <button class="col-md-12 btn btn-hero-success" style="margin-top: 10px;" (click)="onRegister()">Registruj se</button>
+    <button class="col-md-12 btn btn-hero-info">Prijavi se putem google!</button>
+    <button class="col-md-12 btn btn-hero-info" style="margin-top: 10px;" (click)="onRegister()">Registruj se</button>
   </div>
 </div>

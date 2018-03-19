@@ -38,14 +38,16 @@ export class LoginComponent {
     this.spinnerService.registerLoader(this.authService.signIn(user).toPromise()
       .then(data => {
         localStorage.setItem('token', data.id_token);
-        localStorage.setItem('user', data.user);
+        localStorage.setItem('user', 'Nemanja');
         this.toastr.clear();
-        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + data.user.username);
-        return this.router.navigateByUrl('pages');
+        // this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + data.user.username);
+        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + "Nemanja");
+        this.router.navigateByUrl('dashboard');
       })
       .catch(
         error => {
-          this.toastr.error('Doslo je do greske na serveru','Greska' );
+          console.log(error);
+          this.toastr.error('Doslo je do greske na serveru', 'Greska' );
         }))
     this.spinnerService.load();
   }

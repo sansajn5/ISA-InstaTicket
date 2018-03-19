@@ -46,7 +46,7 @@ export class AuthService {
     const params = new HttpParams().set('key',key);
     return this.http.get(`${this.BASE_URL}/activate`,{
       headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
-      params
+      params,
     })
     .map(data => data);
   }
@@ -55,9 +55,8 @@ export class AuthService {
    * Method /GET
    * Invoking server to remove user from session
    */
-  logout(): Observable<any> {
+  logout(): void {
     localStorage.clear();
-    return null;
   }
 
 
