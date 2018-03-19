@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import { User } from "../models/user.model";
-import { Router } from "@angular/router";
+import { User } from '../models/user.model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
@@ -14,7 +13,7 @@ export class AuthService {
 
   private BASE_URL = 'http://localhost:8090/api/auth';
 
-  constructor(private http: HttpClient,private router: Router) {}
+  constructor(private http: HttpClient) {}
 
 
   /**
@@ -43,8 +42,8 @@ export class AuthService {
   }
 
   activeAccount(key: string): Observable<any> {
-    const params = new HttpParams().set('key',key);
-    return this.http.get(`${this.BASE_URL}/activate`,{
+    const params = new HttpParams().set('key', key);
+    return this.http.get(`${this.BASE_URL}/activate`, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
       params,
     })

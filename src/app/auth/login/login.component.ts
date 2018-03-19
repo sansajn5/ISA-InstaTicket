@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../@theme/services/auth.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { User } from "../../@theme/models/user.model";
+import { User } from '../../@theme/models/user.model';
 import { NbSpinnerService } from '@nebular/theme';
-import { ToastrService } from "ngx-toastr";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'ngx-sign-in',
@@ -41,12 +41,11 @@ export class LoginComponent {
         localStorage.setItem('user', 'Nemanja');
         this.toastr.clear();
         // this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + data.user.username);
-        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + "Nemanja");
+        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + 'Nemanja');
         this.router.navigateByUrl('dashboard');
       })
       .catch(
         error => {
-          console.log(error);
           this.toastr.error('Doslo je do greske na serveru', 'Greska' );
         }))
     this.spinnerService.load();

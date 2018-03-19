@@ -8,9 +8,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AuthGuard } from "./@theme/guard/auth.guard";
-import { AuthService } from "./@theme/services/auth.service";
-import { HttpClientModule } from "@angular/common/http";
+import { AuthGuard } from './@theme/guard/auth.guard';
+import { AuthService } from './@theme/services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -30,7 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
     AuthGuard,
-    AuthService
+    AuthService,
   ],
 })
 export class AppModule {

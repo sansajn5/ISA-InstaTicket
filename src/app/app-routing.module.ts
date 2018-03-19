@@ -1,6 +1,6 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { AuthGuard } from "./@theme/guard/auth.guard";
+import { AuthGuard } from './@theme/guard/auth.guard';
 
 const routes: Routes = [
   { path: 'auth', loadChildren: 'app/auth/auth.module#AuthModule' },

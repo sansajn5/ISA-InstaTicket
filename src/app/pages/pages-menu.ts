@@ -11,7 +11,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Odjavi se',
     icon: 'fa fa-sign-out',
     link: 'logout',
-  },/*
+  }, /*
   {
     title: 'FEATURES',
     group: true,

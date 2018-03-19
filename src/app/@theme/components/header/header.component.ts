@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {  NbSidebarService } from '@nebular/theme';
 import { Router } from '@angular/router';
-import { AuthService } from "../../services/auth.service";
-import { ToastrService } from "ngx-toastr";
+import { AuthService } from '../../services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'ngx-header',
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     // this.user = JSON.parse(localStorage.getItem('user')).username;
-    this.user = "nemanja";
+    this.user = 'nemanja';
   }
 
   toggleSidebar(): boolean {

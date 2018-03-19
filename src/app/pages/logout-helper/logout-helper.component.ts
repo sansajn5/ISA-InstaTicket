@@ -1,8 +1,7 @@
-import {Component, OnInit} from "@angular/core";
-import {Router} from "@angular/router";
-import {AuthService} from "../../@theme/services/auth.service";
-import {NbSpinnerService} from "@nebular/theme";
-import {ToastrService} from "ngx-toastr";
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from '../../@theme/services/auth.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'ngx-logout-helper',
@@ -12,7 +11,6 @@ export class LogoutHelperComponent implements OnInit {
 
   constructor(private router: Router,
               private authService: AuthService,
-              private spinnerService: NbSpinnerService,
               private toastr: ToastrService) {}
 
   ngOnInit() {

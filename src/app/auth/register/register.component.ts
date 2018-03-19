@@ -1,10 +1,10 @@
-import {Component} from "@angular/core";
-import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {NbSpinnerService} from "@nebular/theme";
-import {Router} from "@angular/router";
-import {ToastrService} from "ngx-toastr";
-import {User} from "../../@theme/models/user.model";
-import {AuthService} from "../../@theme/services/auth.service";
+import {Component} from '@angular/core';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {NbSpinnerService} from '@nebular/theme';
+import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
+import {User} from '../../@theme/models/user.model';
+import {AuthService} from '../../@theme/services/auth.service';
 
 @Component({
   selector: 'ngx-register',
@@ -31,14 +31,14 @@ export class RegisterComponent {
               private spinnerService: NbSpinnerService,
               private toastr: ToastrService) {
     this.form = this.fb.group({
-      'username': ['', Validators.compose([Validators.required, Validators.minLength(3),Validators.maxLength(12)])],
-      'password': ['', Validators.compose([Validators.required, Validators.minLength(6),Validators.maxLength(12)])],
-      'email': ['', Validators.compose([Validators.required, Validators.minLength(5),Validators.maxLength(20)])],
-      'name': ['', Validators.compose([Validators.required, Validators.minLength(3),Validators.maxLength(12)])],
-      'lastName': ['', Validators.compose([Validators.required, Validators.minLength(3),Validators.maxLength(12)])],
-      'city': ['', Validators.compose([Validators.required, Validators.minLength(3),Validators.maxLength(10)])],
-      'address': ['', Validators.compose([Validators.required, Validators.minLength(6),Validators.maxLength(15)])],
-      'number': ['', Validators.compose([Validators.required, Validators.minLength(9),Validators.maxLength(15)])],
+      'username': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(12)])],
+      'password': ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
+      'email': ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
+      'name': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(12)])],
+      'lastName': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(12)])],
+      'city': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(10)])],
+      'address': ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(15)])],
+      'number': ['', Validators.compose([Validators.required, Validators.minLength(9), Validators.maxLength(15)])],
     });
 
     this.username = this.form.controls['username'];
@@ -69,8 +69,7 @@ export class RegisterComponent {
       })
       .catch(
         error => {
-          console.log('greska je ' + error);
-          this.toastr.error('Doslo je do greske na serveru','Greska' );
+          this.toastr.error('Doslo je do greske na serveru', 'Greska' );
         }))
     this.spinnerService.load();
   }

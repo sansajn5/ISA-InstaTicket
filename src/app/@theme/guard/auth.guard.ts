@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router} from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { tokenNotExpired } from 'angular2-jwt';
-import { ToastrService } from "ngx-toastr";
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -21,14 +21,14 @@ export class AuthGuard implements CanActivate {
     // Token and userId are set, but token is not valid, redirect to login page and send notification
     if (localStorage.getItem('token') && localStorage.getItem('user') && !tokenNotExpired()) {
       this.toastr.clear();
-      this.toastr.warning('Your secure token expired.(Token is valid for 60 minutes)','Token expired');
+      this.toastr.warning('Your secure token expired.(Token is valid for 60 minutes)', 'Token expired');
       this.authService.logout();
       this.router.navigate(['auth/login']);
       return false;
     }
 
     this.toastr.clear();
-    this.toastr.warning('Make sure that you are logged in in order to see this page.','Hint');
+    this.toastr.warning('Make sure that you are logged in in order to see this page.', 'Hint');
     this.router.navigate(['auth/login']);
     return false;
   }

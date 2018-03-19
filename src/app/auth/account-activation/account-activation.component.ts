@@ -1,8 +1,7 @@
-import {Component, OnInit} from "@angular/core";
-import {AuthService} from "../../@theme/services/auth.service";
-import {NbSpinnerService} from "@nebular/theme";
-import {ActivatedRoute, Router} from "@angular/router";
-import {ToastrService} from "ngx-toastr";
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../@theme/services/auth.service';
+import {NbSpinnerService} from '@nebular/theme';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-account-activation',
@@ -23,7 +22,7 @@ export class AccountActivationComponent implements OnInit {
   constructor(protected router: Router,
               private authService: AuthService,
               private spinnerService: NbSpinnerService,
-              private activeRouter: ActivatedRoute,) {}
+              private activeRouter: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.activeRouter.queryParams.subscribe(params => {
@@ -31,7 +30,6 @@ export class AccountActivationComponent implements OnInit {
     });
     this.spinnerService.registerLoader(this.authService.activeAccount(this.key).toPromise()
       .then(data => {
-        console.log(data);
         this.showResponse = 'Uspesno ste aktivirali Vas nalog.';
         this.success = true;
       })
