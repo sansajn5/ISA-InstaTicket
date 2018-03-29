@@ -19,12 +19,15 @@ import { SolarComponent } from './solar/solar.component';
 import { PlayerComponent } from './rooms/player/player.component';
 import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
+import { CinemaComponent } from './cinema/cinema.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
 @NgModule({
   imports: [
     ThemeModule,
     NgxEchartsModule,
+    DashboardRoutingModule,
   ],
   declarations: [
     DashboardComponent,
@@ -44,6 +47,7 @@ import { TrafficChartComponent } from './traffic/traffic-chart.component';
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
+    CinemaComponent,
   ],
 })
 export class DashboardModule { }
