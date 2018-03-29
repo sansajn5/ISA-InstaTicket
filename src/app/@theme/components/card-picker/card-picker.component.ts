@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'ngx-card-picker',
@@ -9,7 +10,11 @@ export class CardPickerComponent {
 
     @Input() type: string;
     @Input() image: string;
+    @Input() url: string;
 
+    constructor(private router: Router) {}
 
-    onImgClick(): void { }
+    onImgClick(): void {
+        this.router.navigateByUrl(this.url);
+     }
 }

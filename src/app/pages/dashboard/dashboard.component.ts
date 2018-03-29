@@ -11,6 +11,8 @@ export class DashboardComponent implements OnInit {
   cinemaImage: string;
   theatre: string;
   theatreImage: string;
+  urlCinema: string;
+  urlTheatre: string;
 
   imageRoute = '../../../assets/images/';
 
@@ -19,6 +21,8 @@ export class DashboardComponent implements OnInit {
     this.theatre = 'Pozorista'
     this.cinemaImage = this.imageRoute + 'cinema.jpg';
     this.theatreImage = this.imageRoute + 'theatre.png';
+    this.urlCinema = 'dashboard/cinemas';
+    this.urlTheatre = 'dashboard/theathres';
   }
 
 
