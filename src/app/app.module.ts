@@ -13,6 +13,7 @@ import { AuthService } from './@theme/services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import {PlaceService} from "./@theme/services/place.service";
+import {FanZoneService} from "./@theme/services/fanZone.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +34,7 @@ import {PlaceService} from "./@theme/services/place.service";
     AuthGuard,
     AuthService,
     PlaceService,
+    FanZoneService,
   ],
 })
 export class AppModule {

@@ -5,6 +5,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import {FanZoneComponent} from "../fanZone/fanZone.component";
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
   declarations: [
     DashboardComponent,
     CinemaComponent,
+    FanZoneComponent,
   ],
 })
 export class DashboardModule { }

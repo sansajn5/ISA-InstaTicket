@@ -10,8 +10,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Odjavi se',
     icon: 'fa fa-sign-out',
-    link: 'logout',
-  }, /*
+    link: '/logout',
+  },
+
+  {
+    title: 'Fan zona',
+    icon: 'fa fa-shopping-cart',
+    link: '/dashboard/fanZoneItems',
+
+
+  },
+
+
+  /*
   {
     title: 'FEATURES',
     group: true,
