@@ -3,8 +3,9 @@ import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
-import { CinemaComponent } from './cinema/cinema.component';
+import { CinemaComponent } from './placeList/cinema.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import {PlaceComponent} from "./place/place.component";
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
   declarations: [
     DashboardComponent,
     CinemaComponent,
+    PlaceComponent,
   ],
 })
 export class DashboardModule { }

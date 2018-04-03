@@ -2,9 +2,7 @@
   <div class="col-md-12 cardWrapper">
     <nb-card>
       <div *ngFor="let item of items" class="col-md-4 col-xxxl-4">
-        <h2 class="col-md-offset-2">{{item.name}}</h2>
-        <h3 class="col-md-offset-2">{{item.description}}</h3>
-        <h3 class="col-md-offset-2">{{item.address}}</h3>
+        <h2 class="col-md-offset-2" (click)="onClick(item.id)">{{item.name}}</h2>
       </div>
     </nb-card>
   </div>
