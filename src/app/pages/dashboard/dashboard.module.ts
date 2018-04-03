@@ -7,6 +7,9 @@ import { CinemaComponent } from './placeList/cinema.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import {PlaceComponent} from "./place/place.component";
 
+import {FanZoneComponent} from "../fanZone/fanZone.component";
+
+
 
 @NgModule({
   imports: [
@@ -18,6 +21,7 @@ import {PlaceComponent} from "./place/place.component";
     DashboardComponent,
     CinemaComponent,
     PlaceComponent,
+    FanZoneComponent,
   ],
 })
 export class DashboardModule { }
