@@ -12,6 +12,7 @@ import { AuthGuard } from './@theme/guard/auth.guard';
 import { AuthService } from './@theme/services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import {PlaceService} from "./@theme/services/place.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { ToastrModule } from 'ngx-toastr';
     { provide: APP_BASE_HREF, useValue: '/' },
     AuthGuard,
     AuthService,
+    PlaceService,
   ],
 })
 export class AppModule {
