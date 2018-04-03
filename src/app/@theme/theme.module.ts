@@ -20,16 +20,10 @@ import {
 import {
   FooterComponent,
   HeaderComponent,
-  ThemeSettingsComponent,
-  ThemeSwitcherComponent,
-  TinyMCEComponent,
 } from './components';
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
 import {
-  OneColumnLayoutComponent,
   SampleLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent,
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
@@ -52,15 +46,9 @@ const NB_MODULES = [
 ];
 
 const COMPONENTS = [
-  ThemeSwitcherComponent,
   HeaderComponent,
   FooterComponent,
-  ThemeSettingsComponent,
-  TinyMCEComponent,
-  OneColumnLayoutComponent,
   SampleLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent,
   CardPickerComponent,
 ];
 
