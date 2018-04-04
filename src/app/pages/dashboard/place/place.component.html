@@ -1,11 +1,28 @@
-<div>
+<div class="row">
+  <div class="col-md-4 cardWrapper ">
 
-  <h2>{{nameTitle}}</h2>
-  <h4>
-    Opis: </h4>
-  <p>{{desc}}</p>
-   <h4> Adresa:</h4>
+    <h2>{{nameTitle}}</h2>
+    <h4>Rejting:</h4>
+    <h4> Adresa:</h4>
     <p>{{adr}}</p>
-</div>
-<button>Dodaj salu</button>
+    <h4>
+      Opis: </h4>
+    <p>{{desc}}</p>
 
+  </div>
+
+  <div class="col-md-7 cardWrapper margin">
+  <div class="position">
+    <button class="btn">Filmovi</button>
+    <button class="btn">Dodaj film</button>
+    <button class="btn">Sale</button>
+    <button class="btn">Dodaj salu</button>
+  </div>
+    <h3>Na repertoaru</h3>
+    <nb-card>
+      <div *ngFor="let item of items"   >
+        <ngx-card-picker type={{item.date}} url="dashboard/place/repertory/{{item.id}}" ></ngx-card-picker>
+      </div>
+    </nb-card>
+  </div>
+</div>

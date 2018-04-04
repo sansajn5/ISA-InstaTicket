@@ -1,10 +1,10 @@
 <div class="auth-block" class="w">
   <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
   <h2 class="title">Dodavanje Biosopa/Pozorista</h2>
-  <form >
+  <form  >
     <div class="form-group">
       <label>Naziv:</label>
-      <input name="password" class="form-control"  id="input-password"
+      <input name="name" class="form-control"  id="input-name"
               placeholder="naziv">
 
       <label >Adresa:</label>
@@ -21,7 +21,7 @@
         <option>Pozoriste</option>
       </select>
 
-      <button class="btn btn-hero-success b">Dodaj</button>
+      <button class="btn btn-hero-success b" (click)="createPlace()">Dodaj</button>
 
 </div>
 

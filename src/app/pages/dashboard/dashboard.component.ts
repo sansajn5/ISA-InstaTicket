@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
     this.urlTheatre = 'dashboard/theathres';
   }
 
-  addPlace(){
+  addPlace() {
     this.router.navigateByUrl('dashboard/addPlace' );
   }
 

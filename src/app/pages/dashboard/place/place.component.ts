@@ -6,7 +6,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Component({
 
   templateUrl: './place.component.html',
-
+  styleUrls: ['./place.component.scss'],
 })
 
 export class PlaceComponent implements OnInit {
@@ -14,6 +14,7 @@ export class PlaceComponent implements OnInit {
    nameTitle: string;
    desc: string;
    adr: string;
+   items = []
 
   constructor(private placeService: PlaceService,
               protected router: Router, private route: ActivatedRoute
@@ -28,5 +29,10 @@ export class PlaceComponent implements OnInit {
       this.desc = data.place.description;
       this.adr = data.place.address;
     })
+
+    this.placeService.getRepertoriesInPlace(id).subscribe(data => {
+      this.items = data.repertories;
+    })
+
   }
 }

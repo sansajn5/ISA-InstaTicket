@@ -3,18 +3,18 @@ import {PlaceService} from "../../../@theme/services/place.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-    selector: 'ngx-cinema',
-    templateUrl: './cinema.component.html',
-    styleUrls: ['./cinema.component.scss'],
+    templateUrl: './placeList.component.html',
+    styleUrls: ['./placeList.component.scss'],
 })
-export class CinemaComponent implements OnInit {
+export class PlaceListComponent implements OnInit {
 
   items = []
   imageRoute = '../../../assets/images/';
   imageCinema: string;
   urlCinema: string;
+
   constructor(private placeService: PlaceService,
-              protected router: Router, private route: ActivatedRoute
+              protected router: Router
   ) {}
 
   ngOnInit() {
