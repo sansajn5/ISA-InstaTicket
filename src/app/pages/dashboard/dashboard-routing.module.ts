@@ -7,14 +7,15 @@ import { CinemaComponent } from "./placeList/cinema.component";
 import {PlaceComponent} from "./place/place.component";
 
 import {FanZoneComponent} from "../fanZone/fanZone.component";
+import {AddPlaceComponent} from "./addPlace/addPlace.component";
 
 const routes: Routes = [
     { path: '', component: DashboardComponent },
     { path: 'cinemas', component: CinemaComponent },
-
+    { path: 'theathres', component: CinemaComponent },
     { path: 'place/:id', component: PlaceComponent },
-
     { path: 'fanZoneItems', component: FanZoneComponent},
+    { path: 'addPlace', component: AddPlaceComponent},
 
 ];
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ngx-dashboard',
@@ -16,6 +17,8 @@ export class DashboardComponent implements OnInit {
 
   imageRoute = '../../../assets/images/';
 
+  constructor(protected router: Router
+  ) {}
   ngOnInit(): void {
     this.cinema = 'Bioskopi';
     this.theatre = 'Pozorista'
@@ -25,6 +28,9 @@ export class DashboardComponent implements OnInit {
     this.urlTheatre = 'dashboard/theathres';
   }
 
+  addPlace(){
+    this.router.navigateByUrl('dashboard/addPlace' );
+  }
 
 
 

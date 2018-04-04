@@ -8,6 +8,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import {PlaceComponent} from "./place/place.component";
 
 import {FanZoneComponent} from "../fanZone/fanZone.component";
+import {AddPlaceComponent} from "./addPlace/addPlace.component";
 
 
 
@@ -22,6 +23,7 @@ import {FanZoneComponent} from "../fanZone/fanZone.component";
     CinemaComponent,
     PlaceComponent,
     FanZoneComponent,
+    AddPlaceComponent,
   ],
 })
 export class DashboardModule { }
