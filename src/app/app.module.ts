@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import {PlaceService} from "./@theme/services/place.service";
 import {FanZoneService} from "./@theme/services/fanZone.service";
 import {RepertoryService} from "./@theme/services/repertory.service";
+import {ProjectionService} from "./@theme/services/projection.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,6 +38,7 @@ import {RepertoryService} from "./@theme/services/repertory.service";
     PlaceService,
     FanZoneService,
     RepertoryService,
+    ProjectionService,
   ],
 })
 export class AppModule {

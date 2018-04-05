@@ -10,6 +10,7 @@ import {PlaceComponent} from "./place/place.component";
 import {FanZoneComponent} from "../fanZone/fanZone.component";
 import {AddPlaceComponent} from "./addPlace/addPlace.component";
 import {RepertoryComponent} from "./repertory/repertory.component";
+import {ProjectionComponent} from "./projection/projection.component";
 
 
 
@@ -26,6 +27,7 @@ import {RepertoryComponent} from "./repertory/repertory.component";
     FanZoneComponent,
     AddPlaceComponent,
     RepertoryComponent,
+    ProjectionComponent,
   ],
 })
 export class DashboardModule { }

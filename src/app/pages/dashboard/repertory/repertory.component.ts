@@ -28,4 +28,8 @@ export class RepertoryComponent implements OnInit {
 
   }
 
+  detailProjection(id) {
+    this.router.navigateByUrl('dashboard/place/repertory/projection/' + id);
+  }
+
 }
