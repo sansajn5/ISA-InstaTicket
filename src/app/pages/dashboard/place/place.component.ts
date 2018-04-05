@@ -45,4 +45,8 @@ export class PlaceComponent implements OnInit {
     const id = this.route.snapshot.params.id;
     this.router.navigateByUrl('dashboard/place/' + id + '/halls');
   }
+
+  getProjections(id){
+    this.router.navigateByUrl('dashboard/place/repertory/' + id);
+  }
 }
