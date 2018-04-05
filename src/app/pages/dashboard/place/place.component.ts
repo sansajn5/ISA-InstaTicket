@@ -35,4 +35,14 @@ export class PlaceComponent implements OnInit {
     })
 
   }
+
+  getEvents() {
+    const id = this.route.snapshot.params.id;
+    this.router.navigateByUrl('dashboard/place/' + id + '/events');
+  }
+
+  getHalls() {
+    const id = this.route.snapshot.params.id;
+    this.router.navigateByUrl('dashboard/place/' + id + '/halls');
+  }
 }

@@ -35,4 +35,8 @@ export class PlaceService {
       .map(data => data);
   }
 
+  getEventInPlace(id): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/${id}/event-in-place` )
+  }
+
 }

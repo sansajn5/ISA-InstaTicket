@@ -10,6 +10,8 @@ import {FanZoneComponent} from "../fanZone/fanZone.component";
 import {AddPlaceComponent} from "./addPlace/addPlace.component";
 import {RepertoryComponent} from "./repertory/repertory.component";
 import {ProjectionComponent} from "./projection/projection.component";
+import {EventComponent} from "./event/event.component";
+import {HallComponent} from "./hall/hall.component";
 
 const routes: Routes = [
     { path: '', component: DashboardComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
     { path: 'addPlace', component: AddPlaceComponent},
     { path : 'place/repertory/:id', component: RepertoryComponent},
     { path : 'place/repertory/projection/:id', component: ProjectionComponent},
+    { path : 'place/:id/events', component: EventComponent},
+    { path : 'place/:id/halls', component: HallComponent},
 
 ];
 

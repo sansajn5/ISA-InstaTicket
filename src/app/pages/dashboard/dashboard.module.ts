@@ -11,6 +11,8 @@ import {FanZoneComponent} from "../fanZone/fanZone.component";
 import {AddPlaceComponent} from "./addPlace/addPlace.component";
 import {RepertoryComponent} from "./repertory/repertory.component";
 import {ProjectionComponent} from "./projection/projection.component";
+import {EventComponent} from "./event/event.component";
+import {HallComponent} from "./hall/hall.component";
 
 
 
@@ -28,6 +30,8 @@ import {ProjectionComponent} from "./projection/projection.component";
     AddPlaceComponent,
     RepertoryComponent,
     ProjectionComponent,
+    EventComponent,
+    HallComponent,
   ],
 })
 export class DashboardModule { }

@@ -16,6 +16,8 @@ import {PlaceService} from "./@theme/services/place.service";
 import {FanZoneService} from "./@theme/services/fanZone.service";
 import {RepertoryService} from "./@theme/services/repertory.service";
 import {ProjectionService} from "./@theme/services/projection.service";
+import {HallService} from "./@theme/services/hall.service";
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +41,7 @@ import {ProjectionService} from "./@theme/services/projection.service";
     FanZoneService,
     RepertoryService,
     ProjectionService,
+    HallService,
   ],
 })
 export class AppModule {

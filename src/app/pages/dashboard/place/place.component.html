@@ -2,21 +2,30 @@
   <div class="col-md-4 cardWrapper ">
 
     <h2>{{nameTitle}}</h2>
-    <h4>Rejting:</h4>
-    <h4> Adresa:</h4>
-    <p>{{adr}}</p>
-    <h4>
-      Opis: </h4>
-    <p>{{desc}}</p>
+    <div class="margin">
+      <h4>Rejting:</h4>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+    <div class="margin">
+      <h4> Adresa:</h4>
+      <p>{{adr}}</p>
+    </div>
+    <div class="margin">
+      <h4>
+        Opis: </h4>
+      <p>{{desc}}</p>
+    </div>
 
   </div>
 
-  <div class="col-md-7 cardWrapper margin">
+  <div class="col-md-7 cardWrapper margin-repertory">
   <div class="position">
-    <button class="btn">Filmovi</button>
-    <button class="btn">Dodaj film</button>
-    <button class="btn">Sale</button>
-    <button class="btn">Dodaj salu</button>
+    <button class="btn" (click)="getEvents()">Filmovi</button>
+    <button class="btn" (click)="getHalls()">Sale</button>
   </div>
     <h3>Na repertoaru</h3>
     <nb-card>
@@ -24,5 +33,9 @@
         <ngx-card-picker type={{item.date}} url="dashboard/place/repertory/{{item.id}}" ></ngx-card-picker>
       </div>
     </nb-card>
+  </div>
+
+  <div class="col-md-4 cardWrapper margin-tickets ">
+    <h2 >Karte na popustu:</h2>
   </div>
 </div>
