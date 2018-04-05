@@ -2,7 +2,6 @@
 
   h1 {
     text-align: center;
-    margin-top: 30px;
     margin-bottom: 30px;
   }
 
@@ -11,4 +10,22 @@
     color: black;
   }
 
+  .cardWrapper {
+    display: inline-block;
+  }
+
+  .h {
+    height: 20px;
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+
+  .img {
+    width: 400px;
+    height: 500px;
+    margin-right: 30px;
+    position: absolute;
+  }
 }

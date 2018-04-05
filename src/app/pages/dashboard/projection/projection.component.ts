@@ -17,6 +17,13 @@ export class ProjectionComponent implements OnInit {
   director: string;
   duration: string;
   description: string;
+  hall: string;
+  startTime: string;
+  endTime: string;
+  date: string;
+
+  imageRoute = '../../../assets/images/';
+  image: string;
 
   constructor (protected router: Router,
                private projecionService: ProjectionService,
@@ -31,6 +38,13 @@ export class ProjectionComponent implements OnInit {
       this.director = data.projection.event.director;
       this.actors = data.projection.event.actors;
       this.type = data.projection.event.type;
+      this.duration = data.projection.event.duration;
+      this.description = data.projection.event.description;
+      this.hall = data.projection.hall.name;
+      this.startTime = data.projection.startTime;
+      this.endTime = data.projection.endTime;
+      this.date = data.projection.date;
+      this.image = this.imageRoute + 'm.jpg';
     })
 
   }
