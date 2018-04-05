@@ -1,18 +1,16 @@
-<div class="row ">
-  <div class="col-md-12 cardWrapper  ">
+<div>
+  <div class="col-md-6 offset-3 cardWrapper" >
     <nb-card>
-      <div *ngFor="let item of items"    >
+      <div *ngFor="let item of items"  class="row "  >
         <div class="col-md-6 cardWrapper ">
-        <ngx-card-picker type={{item.event.name}} image={{movieImage}} >
-        </ngx-card-picker>
-        <div class="position">
-          <button class="btn"  (click)="detailProjection( item.id )">Detaljnije</button>
-        </div>
+        <img src="{{movieImage}}" style="height: 350px;width: 300px;margin-left: 70px;margin-bottom: 25px" >
       </div>
         <div class="col-md-5 cardWrapper position " >
-          <h4>Vreme projekcije</h4>
+          <h1 style=" margin-top:50px;">{{item.event.name}}</h1>
+          <h4 >Vreme projekcije</h4>
           <h2>{{item.startTime}}-{{item.endTime}}</h2>
           <h4>{{item.hall.name}}</h4>
+          <button class="btn"  (click)="detailProjection( item.id )">Detaljnije</button>
         </div>
 
 </div>

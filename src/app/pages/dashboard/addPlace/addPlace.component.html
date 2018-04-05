@@ -1,27 +1,26 @@
-<div class="auth-block" class="w">
+<div class="auth-block offset-3 col-md-6">
   <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
-  <h2 class="title">Dodavanje Biosopa/Pozorista</h2>
+  <h2 class="title margin ">Dodavanje Biosopa/Pozorista</h2>
   <form  >
-    <div class="form-group">
+    <div class="form-group" >
       <label>Naziv:</label>
-      <input name="name" class="form-control"  id="input-name"
-              placeholder="naziv">
-
-      <label >Adresa:</label>
-      <input name="address" class="form-control"  id="input-address"
-             placeholder="adresa">
-
-      <label >Opis:</label>
-      <textarea name="description" class="form-control h" id="input-description"
-             placeholder="opis"></textarea>
+      <input name="name" class="form-control margin"  id="input-name"
+              placeholder="naziv" >
       <label >Tip:</label>
-
-      <select  class="form-control">
+      <select  class="form-control margin">
         <option>Bioskop</option>
         <option>Pozoriste</option>
       </select>
 
-      <button class="btn btn-hero-success b" (click)="createPlace()">Dodaj</button>
+      <label >Adresa:</label>
+      <input name="address" class="form-control margin"  id="input-address"
+             placeholder="adresa">
+
+      <label >Opis:</label>
+      <textarea name="description" class="form-control margin" id="input-description"
+             placeholder="opis"></textarea>
+
+      <button class="btn btn-hero-success" (click)="createPlace()">Dodaj</button>
 
 </div>
 
