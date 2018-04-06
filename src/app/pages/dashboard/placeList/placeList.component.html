@@ -1,0 +1,8 @@
+<div class="row">
+    <nb-card>
+      <div *ngFor="let item of items" class="col-md-4 cardWrapper "  >
+        <ngx-card-picker  type={{item.name}} image={{imageCinema}} url="dashboard/place/{{item.id}}"></ngx-card-picker>
+      </div>
+    </nb-card>
+  </div>
+

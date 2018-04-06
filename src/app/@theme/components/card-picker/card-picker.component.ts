@@ -17,4 +17,8 @@ export class CardPickerComponent {
     onImgClick(): void {
         this.router.navigateByUrl(this.url);
      }
+
+    onNameClick(): void {
+      this.router.navigateByUrl(this.url);
+    }
 }

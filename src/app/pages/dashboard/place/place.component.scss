@@ -1,0 +1,47 @@
+:host {
+
+  .cardWrapper {
+    background: white;
+    display: inline-block;
+
+  }
+
+  .margin {
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+  }
+  .margin-repertory {
+    margin-left: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    background: lightgray;
+    color: black;
+  }
+
+  .position {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    background: lightgray;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .margin-tickets {
+    margin-top: 20px;
+  }
+   th, td {
+    border: 3px solid darkgray;
+  }
+}

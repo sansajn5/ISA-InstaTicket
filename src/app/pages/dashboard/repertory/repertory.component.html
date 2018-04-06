@@ -1,0 +1,23 @@
+<div>
+  <div class="col-md-6 offset-3 cardWrapper" >
+    <nb-card>
+      <div *ngFor="let item of items"  class="row "  >
+        <div class="col-md-6 cardWrapper ">
+        <img src="{{movieImage}}" style="height: 350px;width: 300px;margin-left: 70px;margin-bottom: 25px" >
+      </div>
+        <div class="col-md-5 cardWrapper position " >
+          <h1 style=" margin-top:50px;">{{item.event.name}}</h1>
+          <h4 >Vreme projekcije</h4>
+          <h2>{{item.startTime}}-{{item.endTime}}</h2>
+          <h4>{{item.hall.name}}</h4>
+          <button class="btn"  (click)="detailProjection( item.id )">Detaljnije</button>
+        </div>
+
+</div>
+    </nb-card>
+
+  </div>
+</div>
+
+
+

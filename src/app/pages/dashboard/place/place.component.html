@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-4 cardWrapper ">
+
+    <h2>{{nameTitle}}</h2>
+    <div class="margin">
+      <h4>Rejting:</h4>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+    <div class="margin">
+      <h4> Adresa:</h4>
+      <p>{{adr}}</p>
+    </div>
+    <div class="margin">
+      <h4>
+        Opis: </h4>
+      <p>{{desc}}</p>
+    </div>
+
+  </div>
+
+  <div class="col-md-7 cardWrapper margin-repertory">
+  <div class="position">
+    <button class="btn" (click)="getEvents()">Filmovi</button>
+    <button class="btn" (click)="getHalls()">Sale</button>
+  </div>
+    <h3>Na repertoaru</h3>
+    <table class="offset-4 col-md-4 ">
+          <tr *ngFor="let item of items"  >
+            <th style=" color: black;text-align: center; font-size: 40px; " (click)="getProjections( item.id )">{{item.date}}</th>
+          </tr>
+    </table>
+  </div>
+
+  <div class="col-md-4 cardWrapper margin-tickets ">
+    <h2 >Karte na popustu:</h2>
+  </div>
+</div>

@@ -2,6 +2,7 @@
 
   .cardWrapper {
     text-align: center;
+    display: inline-block;
   }
 
   nb-card {
@@ -11,4 +12,7 @@
     padding-right: 20px;
     height: 100%;
   }
+
+
+
 }
