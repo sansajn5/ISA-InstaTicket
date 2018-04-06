@@ -33,14 +33,19 @@ export class PlaceService {
     return this.http.get(`${this.BASE_URL}/${id}/repertories` )
   }
 
+  getEventInPlace(id): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/${id}/event-in-place` )
+  }
+
   createPlace(place: Place): Observable<any> {
     const body = JSON.stringify(place);
     return this.http.post(`${this.BASE_URL}/place`, body, httpOptions)
       .map(data => data);
   }
 
-  getEventInPlace(id): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/${id}/event-in-place` )
+  deletePlace(id: any): Observable<any> {
+    return this.http.delete(`${this.BASE_URL}/place/` + id, httpOptions)
+      .map(data => data);
   }
 
 }

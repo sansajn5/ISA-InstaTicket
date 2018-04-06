@@ -2,6 +2,7 @@
 import {Component, OnInit} from "@angular/core";
 import {PlaceService} from "../../../@theme/services/place.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
 
@@ -19,7 +20,9 @@ export class PlaceComponent implements OnInit {
    place: string;
 
   constructor(private placeService: PlaceService,
-              protected router: Router, private route: ActivatedRoute
+              protected router: Router,
+              private route: ActivatedRoute,
+              private toastr: ToastrService
   ) {}
 
 
