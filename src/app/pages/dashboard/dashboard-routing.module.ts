@@ -14,7 +14,6 @@ import {FanZoneComponent} from "../fanZone/fanZone.component";
 
 const routes: Routes = [
     { path: '', component: DashboardComponent },
-
     { path: ':place/place/:id', component: PlaceComponent },
     { path: 'fanZoneItems', component: FanZoneComponent},
     { path: 'addPlace', component: AddPlaceComponent},

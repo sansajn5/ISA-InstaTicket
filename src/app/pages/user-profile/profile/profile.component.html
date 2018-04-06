@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-md-12 cardWrapper">
+        <nb-card class="col-md-12 col-xxxl-12" style="padding-top:40px">
+            <div class="col-xxxl-5 col-md-5" style="display:inline-block;">
+                <div class="row" style="margin-top: 20px;">
+                    <img class="img-thumbnail" src="{{profileImage}}">
+                </div>
+                <div class="row" style="margin-top:15px;">
+                    <nb-card [size]="large" class="col-md-9">
+                        <nb-tabset fullWidth>
+                            <nb-tab tabTitle="Friends">
+                                <div class="contact" *ngFor="let friend of friends">
+                                  <nb-user [name]="friend.user" [title]="friend.type" size="large"></nb-user>
+                                  <i class="i-contact nb-phone"></i>
+                                </div>
+                              </nb-tab>
+                              <nb-tab tabTitle="Recent Visits">
+                                <div class="contact" *ngFor="let visit of recentVisitis">
+                                  <nb-user [name]="visit.user" [title]="visit.type" size="large"></nb-user>
+                                  <span class="time">{{ visit.user }}</span>
+                                </div>
+                            </nb-tab>
+                        </nb-tabset>
+                    </nb-card>
+                </div>
+            </div>
+            <div class="col-xxxl-6 col-md-6" style="display:inline-block">
+                <nb-card class="col-xxxl-12 col-md-12" style="display:inline-block; top:42px;">
+                    <nb-card-header>
+                        <h1>{{profileUsername}}</h1>
+                    </nb-card-header>
+                    <nb-card-body>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="col-md-3" style="display:inline-block">
+                                        <label for="inputFirstName">First Name</label>
+                                    </div>
+                                    <div class="col-md-8" style="display:inline-block">
+                                        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="col-md-3" style="display:inline-block">
+                                        <label for="inputLastName">Last Name</label>
+                                    </div>
+                                    <div class="col-md-8" style="display:inline-block">
+                                        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="col-md-3" style="display:inline-block">
+                                        <label for="inputEmail">Email</label>
+                                    </div>
+                                    <div class="col-md-8" style="display:inline-block">
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-3" style="display:inline-block">
+                                        <label class="col-md-3" for="inputWebsite">Website</label>
+                                    </div>
+                                    <div class="col-md-8" style="display:inline-block">
+                                        <input class="col-md-9" type="text" class="form-control" id="inputWebsite" placeholder="Website">
+                                    </div>
+                                </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </nb-card-body>
+                </nb-card>
+            </div>
+        </nb-card>
+    </div>
+</div>

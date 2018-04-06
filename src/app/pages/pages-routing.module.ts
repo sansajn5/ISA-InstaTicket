@@ -2,7 +2,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import {LogoutHelperComponent} from './logout-helper/logout-helper.component';
 
 const routes: Routes = [{
@@ -12,11 +11,10 @@ const routes: Routes = [{
     path: '',
     loadChildren: './dashboard/dashboard.module#DashboardModule',
   }, {
-    path: 'logout', component: LogoutHelperComponent,
+    path: 'user' ,
+    loadChildren: './user-profile/user-profile.module#UserProfileModule',
   }, {
-    path: 'dashboard',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
+    path: 'logout', component: LogoutHelperComponent,
   }],
 }];
 
