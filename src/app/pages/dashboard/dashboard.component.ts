@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.cinema = 'Bioskopi';
-    this.theatre = 'Pozorista'
+    this.theatre = 'Pozorista';
     this.cinemaImage = this.imageRoute + 'cinema.jpg';
     this.theatreImage = this.imageRoute + 'theatre.png';
     this.urlCinema = 'dashboard/cinemas';

@@ -55,6 +55,7 @@ export class AuthService {
    * Invoking server to remove user from session
    */
   logout(): void {
+    this.http.get(`${this.BASE_URL}/logout`, httpOptions)
     localStorage.clear();
   }
 
