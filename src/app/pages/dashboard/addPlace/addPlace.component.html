@@ -1,26 +1,29 @@
 <div class="auth-block offset-3 col-md-6">
   <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
   <h2 class="title margin ">Dodavanje Biosopa/Pozorista</h2>
-  <form  >
+  <form [formGroup]="form" >
     <div class="form-group" >
       <label>Naziv:</label>
       <input name="name" class="form-control margin"  id="input-name"
-              placeholder="naziv" >
+              placeholder="naziv" [formControl]="name" >
+      <small class="form-text error" *ngIf="name.errors?.required && name.touched">
+        Naziv je obavezan!
+      </small>
       <label >Tip:</label>
-      <select  class="form-control margin">
+      <select  class="form-control margin" [formControl]="type">
         <option>Bioskop</option>
         <option>Pozoriste</option>
       </select>
 
       <label >Adresa:</label>
       <input name="address" class="form-control margin"  id="input-address"
-             placeholder="adresa">
+             placeholder="adresa" [formControl]="address">
 
       <label >Opis:</label>
       <textarea name="description" class="form-control margin" id="input-description"
-             placeholder="opis"></textarea>
+             placeholder="opis" [formControl]="description"></textarea>
 
-      <button class="btn btn-hero-success" (click)="createPlace()">Dodaj</button>
+      <button class="btn btn-hero-success" (click)="createPlace()" [disabled]="!form.valid">Dodaj</button>
 
 </div>
 
