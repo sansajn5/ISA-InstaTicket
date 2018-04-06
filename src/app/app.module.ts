@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import {PlaceService} from "./@theme/services/place.service";
 import {FanZoneService} from "./@theme/services/fanZone.service";
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
