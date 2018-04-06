@@ -15,6 +15,8 @@ export class PlaceComponent implements OnInit {
    desc: string;
    adr: string;
    items = []
+   type: string;
+   place: string;
 
   constructor(private placeService: PlaceService,
               protected router: Router, private route: ActivatedRoute
@@ -23,6 +25,12 @@ export class PlaceComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params.id;
+    this.place = this.route.snapshot.params.place;
+    if (this.place === 'cinemas') {
+      this.type = 'Filmovi';
+    } else {
+      this.type = 'Predstave';
+    }
     this.placeService.getPlace(id).subscribe(data  => {
 
       this.nameTitle = data.place.name;
@@ -38,7 +46,7 @@ export class PlaceComponent implements OnInit {
 
   getEvents() {
     const id = this.route.snapshot.params.id;
-    this.router.navigateByUrl('dashboard/place/' + id + '/events');
+    this.router.navigateByUrl('dashboard/' + this.place + '/place/' + id + '/events');
   }
 
   getHalls() {
@@ -46,7 +54,7 @@ export class PlaceComponent implements OnInit {
     this.router.navigateByUrl('dashboard/place/' + id + '/halls');
   }
 
-  getProjections(id){
+  getProjections(id) {
     this.router.navigateByUrl('dashboard/place/repertory/' + id);
   }
 }

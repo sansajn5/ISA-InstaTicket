@@ -15,14 +15,13 @@ import {HallComponent} from "./hall/hall.component";
 
 const routes: Routes = [
     { path: '', component: DashboardComponent },
-    { path: 'cinemas', component: PlaceListComponent },
-    { path: 'theathres', component: PlaceListComponent },
-    { path: 'place/:id', component: PlaceComponent },
+    { path: ':place', component: PlaceListComponent},
+    { path: ':place/place/:id', component: PlaceComponent },
     { path: 'fanZoneItems', component: FanZoneComponent},
     { path: 'addPlace', component: AddPlaceComponent},
     { path : 'place/repertory/:id', component: RepertoryComponent},
     { path : 'place/repertory/projection/:id', component: ProjectionComponent},
-    { path : 'place/:id/events', component: EventComponent},
+    { path : ':place/place/:id/events', component: EventComponent},
     { path : 'place/:id/halls', component: HallComponent},
 
 ];
