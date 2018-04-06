@@ -24,10 +24,10 @@
 
   <div class="col-md-7 cardWrapper margin-repertory">
   <div class="position">
-    <button class="btn" (click)="getEvents()">Filmovi</button>
-    <button class="btn" (click)="getHalls()">Sale</button>
+    <button class="btn btn-hero-info" (click)="getEvents()">{{type}}</button>
+    <button class="btn btn-hero-info" (click)="getHalls()">Sale</button>
   </div>
-    <h3>Na repertoaru</h3>
+    <h1  style="width: 100%; margin-bottom: 20px;background: #ebeff5;color: black;text-align: center" >Repertoari</h1>
     <table class="offset-4 col-md-4 ">
           <tr *ngFor="let item of items"  >
             <th style=" color: black;text-align: center; font-size: 40px; " (click)="getProjections( item.id )">{{item.date}}</th>

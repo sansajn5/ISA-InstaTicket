@@ -21,6 +21,10 @@ export class PlaceService {
     return this.http.get(`${this.BASE_URL}/cinemas`)
   }
 
+  getTheathres(): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/theaters`)
+  }
+
   getPlace(id): Observable<any> {
     return this.http.get(`${this.BASE_URL}/place/${id}` )
   }

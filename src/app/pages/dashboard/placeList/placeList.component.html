@@ -1,7 +1,11 @@
-<div class="row">
+<div class="row" style="text-align: center;width: 100%">
     <nb-card>
-      <div *ngFor="let item of items" class="col-md-4 cardWrapper "  >
-        <ngx-card-picker  type={{item.name}} image={{imageCinema}} url="dashboard/place/{{item.id}}"></ngx-card-picker>
+      <div *ngFor="let item of items" class=" cardWrapper "  style="margin-left: 10px;margin-right: 10px;  " >
+        <ngx-card-picker  type={{item.name}} image={{image}} url="dashboard/{{place}}/place/{{item.id}}"></ngx-card-picker>
+        <div style="margin-bottom: 20px">
+          <button class="btn btn-hero-info">Izmeni</button>
+          <button class="btn btn-hero-info" >Obrisi</button>
+        </div>
       </div>
     </nb-card>
   </div>
