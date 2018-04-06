@@ -8,12 +8,13 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import {PlaceComponent} from "./place/place.component";
 
 import {FanZoneComponent} from "../fanZone/fanZone.component";
+import {ItemFormComponent} from "../fanZone/itemForm/itemForm.component";
+import {ItemCardComponent} from "../fanZone/itemCard/itemCard.component";
 import {AddPlaceComponent} from "./addPlace/addPlace.component";
 import {RepertoryComponent} from "./repertory/repertory.component";
 import {ProjectionComponent} from "./projection/projection.component";
 import {EventComponent} from "./event/event.component";
 import {HallComponent} from "./hall/hall.component";
-
 
 
 @NgModule({
@@ -27,6 +28,8 @@ import {HallComponent} from "./hall/hall.component";
     PlaceListComponent,
     PlaceComponent,
     FanZoneComponent,
+    ItemFormComponent,
+    ItemCardComponent,
     AddPlaceComponent,
     RepertoryComponent,
     ProjectionComponent,

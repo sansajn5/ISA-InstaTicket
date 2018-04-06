@@ -1,0 +1,58 @@
+
+
+<!--<a class=" btn btn-primary-outline pull-right " (click)="closeNewItemForm()">-->
+  <!--<span class="	glyphicon glyphicon-remove-circle" aria-hidden="true"></span>-->
+<!--</a>-->
+
+<button class="btn btn-block btn-hero-success" (click)="closeNewItemForm()"><i class="fa fa-sign-out"></i></button>
+
+<br>
+
+<form (ngSubmit)="addNewItem()" (keyup.enter)="form.valid && addNewItem()">
+
+  <label><h4> Novi rekvizit: </h4></label>
+
+  <br>
+  <div class="form-group">
+    <label>Naziv: </label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Unesite naziv"
+           [formControl]="name" id="input_item_name"
+           [class.form-control-danger]="name.invalid && name.touched" autofocus>
+  </div>
+
+  <div class="form-group">
+    <label>Opis: </label>
+    <textarea class="form-control" rows="5" placeholder="Unesite opis"
+              [formControl]="description" id="input_item-desc"
+              [class.form-control-danger]="description.invalid && description.touched" autofocus>
+    </textarea>
+  </div>
+
+
+  <div class="form-group">
+    <label>Cena: </label>
+    <input class="form-control" rows="5" placeholder="Unesite cenu"
+           [formControl]="price" id="input_item-price"
+           [class.form-control-danger]="price.invalid && price.touched" autofocus>
+
+    <label>Slika: </label>
+    <div class="input-group">
+      <input type="text" class="form-control"
+             [formControl]="image" id="input_item_image"
+             [class.form-control-danger]="image.invalid && image.touched" autofocus>
+      <span class="input-group-btn">
+        <button id="button_other" class="btn btn-default" type="button"> Izaberi </button>
+      </span>
+    </div>
+  </div>
+
+
+  <br>
+  <br>
+
+
+  <button  id="button_center" class="btn btn-primary btn-lg btn-block"
+           [class.btn-pulse]="submitted"
+           [disabled]="!form.valid">Dodaj</button>
+
+</form>

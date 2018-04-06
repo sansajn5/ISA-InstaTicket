@@ -19,6 +19,7 @@ import {ProjectionService} from "./@theme/services/projection.service";
 import {HallService} from "./@theme/services/hall.service";
 
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
