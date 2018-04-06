@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4de2dd20-58ec-403b-9781-f2eff6210ae2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/@theme/models/place.model.ts" afterPath="$PROJECT_DIR$/src/app/@theme/models/place.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/@theme/services/place.service.ts" afterPath="$PROJECT_DIR$/src/app/@theme/services/place.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.component.ts" afterPath="$PROJECT_DIR$/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/addPlace/addPlace.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/addPlace/addPlace.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/addPlace/addPlace.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/addPlace/addPlace.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/placeList/placeList.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/placeList/placeList.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/placeList/placeList.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/placeList/placeList.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style.scss" afterPath="$PROJECT_DIR$/src/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.html" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,28 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dashboard.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/dashboard.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="82" lean-forward="false" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/dashboard.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="login.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/auth/login/login.component.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,18 +50,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="placeList.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/placeList/placeList.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="57" column="21" lean-forward="false" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#70#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="addPlace.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/addPlace/addPlace.component.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -111,6 +69,10 @@
               <caret line="27" column="89" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="89" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
+                <marker date="1523051368671" expanded="true" signature="1273:1953" ph="{...}" />
+                <marker date="1523051368671" expanded="true" signature="1445:1798" ph="{...}" />
+                <marker date="1523051368671" expanded="true" signature="1831:1915" ph="{...}" />
+                <marker date="1523051368671" expanded="true" signature="1976:2028" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -126,11 +88,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="place.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="place.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="place.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projection.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projection.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -166,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/dashboard.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/repertory/repertory.component.ts" />
         <option value="$PROJECT_DIR$/src/app/@theme/services/projection.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.ts" />
         <option value="$PROJECT_DIR$/src/app/@theme/services/event.service.ts" />
         <option value="$PROJECT_DIR$/src/app/@theme/services/hall.service.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
@@ -174,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/hall/hall.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.scss" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/addPlace/addPlace.component.scss" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.html" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/repertory/repertory.component.html" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/repertory/repertory.component.scss" />
         <option value="$PROJECT_DIR$/src/app/@theme/components/card-picker/card-picker.component.ts" />
@@ -192,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/dashboard-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/@theme/models/place.model.ts" />
         <option value="$PROJECT_DIR$/src/app/@theme/services/place.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/fanZone/itemCard/itemCard.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/fanZone/itemForm/itemForm.component.ts" />
         <option value="$PROJECT_DIR$/src/style.scss" />
@@ -203,6 +192,9 @@
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/addPlace/addPlace.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/addPlace/addPlace.component.html" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.html" />
       </list>
     </option>
   </component>
@@ -353,6 +345,15 @@
               <item name="dashboard" type="462c0819:PsiDirectoryNode" />
               <item name="placeList" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="projection" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -413,7 +414,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103528000" />
+    <option name="totallyTimeSpent" value="105020000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -621,16 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/placeList/placeList.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -671,16 +662,6 @@
           <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-          <folding>
-            <element signature="e#1#49#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -760,16 +741,6 @@
         <state relative-caret-position="740">
           <caret line="68" column="33" lean-forward="false" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
-          <folding>
-            <element signature="e#1#49#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,6 +858,10 @@
           <caret line="27" column="89" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="89" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
+            <marker date="1523051368671" expanded="true" signature="1273:1953" ph="{...}" />
+            <marker date="1523051368671" expanded="true" signature="1445:1798" ph="{...}" />
+            <marker date="1523051368671" expanded="true" signature="1831:1915" ph="{...}" />
+            <marker date="1523051368671" expanded="true" signature="1976:2028" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -943,6 +918,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="39" column="39" lean-forward="false" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/projection/projection.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding />
         </state>
       </provider>

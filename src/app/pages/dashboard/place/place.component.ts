@@ -37,7 +37,7 @@ export class PlaceComponent implements OnInit {
     this.placeService.getPlace(id).subscribe(data  => {
 
       this.nameTitle = data.place.name;
-      this.desc = data.place.description;
+      this.desc = data.place.descripton;
       this.adr = data.place.address;
     })
 
