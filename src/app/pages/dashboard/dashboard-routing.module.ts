@@ -24,7 +24,7 @@ const routes: Routes = [
     { path : 'place/:id/events', component: EventComponent},
     { path : 'place/:id/halls', component: HallComponent},
     { path: 'fanZoneItems', component: FanZoneComponent},
-    { path: 'add-new-item', component: ItemFormComponent},
+    { path: 'fanzone/:mode/:id', component: ItemFormComponent}
 ];
 
 @NgModule({

@@ -32,20 +32,30 @@ export class ItemCardComponent {
   }
 
 
+  ngOnInit() {
 
 
-  deleteItem(): any{
+  }
+
+editItem() {
+    console.log('krenulo')
+
+    this.router.navigateByUrl('dashboard/fanzone/edit/' + this.id);
+}
+
+  deleteItem(): any {
 
 
     this.fanZoneService.deleteItem(this.id).toPromise()
-      .then(data=>{
+      .then(data => {
         this.toastr.clear();
         this.toastr.success('Uspesno obrisan rekvizit!');
         this.visible = false;
 
         this.refreshList.emit(data);
-  })
+      })
+  }
 
-}
+
 
 }

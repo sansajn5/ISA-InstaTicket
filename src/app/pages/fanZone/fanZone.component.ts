@@ -35,7 +35,7 @@ export class FanZoneComponent implements OnInit {
 
   addNewItem() {
 
-    this.router.navigateByUrl('dashboard/add-new-item');
+    this.router.navigateByUrl('dashboard/fanzone/add');
 
 
 

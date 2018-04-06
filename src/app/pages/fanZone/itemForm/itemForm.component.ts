@@ -1,6 +1,6 @@
 
-import {Component} from "@angular/core";
-import {Router} from "@angular/router";
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FanZoneService} from "../../../@theme/services/fanZone.service";
 import {ToastrService} from 'ngx-toastr';
@@ -13,7 +13,7 @@ import {Item} from "../../../@theme/models/item.model";
 })
 
 
-export class ItemFormComponent {
+export class ItemFormComponent implements OnInit{
 
   public form: FormGroup;
   public name: AbstractControl;
@@ -22,12 +22,13 @@ export class ItemFormComponent {
   public image: AbstractControl;
   item: Item;
 
-
+  public mode = 'new';
 
   constructor(private fb: FormBuilder,
               protected router: Router,
               private fanZoneService: FanZoneService,
-              private toastr: ToastrService) {
+              private toastr: ToastrService,
+              private route: ActivatedRoute) {
 
     this.form = this.fb.group({
       'name' : ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(50)])],
@@ -45,6 +46,34 @@ export class ItemFormComponent {
     this.image = this.form.controls['image'];
 
   }
+
+
+  ngOnInit(){
+      const mode = this.route.snapshot.params.mode;
+
+      if(mode == 'edit') {
+
+        const idItem = this.route.snapshot.params.id;
+          this.fanZoneService.getItemData(idItem).subscribe(data => {
+            this.form.controls['name'].setValue(data.name);
+            this.form.controls['description'].setValue(data.description);
+            this.form.controls['price'].setValue(data.price);
+            this.form.controls['image'].setValue(data.image);
+
+
+          })
+
+      }else if(mode == 'add') {
+        console.log('ddkkd')
+      }
+      else{
+        this.router.navigateByUrl("dashboard")
+      }
+
+
+  }
+
+
 
   closeNewItemForm(): void{
 
