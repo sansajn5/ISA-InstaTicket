@@ -40,6 +40,7 @@ export class LoginComponent {
         console.log(data);
         localStorage.setItem('token', data.id_token);
         localStorage.setItem('user', data.username);
+        localStorage.setItem('role',data.role);
         this.toastr.clear();
         this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + data.username);
         this.router.navigateByUrl('dashboard');
