@@ -49,15 +49,21 @@ export class PlaceComponent implements OnInit {
 
   getEvents() {
     const id = this.route.snapshot.params.id;
-    this.router.navigateByUrl('dashboard/' + this.place + '/place/' + id + '/events');
+    this.router.navigateByUrl('dashboard/' + this.place + '/' + id + '/events');
   }
 
   getHalls() {
     const id = this.route.snapshot.params.id;
-    this.router.navigateByUrl('dashboard/place/' + id + '/halls');
+    this.router.navigateByUrl('dashboard/' + this.place + '/' + id + '/halls');
   }
 
   getProjections(id) {
     this.router.navigateByUrl('dashboard/place/repertory/' + id);
+  }
+
+  getRepertories() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/place/' + place + '/' + id + '/repertories-in-place')
   }
 }
