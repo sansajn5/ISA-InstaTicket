@@ -19,6 +19,8 @@ export class PlaceComponent implements OnInit {
    type: string;
    place: string;
 
+   starRate = 2;
+
   constructor(private placeService: PlaceService,
               protected router: Router,
               private route: ActivatedRoute,
@@ -65,5 +67,11 @@ export class PlaceComponent implements OnInit {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
     this.router.navigateByUrl('dashboard/place/' + place + '/' + id + '/repertories-in-place')
+  }
+
+  getStatistic() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/' + place + '/place/' + id + '/statistic')
   }
 }

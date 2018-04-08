@@ -4,11 +4,19 @@
     <h2>{{nameTitle}}</h2>
     <div class="margin">
       <h4>Rejting:</h4>
-      <span class="fa fa-star "></span>
-      <span class="fa fa-star "></span>
-      <span class="fa fa-star "></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
+          <p >
+            <ngb-rating [(rate)]="starRate" max=5>
+              <ng-template let-fill="fill">
+
+              <span class="star fill" [class.filled]="fill === 100" >
+                <i  class="ion-android-star" *ngIf="fill === 100" style="color: black" ></i>
+                <i  class="ion-android-star-outline" *ngIf="fill !== 100"></i>
+              </span>
+              </ng-template>
+            </ngb-rating>
+            <span class="current-rate" style="color: black;">{{ starRate }}</span>
+          </p>
+
     </div>
     <div class="margin">
       <h4> Adresa:</h4>
@@ -27,7 +35,7 @@
     <button class="btn btn-hero-info" (click)="getEvents()">{{type}}</button>
     <button class="btn btn-hero-info" (click)="getHalls()">Sale</button>
     <button class="btn btn-hero-info" (click)="getRepertories()">Repertoari</button>
-    <button class="btn btn-hero-info">Statistika</button>
+    <button class="btn btn-hero-info" (click)="getStatistic()">Statistika</button>
   </div>
     <h1  style="width: 100%; margin-bottom: 20px;background: #ebeff5;color: black;text-align: center" >Repertoari</h1>
     <table class="offset-4 col-md-4 ">

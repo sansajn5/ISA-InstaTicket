@@ -19,6 +19,7 @@ import {AddEventComponent} from "./add-event/addEvent.component";
 import {AddHallComponent} from "./add-hall/addHall.component";
 import {RepertoriesComponent} from "./repertories/repertories.component";
 import {ProjectionsComponent} from "./projections/projections.component";
+import {StatisticComponent} from "./statistic/statistic.component";
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import {ProjectionsComponent} from "./projections/projections.component";
     AddHallComponent,
     RepertoriesComponent,
     ProjectionsComponent,
+    StatisticComponent,
   ],
 })
 export class DashboardModule { }

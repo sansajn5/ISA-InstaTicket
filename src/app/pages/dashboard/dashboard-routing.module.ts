@@ -15,6 +15,7 @@ import {AddEventComponent} from "./add-event/addEvent.component";
 import {AddHallComponent} from "./add-hall/addHall.component";
 import {RepertoriesComponent} from "./repertories/repertories.component";
 import {ProjectionsComponent} from "./projections/projections.component";
+import {StatisticComponent} from "./statistic/statistic.component";
 
 const routes: Routes = [
     { path: '', component: DashboardComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
     { path: 'places/:place/:id/addEvent' , component: AddEventComponent},
     { path: 'places/:place/:id/addHall', component: AddHallComponent},
     { path: 'place/:place/:id/repertories-in-place', component: RepertoriesComponent},
+    { path: ':place/place/:id/statistic', component: StatisticComponent},
     { path: 'place/:place/:id/repertories-in-place/:idRepertory', component: ProjectionsComponent},
     { path: ':place', component: PlaceListComponent},
 
