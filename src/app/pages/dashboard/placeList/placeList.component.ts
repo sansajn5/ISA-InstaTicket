@@ -48,7 +48,7 @@ export class PlaceListComponent implements OnInit {
   }
 
   deletePlace (id): any {
-
+  /*
     this.placeService.deletePlace(id).toPromise()
       .then(data => {
         this.toastr.clear();
@@ -58,7 +58,7 @@ export class PlaceListComponent implements OnInit {
       .catch(err => {
       this.toastr.error("Greska pri brisanju");
     });
-
+*/
   }
 
 

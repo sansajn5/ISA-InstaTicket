@@ -23,7 +23,8 @@ const routes: Routes = [
     { path : 'place/:id/halls', component: HallComponent},
 
     { path: 'fanZoneItems', component: FanZoneComponent},
-    { path: 'fanzone/:mode/:id', component: ItemFormComponent}
+    { path: 'fanzone/:mode/:id', component: ItemFormComponent},
+    { path: 'fanzone/:mode', component: ItemFormComponent},
     { path: ':place', component: PlaceListComponent},
 
 ];

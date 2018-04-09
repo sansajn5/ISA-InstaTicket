@@ -73,4 +73,8 @@ export class FanZoneComponent implements OnInit {
     this.items =  this.items.filter(el => el.id != data.item.id);
   }
 
+  updateEditedList(data) {
+    this.items = data.items;
+  }
+
 }

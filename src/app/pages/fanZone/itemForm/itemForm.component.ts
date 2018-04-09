@@ -1,10 +1,11 @@
 
-import {Component, OnInit} from "@angular/core";
+import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FanZoneService} from "../../../@theme/services/fanZone.service";
 import {ToastrService} from 'ngx-toastr';
 import {Item} from "../../../@theme/models/item.model";
+
 
 @Component({
   selector : 'ngx-new-item',
@@ -22,7 +23,15 @@ export class ItemFormComponent implements OnInit{
   public image: AbstractControl;
   item: Item;
 
+  public id: any;
+
+  @Output() refreshList:EventEmitter<any> = new EventEmitter()
+
   public mode = 'new';
+  public title_name = 'Novi rekvizit: ';
+  public method_name = 'DODAJ';
+
+
 
   constructor(private fb: FormBuilder,
               protected router: Router,
@@ -55,11 +64,15 @@ export class ItemFormComponent implements OnInit{
 
         const idItem = this.route.snapshot.params.id;
           this.fanZoneService.getItemData(idItem).subscribe(data => {
-            this.form.controls['name'].setValue(data.name);
-            this.form.controls['description'].setValue(data.description);
-            this.form.controls['price'].setValue(data.price);
-            this.form.controls['image'].setValue(data.image);
 
+            this.title_name = 'Izmeni rekvizit: ';
+            this.method_name = 'IZMENI';
+
+
+            this.form.controls['name'].setValue(data.item.name);
+            this.form.controls['description'].setValue(data.item.description);
+            this.form.controls['price'].setValue(data.item.price);
+            this.form.controls['image'].setValue(data.item.image);
 
           })
 
@@ -82,6 +95,18 @@ export class ItemFormComponent implements OnInit{
   }
 
 
+  confirmClick() {
+
+    if (this.method_name === 'DODAJ'){
+      this.addNewItem();
+    }
+    else{
+      this.editItem();
+    }
+  }
+
+
+
   addNewItem() {
 
     const item = new Item(this.name.value,
@@ -98,6 +123,31 @@ export class ItemFormComponent implements OnInit{
         this.router.navigateByUrl('dashboard/fanZoneItems');
       })
   }
+
+
+  editItem() {
+
+    const item = new Item(
+      this.name.value,
+      this.description.value,
+      this.image.value,
+      this.price.value,
+    );
+
+    this.id = this.route.snapshot.params.id;
+
+    this.fanZoneService.editItem(item, this.id).toPromise()
+      .then(data=>{
+        this.toastr.clear();
+        this.toastr.success('Uspesno izmenjen rekvizit!');
+
+        this.router.navigateByUrl('dashboard/fanZoneItems');
+
+        this.refreshList.emit(data);
+      })
+
+  }
+
 
 
 }

@@ -37,11 +37,11 @@ export class ItemCardComponent {
 
   }
 
-editItem() {
-    console.log('krenulo')
+  editItem() {
+      console.log('krenulo' + this.id);
 
-    this.router.navigateByUrl('dashboard/fanzone/edit/' + this.id);
-}
+      this.router.navigateByUrl('dashboard/fanzone/edit/' + this.id);
+  }
 
   deleteItem(): any {
 
