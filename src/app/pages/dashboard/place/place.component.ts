@@ -19,7 +19,7 @@ export class PlaceComponent implements OnInit {
    type: string;
    place: string;
 
-   starRate = 2;
+   starRate ;
 
   constructor(private placeService: PlaceService,
               protected router: Router,
@@ -45,6 +45,10 @@ export class PlaceComponent implements OnInit {
 
     this.placeService.getRepertoriesInPlace(id).subscribe(data => {
       this.items = data.repertories;
+    })
+
+    this.placeService.getVoteForPlace(id).subscribe(data => {
+      this.starRate = data.vote;
     })
 
   }

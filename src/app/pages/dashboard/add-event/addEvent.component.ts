@@ -32,14 +32,14 @@ export class AddEventComponent {
               private toastr: ToastrService,
               private route: ActivatedRoute) {
     this.form = this.fb.group({
-      'name': ['', Validators.compose([Validators.required])],
-      'type': ['', Validators.compose([Validators.required])],
-      'actors': [''],
-      'director': [''],
-      'duration': ['', Validators.compose([Validators.required,
-        Validators.pattern('[0-9]+')])],
-      'image': [''],
+      'name': ['', Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(60)])],
+      'type': ['', Validators.compose([Validators.required, Validators.min(1), Validators.maxLength(50)])],
+      'actors': ['' , Validators.compose([Validators.maxLength(5000), Validators.minLength(0)])],
+      'director': ['' , Validators.compose([Validators.maxLength(50), Validators.minLength(0)])],
+      'duration': ['', Validators.compose([Validators.required, Validators.pattern('[0-9]+')])],
+      'image': ['' , Validators.compose([Validators.maxLength(5000), Validators.minLength(0)])],
       'description': [''],
+
 
 
     })
