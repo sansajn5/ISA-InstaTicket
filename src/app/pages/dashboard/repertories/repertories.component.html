@@ -1,0 +1,17 @@
+<div class="row">
+  <div>
+    <button class="btn btn-hero-info" (click)="addProjection()" >Dodaj projekciju</button>
+  </div>
+  <div class="offset-1 col-md-8" >
+    <table>
+      <tr>
+        <th class="th-hall " style="background: #4CB2FF; color: white">Repertoar za dan:</th>
+        <th class="th" style="background: #4CB2FF; color: white">Obrisi</th>
+      <tr *ngFor="let item of items">
+        <th (click)="getProjections(item.id)">{{item.date}}</th>
+        <th class="th" (click)="deleteRepertory(item.id)">Obrisi</th>
+      </tr>
+    </table>
+    </div>
+</div>
+

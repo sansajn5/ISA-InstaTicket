@@ -15,6 +15,12 @@ import {RepertoryComponent} from "./repertory/repertory.component";
 import {ProjectionComponent} from "./projection/projection.component";
 import {EventComponent} from "./event/event.component";
 import {HallComponent} from "./hall/hall.component";
+import {AddEventComponent} from "./add-event/addEvent.component";
+import {AddHallComponent} from "./add-hall/addHall.component";
+import {RepertoriesComponent} from "./repertories/repertories.component";
+import {ProjectionsComponent} from "./projections/projections.component";
+import {StatisticComponent} from "./statistic/statistic.component";
+import {AddProjectionComponent} from "./add-projection/addProjection.component";
 
 
 @NgModule({
@@ -35,6 +41,12 @@ import {HallComponent} from "./hall/hall.component";
     ProjectionComponent,
     EventComponent,
     HallComponent,
+    AddEventComponent,
+    AddHallComponent,
+    RepertoriesComponent,
+    ProjectionsComponent,
+    StatisticComponent,
+    AddProjectionComponent,
   ],
 })
 export class DashboardModule { }

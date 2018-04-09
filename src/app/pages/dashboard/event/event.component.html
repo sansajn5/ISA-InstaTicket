@@ -1,6 +1,6 @@
 <div class="row">
   <div>
-    <button class="btn  btn-hero-info">{{add}}</button>
+    <button class="btn  btn-hero-info" (click)="openFormAddEvent()">{{add}}</button>
   </div>
   <div class="offset-1 col-md-8" >
     <table>
@@ -11,8 +11,8 @@
 
         <tr *ngFor="let item of items">
           <th>{{item.name}}</th>
-          <th class="th">Izmeni</th>
-          <th class="th">Obrisi</th>
+          <th class="th" >Izmeni</th>
+          <th class="th" (click)="deleteEvent(item.id)" >Obrisi</th>
         </tr>
     </table>
 

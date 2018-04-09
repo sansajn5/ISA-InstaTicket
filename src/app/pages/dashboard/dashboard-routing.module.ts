@@ -11,6 +11,12 @@ import {ProjectionComponent} from "./projection/projection.component";
 import {EventComponent} from "./event/event.component";
 import {HallComponent} from "./hall/hall.component";
 import {FanZoneComponent} from "../fanZone/fanZone.component";
+import {AddEventComponent} from "./add-event/addEvent.component";
+import {AddHallComponent} from "./add-hall/addHall.component";
+import {RepertoriesComponent} from "./repertories/repertories.component";
+import {ProjectionsComponent} from "./projections/projections.component";
+import {StatisticComponent} from "./statistic/statistic.component";
+import {AddProjectionComponent} from "./add-projection/addProjection.component";
 
 const routes: Routes = [
     { path: '', component: DashboardComponent },
@@ -19,12 +25,24 @@ const routes: Routes = [
     { path: 'addPlace', component: AddPlaceComponent},
     { path : 'place/repertory/:id', component: RepertoryComponent},
     { path : 'place/repertory/projection/:id', component: ProjectionComponent},
+
     { path : ':place/place/:id/events', component: EventComponent},
     { path : 'place/:id/halls', component: HallComponent},
 
     { path: 'fanZoneItems', component: FanZoneComponent},
     { path: 'fanzone/:mode/:id', component: ItemFormComponent},
     { path: 'fanzone/:mode', component: ItemFormComponent},
+
+    { path : ':place/:id/events', component: EventComponent},
+    { path : ':place/:id/halls', component: HallComponent},
+    { path: 'add-new-item', component: ItemFormComponent},
+    { path: 'places/:place/:id/addEvent' , component: AddEventComponent},
+    { path: 'places/:place/:id/addHall', component: AddHallComponent},
+    { path: 'place/:place/:id/repertories-in-place', component: RepertoriesComponent},
+    { path: ':place/place/:id/statistic', component: StatisticComponent},
+    { path: 'place/:place/:id/repertories-in-place/:idRepertory', component: ProjectionsComponent},
+    { path: 'place/:place/:id/addProjection', component: AddProjectionComponent},
+
     { path: ':place', component: PlaceListComponent},
 
 ];

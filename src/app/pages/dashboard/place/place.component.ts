@@ -19,6 +19,8 @@ export class PlaceComponent implements OnInit {
    type: string;
    place: string;
 
+   starRate = 2;
+
   constructor(private placeService: PlaceService,
               protected router: Router,
               private route: ActivatedRoute,
@@ -37,7 +39,7 @@ export class PlaceComponent implements OnInit {
     this.placeService.getPlace(id).subscribe(data  => {
 
       this.nameTitle = data.place.name;
-      this.desc = data.place.description;
+      this.desc = data.place.descripton;
       this.adr = data.place.address;
     })
 
@@ -49,15 +51,27 @@ export class PlaceComponent implements OnInit {
 
   getEvents() {
     const id = this.route.snapshot.params.id;
-    this.router.navigateByUrl('dashboard/' + this.place + '/place/' + id + '/events');
+    this.router.navigateByUrl('dashboard/' + this.place + '/' + id + '/events');
   }
 
   getHalls() {
     const id = this.route.snapshot.params.id;
-    this.router.navigateByUrl('dashboard/place/' + id + '/halls');
+    this.router.navigateByUrl('dashboard/' + this.place + '/' + id + '/halls');
   }
 
   getProjections(id) {
     this.router.navigateByUrl('dashboard/place/repertory/' + id);
+  }
+
+  getRepertories() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/place/' + place + '/' + id + '/repertories-in-place')
+  }
+
+  getStatistic() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/' + place + '/place/' + id + '/statistic')
   }
 }

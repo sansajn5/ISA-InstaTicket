@@ -21,7 +21,7 @@ export class ProjectionComponent implements OnInit {
   startTime: string;
   endTime: string;
   date: string;
-
+  starRate=3;
   imageRoute = '../../../assets/images/';
   image: string;
 

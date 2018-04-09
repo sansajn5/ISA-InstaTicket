@@ -43,4 +43,12 @@ export class PlaceService {
     return this.http.get(`${this.BASE_URL}/${id}/event-in-place` )
   }
 
+  editPlace(id , place: Place): Observable<any> {
+    const token = localStorage.getItem('token')
+    const body = JSON.stringify(place);
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.put(`${this.BASE_URL}/place/${id}`,{ headers: headers});
+  }
+
+
 }

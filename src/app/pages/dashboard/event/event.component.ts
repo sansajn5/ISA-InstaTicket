@@ -1,6 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {PlaceService} from "../../../@theme/services/place.service";
+import {ToastrService} from "ngx-toastr";
+import {NbSpinnerService} from "@nebular/theme";
+import {EventService} from "../../../@theme/services/event.service";
 
 @Component({
 
@@ -9,18 +12,21 @@ import {PlaceService} from "../../../@theme/services/place.service";
 
 })
 
-export class EventComponent implements OnInit{
+export class EventComponent implements OnInit {
   items = []
   add: string;
   type: string;
 
   constructor(private placeService: PlaceService,
               protected router: Router,
-              private route: ActivatedRoute
-  ) {}
+              private route: ActivatedRoute,
+              private spinnerService: NbSpinnerService,
+              private toastr: ToastrService,
+              private  eventService: EventService) {
+  }
 
   ngOnInit() {
-    const place =  this.route.snapshot.params.place;
+    const place = this.route.snapshot.params.place;
     const id = this.route.snapshot.params.id;
     if (place === 'cinemas') {
       this.add = 'Dodaj film';
@@ -36,4 +42,23 @@ export class EventComponent implements OnInit{
 
   }
 
+  openFormAddEvent() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/places/' + place + '/' + id + '/addEvent')
+  }
+
+  deleteEvent(id): any {
+
+    this.eventService.deleteEvent(id).toPromise()
+      .then(data => {
+        this.toastr.clear();
+        this.toastr.success('Uspesno obrisao!');
+        this.items = this.items.filter(el => el.id != id);
+      })
+      .catch(err => {
+        this.toastr.error("Greska pri brisanju");
+      });
+
+  }
 }

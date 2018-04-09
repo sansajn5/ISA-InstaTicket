@@ -1,0 +1,39 @@
+<div class="auth-block offset-3 col-md-6">
+  <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
+  <h2 class="title margin ">Dodavanje Projekcije</h2>
+  <form  >
+    <div class="form-group" >
+
+      <label >{{type}}</label>
+
+      <select  class="form-control margin" >
+        <option *ngFor="let eventPlace of eventsPlace " >{{eventPlace.name}}</option>
+      </select>
+
+      <select  class="form-control margin" >
+        <option *ngFor="let hall of halls " >{{hall.name}}</option>
+      </select>
+
+
+      <label>Datum:</label>
+      <input name="date" class="form-control margin"  id="input-date"
+             placeholder="unesite datum"  >
+
+
+      <label>Pocetak projekcije:</label>
+      <input name="startTime" class="form-control margin"  id="input-startTime"
+             placeholder="unesite vreme"  >
+
+
+
+      <label>Zavrsetak projekcije:</label>
+      <input name="endTime" class="form-control margin"  id="input-endTime"
+             placeholder="unesite vreme"  >
+
+
+      <button class="btn btn-hero-success" (click)="createPlace()" >Dodaj</button>
+
+    </div>
+
+  </form>
+</div>
