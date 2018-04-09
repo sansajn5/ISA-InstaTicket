@@ -2,9 +2,9 @@
 import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {FanZoneService} from "../../../@theme/services/fanZone.service";
+import {FanZoneService} from "../../../../@theme/services/fanZone.service";
 import {ToastrService} from 'ngx-toastr';
-import {Item} from "../../../@theme/models/item.model";
+import {Item} from "../../../../@theme/models/item.model";
 
 
 @Component({

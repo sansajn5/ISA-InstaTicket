@@ -20,21 +20,31 @@ import {AddProjectionComponent} from "./add-projection/addProjection.component";
 
 const routes: Routes = [
     { path: '', component: DashboardComponent },
-    { path: ':place/place/:id', component: PlaceComponent },
-    { path: 'fanZoneItems', component: FanZoneComponent},
-    { path: 'addPlace', component: AddPlaceComponent},
-    { path : 'place/repertory/:id', component: RepertoryComponent},
-    { path : 'place/repertory/projection/:id', component: ProjectionComponent},
-    { path : ':place/:id/events', component: EventComponent},
-    { path : ':place/:id/halls', component: HallComponent},
-    { path: 'add-new-item', component: ItemFormComponent},
-    { path: 'places/:place/:id/addEvent' , component: AddEventComponent},
-    { path: 'places/:place/:id/addHall', component: AddHallComponent},
-    { path: 'place/:place/:id/repertories-in-place', component: RepertoriesComponent},
-    { path: ':place/place/:id/statistic', component: StatisticComponent},
-    { path: 'place/:place/:id/repertories-in-place/:idRepertory', component: ProjectionsComponent},
-    { path: 'place/:place/:id/addProjection', component: AddProjectionComponent},
-    { path: ':place', component: PlaceListComponent},
+    { path: 'fan-zone' , loadChildren: './fanzone/fan-zone.module#FanZoneModule' },
+    // { path: ':place/place/:id', component: PlaceComponent },
+    // { path: 'fanZoneItems', component: FanZoneComponent},
+    // { path: 'addPlace', component: AddPlaceComponent},
+    // { path : 'place/repertory/:id', component: RepertoryComponent},
+    // { path : 'place/repertory/projection/:id', component: ProjectionComponent},
+
+    // { path : ':place/place/:id/events', component: EventComponent},
+    // { path : 'place/:id/halls', component: HallComponent},
+
+    // { path: 'fanZoneItems', component: FanZoneComponent},
+    // { path: 'fanzone/:mode/:id', component: ItemFormComponent},
+    // { path: 'fanzone/:mode', component: ItemFormComponent},
+
+    // { path : ':place/:id/events', component: EventComponent},
+    // { path : ':place/:id/halls', component: HallComponent},
+    // { path: 'add-new-item', component: ItemFormComponent},
+    // { path: 'places/:place/:id/addEvent' , component: AddEventComponent},
+    // { path: 'places/:place/:id/addHall', component: AddHallComponent},
+    // { path: 'place/:place/:id/repertories-in-place', component: RepertoriesComponent},
+    // { path: ':place/place/:id/statistic', component: StatisticComponent},
+    // { path: 'place/:place/:id/repertories-in-place/:idRepertory', component: ProjectionsComponent},
+    // { path: 'place/:place/:id/addProjection', component: AddProjectionComponent},
+
+    // { path: ':place', component: PlaceListComponent},
 
 ];
 

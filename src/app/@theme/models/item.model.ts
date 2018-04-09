@@ -5,4 +5,7 @@ export class Item {
               public image: string,
               public price: string,
               ) {}
+
+
+
 }

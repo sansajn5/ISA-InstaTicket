@@ -1,17 +1,15 @@
-import {Component, OnInit} from "@angular/core";
-
-import {FanZoneService} from "../../@theme/services/fanZone.service";
-import {Router} from "@angular/router";
+import { Component } from "@angular/core";
+import { FanZoneService } from "../../../../@theme/services/fanZone.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector : 'ngx-fanzone-items',
-  templateUrl: './fanZone.component.html',
-  styleUrls: ['./fanZone.component.scss'],
+    selector: 'ngx-fan-zone-items',
+    templateUrl: './fan-zone-items.component.html',
+    styleUrls: ['./fan-zone-items.component.scss']
 })
+export class FanZoneItems {
 
-export class FanZoneComponent implements OnInit {
-
-  items = []
+    items = []
 
   public class_tab1 = 'nav-link';
   public class_tab2 = 'nav-link';
@@ -35,7 +33,7 @@ export class FanZoneComponent implements OnInit {
 
   addNewItem() {
 
-    this.router.navigateByUrl('dashboard/fanzone/add');
+    this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items/add');
 
 
 
@@ -48,10 +46,8 @@ export class FanZoneComponent implements OnInit {
 
     this.class_tab1 = 'nav-link active';
     this.class_tab2 = 'nav-link';
-
     this.show_items = true;
     this.show_offers = false;
-
 
   }
 

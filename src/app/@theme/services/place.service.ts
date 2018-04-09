@@ -6,55 +6,41 @@ import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
 import {Place} from "../models/place.model";
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
+};
+
 @Injectable()
 export class PlaceService {
-
 
   private BASE_URL = 'http://localhost:8090/api/place';
 
   constructor(private http: HttpClient) {}
 
   getCinemas(): Observable<any> {
-    const token = localStorage.getItem('token')
-    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.get(`${this.BASE_URL}/cinemas`,{ headers: headers});
+    return this.http.get(`${this.BASE_URL}/cinemas`)
   }
 
   getTheathres(): Observable<any> {
-    const token = localStorage.getItem('token')
-    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.get(`${this.BASE_URL}/theaters`,{ headers: headers});
+    return this.http.get(`${this.BASE_URL}/theaters`)
   }
 
   getPlace(id): Observable<any> {
-    const token = localStorage.getItem('token')
-    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.get(`${this.BASE_URL}/place/${id}`,{ headers: headers});
+    return this.http.get(`${this.BASE_URL}/place/${id}` )
   }
 
   getRepertoriesInPlace (id): Observable<any> {
-    const token = localStorage.getItem('token')
-    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.get(`${this.BASE_URL}/${id}/repertories`,{ headers: headers});
+    return this.http.get(`${this.BASE_URL}/${id}/repertories` )
   }
 
   createPlace(place: Place): Observable<any> {
-    const token = localStorage.getItem('token')
     const body = JSON.stringify(place);
-    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.post(`${this.BASE_URL}/place`, body,{ headers: headers});
+    return this.http.post(`${this.BASE_URL}/place`, body, httpOptions)
+      .map(data => data);
   }
 
   getEventInPlace(id): Observable<any> {
-    const token = localStorage.getItem('token')
-    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.get(`${this.BASE_URL}/${id}/event-in-place`,{ headers: headers});
-  }
-
-  deletePlace(id: any): Observable<any> {
-    const token = localStorage.getItem('token')
-    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.delete(`${this.BASE_URL}/place/` + id,{ headers: headers});
+    return this.http.get(`${this.BASE_URL}/${id}/event-in-place` )
   }
 
   editPlace(id , place: Place): Observable<any> {

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
 import { Router } from '@angular/router';
-import {FanZoneService} from "../../../@theme/services/fanZone.service";
+import {FanZoneService} from "../../../../@theme/services/fanZone.service";
 import {ToastrService} from "ngx-toastr";
 
 
