@@ -57,4 +57,12 @@ export class PlaceService {
     return this.http.delete(`${this.BASE_URL}/place/` + id,{ headers: headers});
   }
 
+  editPlace(id , place: Place): Observable<any> {
+    const token = localStorage.getItem('token')
+    const body = JSON.stringify(place);
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.put(`${this.BASE_URL}/place/${id}`,{ headers: headers});
+  }
+
+
 }

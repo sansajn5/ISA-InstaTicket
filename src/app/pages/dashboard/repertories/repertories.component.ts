@@ -42,10 +42,16 @@ export class RepertoriesComponent implements OnInit{
       });
 
   }
-  
+
   getProjections(idRepertory): any {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
     this.router.navigateByUrl('dashboard/place/'+ place + '/' + id + '/repertories-in-place/' + idRepertory)
+  }
+
+  addProjection() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/place/' + place + '/' + id + '/addProjection' );
   }
 }
