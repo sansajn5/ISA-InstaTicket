@@ -1,9 +1,9 @@
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Hall} from "../../../@theme/models/hall.model";
 import {Component} from "@angular/core";
-import {HallService} from "../../../@theme/services/hall.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {HallService} from "../../../../@theme/services/hall.service";
+import {Hall} from "../../../../@theme/models/hall.model";
 
 @Component({
 
@@ -50,11 +50,11 @@ export class AddHallComponent {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
 
-    this.hallService.createEvent(hall, id).toPromise()
+    this.hallService.createHall(hall, id).toPromise()
       .then(data => {
         this.toastr.clear();
         this.toastr.success('Uspesno dodavanje!');
-        this.router.navigateByUrl('dashboard/' + place + '/' + id + '/halls');
+        this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/halls');
       })
   }
 }

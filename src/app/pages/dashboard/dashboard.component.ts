@@ -24,12 +24,12 @@ export class DashboardComponent implements OnInit {
     this.theatre = 'Pozorista';
     this.cinemaImage = this.imageRoute + 'cinema.jpg';
     this.theatreImage = this.imageRoute + 'theatre.png';
-    this.urlCinema = 'dashboard/cinemas';
-    this.urlTheatre = 'dashboard/theathres';
+    this.urlCinema = 'dashboard/pages/place/cinemas';
+    this.urlTheatre = 'dashboard/pages/place/theathres';
   }
 
   addPlace() {
-    this.router.navigateByUrl('dashboard/addPlace' );
+    this.router.navigateByUrl('dashboard/pages/place/add-place' );
   }
 
 

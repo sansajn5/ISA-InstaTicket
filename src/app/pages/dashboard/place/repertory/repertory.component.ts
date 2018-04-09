@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
-import {RepertoryService} from "../../../@theme/services/repertory.service";
-
+import {RepertoryService} from "../../../../@theme/services/repertory.service";
 @Component({
   templateUrl: './repertory.component.html',
   styleUrls: ['./repertory.component.scss'],
@@ -29,7 +28,7 @@ export class RepertoryComponent implements OnInit {
   }
 
   detailProjection(id) {
-    this.router.navigateByUrl('dashboard/place/repertory/projection/' + id);
+    this.router.navigateByUrl('dashboard/pages/place/repertory/projection/' + id);
   }
 
 }

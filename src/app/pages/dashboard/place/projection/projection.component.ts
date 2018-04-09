@@ -1,7 +1,7 @@
 
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ProjectionService} from "../../../@theme/services/projection.service";
+import {ProjectionService} from "../../../../@theme/services/projection.service";
 
 @Component({
   templateUrl: './projection.component.html',

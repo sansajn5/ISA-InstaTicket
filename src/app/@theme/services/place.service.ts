@@ -34,9 +34,10 @@ export class PlaceService {
   }
 
   createPlace(place: Place): Observable<any> {
+    const token = localStorage.getItem('token')
     const body = JSON.stringify(place);
-    return this.http.post(`${this.BASE_URL}/place`, body, httpOptions)
-      .map(data => data);
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.post(`${this.BASE_URL}/place`, body, { headers: headers})
   }
 
   getEventInPlace(id): Observable<any> {
@@ -47,12 +48,18 @@ export class PlaceService {
     const token = localStorage.getItem('token')
     const body = JSON.stringify(place);
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.put(`${this.BASE_URL}/place/${id}`,{ headers: headers});
+    return this.http.put(`${this.BASE_URL}/place/${id}`, body,{ headers: headers});
   }
 
   getVoteForPlace(id): Observable<any> {
     const token = localStorage.getItem('token')
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
     return this.http.get(`${this.BASE_URL}/${id}/vote`,{ headers: headers});
+  }
+
+  deletePlace(id: any): Observable<any> {
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.delete(`${this.BASE_URL}/place/` + id,{ headers: headers});
   }
 }

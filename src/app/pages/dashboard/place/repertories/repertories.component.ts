@@ -1,16 +1,15 @@
 import {Component, OnInit} from "@angular/core";
-import {PlaceService} from "../../../@theme/services/place.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
-import {RepertoryService} from "../../../@theme/services/repertory.service";
-
+import {RepertoryService} from "../../../../@theme/services/repertory.service";
+import {PlaceService} from "../../../../@theme/services/place.service";
 @Component({
   templateUrl: './repertories.component.html',
   styleUrls: ['./repertories.component.scss'],
 
 })
 
-export class RepertoriesComponent implements OnInit{
+export class RepertoriesComponent implements OnInit {
   items = []
 
 
@@ -46,12 +45,12 @@ export class RepertoriesComponent implements OnInit{
   getProjections(idRepertory): any {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
-    this.router.navigateByUrl('dashboard/place/'+ place + '/' + id + '/repertories-in-place/' + idRepertory)
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/repertory/' + idRepertory)
   }
 
   addProjection() {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
-    this.router.navigateByUrl('dashboard/place/' + place + '/' + id + '/addProjection' );
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add-projection' );
   }
 }

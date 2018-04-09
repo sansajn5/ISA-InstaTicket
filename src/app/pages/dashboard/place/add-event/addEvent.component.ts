@@ -1,9 +1,9 @@
 import {Component} from "@angular/core";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {EventService} from "../../../@theme/services/event.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
-import {EventModel} from "../../../@theme/models/event.model";
+import {EventService} from "../../../../@theme/services/event.service";
+import {EventModel} from "../../../../@theme/models/event.model";
 
 @Component({
 
@@ -69,7 +69,7 @@ export class AddEventComponent {
       .then(data=> {
         this.toastr.clear();
         this.toastr.success('Uspesno dodavanje!');
-        this.router.navigateByUrl('dashboard/' + place + '/' + id + '/events');
+        this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/events');
       })
   }
 }

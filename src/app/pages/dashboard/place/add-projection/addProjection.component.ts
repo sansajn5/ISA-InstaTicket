@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
-import {PlaceService} from "../../../@theme/services/place.service";
-import {id} from "@swimlane/ngx-charts/release/utils";
-import {HallService} from "../../../@theme/services/hall.service";
 import {AbstractControl, FormGroup} from "@angular/forms";
+import {PlaceService} from "../../../../@theme/services/place.service";
+import {HallService} from "../../../../@theme/services/hall.service";
+//import {IMyDpOptions} from 'mydatepicker';
 
 @Component ({
   templateUrl: './addProjection.component.html',
@@ -15,6 +15,7 @@ export class AddProjectionComponent implements OnInit {
   eventsPlace = []
   halls = []
   id: string;
+  date: string;
 
   public form: FormGroup;
   public eventInPlace: AbstractControl;
@@ -43,5 +44,11 @@ export class AddProjectionComponent implements OnInit {
       this.halls = data.halls;
     })
   }
+
+  //
+  // public myDatePickerOptions: IMyDpOptions = {
+  //   // other options...
+  //   dateFormat: 'dd.mm.yyyy',
+  // };
 
 }

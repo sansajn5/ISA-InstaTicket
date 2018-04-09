@@ -1,8 +1,10 @@
 import {Component, EventEmitter, OnInit, Output} from "@angular/core";
-import {PlaceService} from "../../../@theme/services/place.service";
+
 import {ActivatedRoute, Router} from "@angular/router";
 import {NbSpinnerService} from "@nebular/theme";
 import {ToastrService} from "ngx-toastr";
+import {PlaceService} from "../../../../@theme/services/place.service";
+
 
 @Component({
     templateUrl: './placeList.component.html',
@@ -48,7 +50,6 @@ export class PlaceListComponent implements OnInit {
   }
 
   deletePlace (id): any {
-  /*
     this.placeService.deletePlace(id).toPromise()
       .then(data => {
         this.toastr.clear();
@@ -58,7 +59,7 @@ export class PlaceListComponent implements OnInit {
       .catch(err => {
       this.toastr.error("Greska pri brisanju");
     });
-*/
+
   }
 
 
