@@ -29,6 +29,7 @@ import {
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CardPickerComponent } from './components/card-picker/card-picker.component';
+import {NgbdDatepickerPopup} from "./components/datepicker-popup/datepicker-popup";
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
@@ -51,6 +52,7 @@ const COMPONENTS = [
   FooterComponent,
   SampleLayoutComponent,
   CardPickerComponent,
+  NgbdDatepickerPopup,
 ];
 
 const PIPES = [

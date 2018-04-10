@@ -7,54 +7,53 @@
       <a [className]="class_tab2" id="offers-tab" data-toggle="tab" (click)="offersClick()" role="tab" aria-controls="profile" aria-selected="false">Oglasi</a>
     </li>
   </ul>
-  
-  
-  
+
+
+
   <div class="tab-content" id="myTabContent">
-  
+
     <div *ngIf="show_items" class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="official-shop-tab">
-  
+
       <br>
       <button (click)="addNewItem()"  class="btn btn-default button_center" type="button"> Dodaj rekvizit </button>
       <br>
-  
+
       <br>
       <div class="row">
         <div *ngFor="let item of items" class="col-md-4 col-sm-6 col-12">
-  
+
           <ngx-item-card (refreshList)="updateList($event)" id={{item.id}} name={{item.name}} description={{item.description}} price={{item.price}}></ngx-item-card>
           <br>
-  
+
         </div>
       </div>
-  
+
     </div>
-  
+
     <div *ngIf="show_offers" class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="offers-tab">
-  
+
         <br>
-        <button  class="btn btn-default button_center" type="button"> Dodaj oglas </button>
-  
-  
+        <button  (click)="addNewOffer()" class="btn btn-default button_center" type="button"> Dodaj oglas </button>
+
+
         <div>
           <br>
           <p> Oglasi polovni </p>
         </div>
-  
+
     </div>
-  
+
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+

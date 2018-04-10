@@ -1,0 +1,55 @@
+
+<button class="btn btn-primary-outline pull-right basic_col" (click)="closeNewOfferForm()"><i class="fa fa-times-circle"></i></button>
+
+<br>
+
+
+<form (ngSubmit)="confirmClick()" (keyup.enter)="form.valid && addNewItem()">
+
+
+  <label><h4> {{title_name}} </h4></label>
+
+
+  <br>
+  <div class="form-group">
+    <label>Naziv: </label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Unesite naziv"
+           [formControl]="name" id="input_offer_name">
+  </div>
+
+  <div class="form-group">
+    <label>Opis: </label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Unesite opis"
+           [formControl]="description" id="input_offer_desc">
+
+    <br>
+    <label>Slika: </label>
+    <div class="input-group">
+        <input type="text" class="form-control"
+               [formControl]="image" id="input_item_image">
+        <span class="input-group-btn">
+            <button id="button_other" class="btn btn-default" type="button"> Izaberi </button>
+        </span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Početna cena: </label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Unesite početnu cenu"
+           [formControl]="price" id="input_offer_price">
+  </div>
+
+
+
+
+  <div>
+    <label>Datum isticanja licitacije: </label>
+    <ngbd-datepicker-popup id="date_picker"></ngbd-datepicker-popup>
+  </div>
+
+  <br>
+  <br>
+  <button  id="button_center" class="btn btn-primary btn-lg btn-block"
+           [class.btn-pulse]="submitted">Dodaj</button>
+
+</form>

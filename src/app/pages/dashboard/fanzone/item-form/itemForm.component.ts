@@ -90,6 +90,7 @@ export class ItemFormComponent implements OnInit{
 
   closeNewItemForm(): void{
 
+
     this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
 
   }

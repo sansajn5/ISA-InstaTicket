@@ -20,8 +20,8 @@ import {RepertoriesComponent} from "./repertories/repertories.component";
 import {ProjectionsComponent} from "./projections/projections.component";
 
 import {FanZoneComponent} from "../fanZone/fanZone.component";
-import {ItemFormComponent} from "../fanZone/itemForm/itemForm.component";
-import {ItemCardComponent} from "../fanZone/itemCard/itemCard.component"; */
+import {ItemFormComponent} from "../fanZone/item-form/item-form.component";
+import {ItemCardComponent} from "../fanZone/item-card/item-card.component"; */
 
 import {StatisticComponent} from "./statistic/statistic.component";
 

@@ -64,6 +64,14 @@ export class FanZoneItems {
 
   }
 
+
+  addNewOffer() {
+
+    this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items/offers/offers/add');
+  }
+
+
+
   updateList(data) {
     console.log(data);
     this.items =  this.items.filter(el => el.id != data.item.id);
