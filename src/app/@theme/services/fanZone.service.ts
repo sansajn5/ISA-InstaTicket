@@ -50,7 +50,7 @@ export class FanZoneService {
 
     const body = JSON.stringify(item);
 
-    alert('NOVO IME ' + item.name);
+    
 
 
 

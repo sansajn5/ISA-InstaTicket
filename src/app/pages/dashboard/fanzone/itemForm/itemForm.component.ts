@@ -80,7 +80,7 @@ export class ItemFormComponent implements OnInit{
         console.log('ddkkd')
       }
       else{
-        this.router.navigateByUrl("dashboard")
+        this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items')
       }
 
 
@@ -90,7 +90,7 @@ export class ItemFormComponent implements OnInit{
 
   closeNewItemForm(): void{
 
-    this.router.navigateByUrl('dashboard/fanZoneItems');
+    this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
 
   }
 
@@ -109,6 +109,7 @@ export class ItemFormComponent implements OnInit{
 
   addNewItem() {
 
+
     const item = new Item(this.name.value,
                           this.description.value,
                           this.image.value,
@@ -120,7 +121,7 @@ export class ItemFormComponent implements OnInit{
         this.toastr.clear();
         this.toastr.success('Uspesno dodat rekvizit!');
 
-        this.router.navigateByUrl('dashboard/fanZoneItems');
+        this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
       })
   }
 
@@ -141,7 +142,7 @@ export class ItemFormComponent implements OnInit{
         this.toastr.clear();
         this.toastr.success('Uspesno izmenjen rekvizit!');
 
-        this.router.navigateByUrl('dashboard/fanZoneItems');
+        this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
 
         this.refreshList.emit(data);
       })

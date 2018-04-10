@@ -42,7 +42,7 @@ export class FanZoneItems {
 
 
   officialShopClick() {
-    this.router.navigateByUrl('dashboard/fanZoneItems');
+    this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
 
     this.class_tab1 = 'nav-link active';
     this.class_tab2 = 'nav-link';
@@ -53,7 +53,7 @@ export class FanZoneItems {
 
   offersClick() {
 
-    this.router.navigateByUrl('dashboard/fanZoneItems');
+    this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
 
     this.class_tab2 = 'nav-link active';
     this.class_tab1 = 'nav-link';
