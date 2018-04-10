@@ -19,7 +19,7 @@ export class HallService {
     return this.http.get(`${this.BASE_URL}/${id}/halls-in-place` )
   }
 
-  createEvent(hall: Hall , id): Observable<any> {
+  createHall(hall: Hall , id): Observable<any> {
     const token = localStorage.getItem('token')
     const body = JSON.stringify(hall);
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });

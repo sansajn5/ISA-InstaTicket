@@ -1,9 +1,10 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
-import {PlaceService} from "../../../@theme/services/place.service";
 import {ToastrService} from "ngx-toastr";
 import {NbSpinnerService} from "@nebular/theme";
-import {EventService} from "../../../@theme/services/event.service";
+import {PlaceService} from "../../../../@theme/services/place.service";
+import {EventService} from "../../../../@theme/services/event.service";
+
 
 @Component({
 
@@ -45,7 +46,7 @@ export class EventComponent implements OnInit {
   openFormAddEvent() {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
-    this.router.navigateByUrl('dashboard/places/' + place + '/' + id + '/addEvent')
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add-event')
   }
 
   deleteEvent(id): any {

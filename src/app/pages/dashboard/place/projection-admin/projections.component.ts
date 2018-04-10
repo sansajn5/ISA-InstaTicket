@@ -1,8 +1,8 @@
 import {Component, OnInit} from "@angular/core";
-import {ProjectionService} from "../../../@theme/services/projection.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
-import {RepertoryService} from "../../../@theme/services/repertory.service";
+import {RepertoryService} from "../../../../@theme/services/repertory.service";
+import {ProjectionService} from "../../../../@theme/services/projection.service";
 
 @Component({
   templateUrl: './projections.component.html',
@@ -29,7 +29,7 @@ export class ProjectionsComponent implements OnInit {
 
   }
 
-  deleteRepertory(id): any {
+  deleteProjection(id): any {
 
     this.projectionService.deleteProjection(id).toPromise()
       .then(data => {

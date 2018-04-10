@@ -1,9 +1,9 @@
 import {Component} from "@angular/core";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {PlaceService} from "../../../@theme/services/place.service";
 import {Router} from "@angular/router";
-import {Place} from "../../../@theme/models/place.model";
 import {ToastrService} from "ngx-toastr";
+import {PlaceService} from "../../../../@theme/services/place.service";
+import {Place} from "../../../../@theme/models/place.model";
 
 @Component({
 
@@ -54,7 +54,7 @@ import {ToastrService} from "ngx-toastr";
         this.toastr.clear();
         this.toastr.success('Uspesno dodat bioskop ili pozoriste!');
 
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('dashboard/pages');
       })
   }
 }

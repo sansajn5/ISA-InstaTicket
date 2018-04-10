@@ -1,9 +1,9 @@
 
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
-import {HallService} from "../../../@theme/services/hall.service";
 import {ToastrService} from "ngx-toastr";
 import {NbSpinnerService} from "@nebular/theme";
+import {HallService} from "../../../../@theme/services/hall.service";
 
 @Component({
 
@@ -33,7 +33,7 @@ export class HallComponent implements OnInit {
   openFormAddHall() {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
-    this.router.navigateByUrl('dashboard/places/' + place + '/' + id + '/addHall')
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add-hall')
   }
 
   deleteHall(id): any {
