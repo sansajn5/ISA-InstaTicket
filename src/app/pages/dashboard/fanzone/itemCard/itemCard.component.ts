@@ -40,7 +40,7 @@ export class ItemCardComponent {
   editItem() {
       console.log('krenulo' + this.id);
 
-      this.router.navigateByUrl('dashboard/fanzone/edit/' + this.id);
+      this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items/edit/' + this.id);
   }
 
   deleteItem(): any {

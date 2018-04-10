@@ -16,11 +16,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Fan zona',
     icon: 'fa fa-shopping-cart',
-    link: '/dashboard/fanZoneItems',
+    link: '/dashboard/pages/fan-zone',
 
 
   },
-  
+
 
 
   /*
