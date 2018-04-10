@@ -1,49 +1,53 @@
-<div class="auth-block offset-3 col-md-6">
-  <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
-
-  <form [formGroup]="form" >
-    <div class="form-group" >
-      <label>Naziv:</label>
-      <input name="name" class="form-control margin"  id="input-name"
-             placeholder="naziv" [formControl]="name" >
-      <small class="form-text error" *ngIf="name.errors?.required && name.touched ">
-        Naziv je obavezan!
-      </small>
-      <label >Zanr:</label>
-      <input name="type" class="form-control margin"  id="input-type"
-             placeholder="zanr" [formControl]="type" >
-      <small class="form-text error" *ngIf="type.errors?.required && type.touched ">
-        Zanr je obavezan!
-      </small>
-
-      <label >Trajanje:</label>
-      <input name="duration" class="form-control margin" id="input-duration" placeholder="trajanje"
-             [formControl]="duration" [class.form-control-danger]="duration.invalid && duration.touched">
-
-      <label >Glumci:</label>
-      <textarea name="actors" class="form-control margin" id="input-actors"
-                placeholder="glumci" [formControl]="actors" ></textarea>
-
-      <label >Reziser:</label>
-      <input name="director" class="form-control margin" id="input-director" placeholder="reziser" [formControl]="director"  >
 
 
-      <label>Slika: </label>
-      <div class="input-group">
-        <input type="text" class="form-control"
-               [formControl]="imageUrl" id="input_item_image">
-        <span class="input-group-btn">
-        <button id="button_other" class="btn btn-default" type="button"> Izaberi </button>
-      </span>
+  <div class="auth-block offset-3 col-md-6">
+    <button class="btn btn-default offset-9" (click)="back()" style="width: 10%;margin-left:90%;background: #ebeff5"><i style="font-size: 40px" class="fa fa-times-circle"></i></button>
+
+    <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
+    <form [formGroup]="form" >
+      <div class="form-group" >
+        <label>Naziv:</label>
+        <input name="name" class="form-control margin"  id="input-name"
+               placeholder="naziv" [formControl]="name" >
+        <small class="form-text error" *ngIf="name.errors?.required && name.touched ">
+          Naziv je obavezan!
+        </small>
+        <label >Zanr:</label>
+        <input name="type" class="form-control margin"  id="input-type"
+               placeholder="zanr" [formControl]="type" >
+        <small class="form-text error" *ngIf="type.errors?.required && type.touched ">
+          Zanr je obavezan!
+        </small>
+
+        <label >Trajanje:</label>
+        <input name="duration" class="form-control margin" id="input-duration" placeholder="trajanje"
+               [formControl]="duration" [class.form-control-danger]="duration.invalid && duration.touched">
+
+        <label >Glumci:</label>
+        <textarea name="actors" class="form-control margin" id="input-actors"
+                  placeholder="glumci" [formControl]="actors" ></textarea>
+
+        <label >Reziser:</label>
+        <input name="director" class="form-control margin" id="input-director" placeholder="reziser" [formControl]="director"  >
+
+
+        <label>Slika: </label>
+        <div class="input-group">
+          <input type="text" class="form-control"
+                 [formControl]="imageUrl" id="input_item_image">
+          <span class="input-group-btn">
+          <button id="button_other" class="btn btn-default" type="button"> Izaberi </button>
+        </span>
+        </div>
+
+
+        <label >Opis:</label>
+        <textarea name="description" class="form-control margin" id="input-description" style="height: 120px"
+                  placeholder="opis" [formControl]="description" ></textarea>
+
+        <button class="btn btn-hero-success" (click)="createEvent()" [disabled]="!form.valid" >Dodaj</button>
       </div>
 
+    </form>
+  </div>
 
-      <label >Opis:</label>
-      <textarea name="description" class="form-control margin" id="input-description" style="height: 120px"
-                placeholder="opis" [formControl]="description" ></textarea>
-
-      <button class="btn btn-hero-success" (click)="createEvent()" [disabled]="!form.valid" >Dodaj</button>
-    </div>
-
-  </form>
-</div>

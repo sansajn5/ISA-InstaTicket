@@ -28,7 +28,16 @@ export class RepertoryComponent implements OnInit {
   }
 
   detailProjection(id) {
-    this.router.navigateByUrl('dashboard/pages/place/repertory/projection/' + id);
+    const idPlace = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    const idRepertory = this.route.snapshot.params.idRepertory;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/repertory/' + idRepertory
+      + '/projection/' +id);
   }
 
+  back() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id );
+  }
 }

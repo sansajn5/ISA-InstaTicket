@@ -57,4 +57,7 @@ import {Place} from "../../../../@theme/models/place.model";
         this.router.navigateByUrl('dashboard/pages');
       })
   }
+  exit() {
+    this.router.navigateByUrl('dashboard/pages')
+  }
 }

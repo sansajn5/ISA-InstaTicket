@@ -64,7 +64,10 @@ export class PlaceComponent implements OnInit {
   }
 
   getProjections(id) {
-    this.router.navigateByUrl('dashboard/pages/place/repertory/' + id);
+    const idPlace = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/repertory/' + id
+      + '/projections');
   }
 
   getRepertories() {
@@ -77,5 +80,10 @@ export class PlaceComponent implements OnInit {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
     this.router.navigateByUrl('dashboard/' + place + '/place-detail/' + id + '/statistic')
+  }
+
+  back () {
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place )
   }
 }

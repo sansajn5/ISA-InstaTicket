@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="efff1020-af68-4bf2-ab8a-6c2ec1ff4729" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-projection/addProjection.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-projection/addProjection.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-projection/addProjection.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/add-projection/addProjection.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/place-routing.module.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/place-routing.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.scss" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/repertories/repertories.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/repertories/repertories.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/repertories/repertories.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/repertories/repertories.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.html" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.ts" afterPath="$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.ts" />
+    </list>
+=======
     <list default="true" id="efff1020-af68-4bf2-ab8a-6c2ec1ff4729" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +44,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="datepicker-popup.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/@theme/components/datepicker-popup/datepicker-popup.ts">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="place-detail.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="44" column="99" lean-forward="false" selection-start-line="44" selection-start-column="85" selection-end-line="44" selection-end-column="99" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#ng-template#0;n#ngb-rating#0;n#p#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+=======
+      <file leaf-file-name="fan-zone.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone.component.html">
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="581">
               <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
@@ -30,23 +76,57 @@
       <file leaf-file-name="datepicker-popup.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/@theme/components/datepicker-popup/datepicker-popup.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="72">
               <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
               <folding />
+=======
+            <state relative-caret-position="180">
+              <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="39" />
+              <folding>
+                <element signature="e#1#43#0" expanded="true" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+              </folding>
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="fan-zone-items.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone-items/fan-zone-items.component.html">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="projection.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+=======
+      <file leaf-file-name="fanzone.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fanzone.component.ts">
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="630">
               <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="37" />
               <folding />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="projection.component.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+=======
       <file leaf-file-name="fan-zone-items.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone-items/fan-zone-items.component.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,68 +135,187 @@
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="offer-form.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/offer-form/offer-form.component.ts">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="projection.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="51" column="12" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="12" />
+              <folding />
+=======
+      <file leaf-file-name="fanZone.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/@theme/services/fanZone.service.ts">
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="761">
               <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="datepicker-popup.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/@theme/components/datepicker-popup/datepicker-popup.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
               <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
               <folding />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="repertory.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+=======
+      <file leaf-file-name="fan-zone.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+              </folding>
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="card-picker.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/@theme/components/card-picker/card-picker.component.html">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="repertory.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+=======
+      <file leaf-file-name="itemForm.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/itemForm/itemForm.component.html">
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="card-picker.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/@theme/components/card-picker/card-picker.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
               <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="26" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="addProjection.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-projection/addProjection.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="174" lean-forward="false" selection-start-line="2" selection-start-column="174" selection-end-line="2" selection-end-column="174" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="place-detail.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="68" column="2" lean-forward="false" selection-start-line="68" selection-start-column="2" selection-end-line="69" selection-end-column="24" />
+=======
+      <file leaf-file-name="itemForm.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/itemForm/itemForm.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="52" lean-forward="false" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="card-picker.component.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/@theme/components/card-picker/card-picker.component.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="projections.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="48" column="77" lean-forward="false" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
+              <folding />
+=======
+      <file leaf-file-name="itemCard.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/itemCard/itemCard.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="offer-form.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/offer-form/offer-form.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="671">
               <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
               <folding />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="place-routing.module.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place-routing.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="22" column="76" lean-forward="false" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
+              <folding />
+=======
+      <file leaf-file-name="itemCard.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/itemCard/itemCard.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#69#0" expanded="true" />
+              </folding>
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
             </state>
           </provider>
         </entry>
@@ -153,27 +352,54 @@
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/placeList/placeList.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place-detail/place.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/dashboard.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.ts" />
         <option value="$PROJECT_DIR$/src/app/@theme/services/place.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.ts" />
         <option value="$PROJECT_DIR$/src/app/@theme/services/hall.service.ts" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/dashboard.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/dashboard-routing.module.ts" />
+=======
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.html" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/repertories/repertories.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place-routing.module.ts" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place.module.ts" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/app/@theme/theme.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/repertories/repertories.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/repertories/repertories.component.ts" />
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/add-projection/addProjection.component.html" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/add-projection/addProjection.component.ts" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/pages/dashboard/place/place-routing.module.ts" />
+=======
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/dashboard-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/dashboard.module.ts" />
         <option value="$PROJECT_DIR$/src/app/@theme/services/fanZone.service.ts" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/fanzone/offer-form/offer-form.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone-items/fan-zone-items.component.html" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone-routing.module.ts" />
@@ -188,6 +414,9 @@
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/fanzone/offer-form/offer-form.component.ts" />
         <option value="$PROJECT_DIR$/src/app/pages/dashboard/fanzone/offer-form/offer-form.component.html" />
         <option value="$PROJECT_DIR$/src/app/@theme/components/datepicker-popup/datepicker-popup.ts" />
+=======
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
       </list>
     </option>
   </component>
@@ -199,6 +428,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
+=======
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
@@ -207,6 +441,7 @@
     <option name="y" value="420" />
     <option name="width" value="1501" />
     <option name="height" value="860" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -253,8 +488,28 @@
               <item name="@theme" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
+<<<<<<< HEAD
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="@theme" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="ISA-InstaTicket" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISA-InstaTicket" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="@theme" type="462c0819:PsiDirectoryNode" />
@@ -317,8 +572,33 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="add-event" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="add-hall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="add-projection" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="fanzone" type="462c0819:PsiDirectoryNode" />
               <item name="fan-zone-items" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
             </path>
             <path>
               <item name="ISA-InstaTicket" type="b2602c69:ProjectViewProjectNode" />
@@ -327,8 +607,114 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="addPlace" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="hall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="place-detail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="placeList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="projection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="projection-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="repertories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="place" type="462c0819:PsiDirectoryNode" />
+              <item name="repertory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="statistic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISA FRONT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISA FRONT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="fanZone" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="fanzone" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="item-card" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="itemCard" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
             </path>
             <path>
               <item name="ISA-InstaTicket" type="b2602c69:ProjectViewProjectNode" />
@@ -412,20 +798,48 @@
       <workItem from="1521163522691" duration="11432000" />
       <workItem from="1521574307940" duration="1044000" />
       <workItem from="1521744435649" duration="677000" />
+<<<<<<< HEAD
+      <workItem from="1523292950893" duration="23728000" />
+=======
       <workItem from="1523292950893" duration="14459000" />
+<<<<<<< HEAD
       <workItem from="1523354518967" duration="19424000" />
+=======
+      <workItem from="1523354518967" duration="1019000" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="166811000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="156656000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33854166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+    <option name="totallyTimeSpent" value="148406000" />
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
   </component>
   <component name="ToolWindowManager">
     <frame x="70" y="-8" width="1858" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19652551" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36427796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -458,6 +872,119 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/dashboard.component.ts">
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/@theme/services/projection.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="25" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/placeList/placeList.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/placeList/placeList.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place-detail/place.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place-detail/place.component.ts" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place-detail/place.component.html" />
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/projections/projections.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/repertory/repertory.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/statistic/statistic.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/placeList/placeList.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="86" lean-forward="false" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/dashboard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -465,70 +992,18 @@
           <folding>
             <element signature="e#0#50#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.html">
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/projections/projections.component.html" />
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/repertory/repertory.component.html" />
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+        <state relative-caret-position="408">
+          <caret line="30" column="75" lean-forward="false" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="75" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/@theme/models/place.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/@theme/services/place.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="32" column="61" lean-forward="false" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="48" column="93" lean-forward="false" selection-start-line="48" selection-start-column="93" selection-end-line="48" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="71" column="77" lean-forward="false" selection-start-line="71" selection-start-column="77" selection-end-line="71" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" column="92" lean-forward="false" selection-start-line="35" selection-start-column="92" selection-end-line="35" selection-end-column="92" />
-          <folding>
-            <element signature="e#1#49#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -553,37 +1028,331 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/pages/fanZone/fanZone.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/@theme/theme.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="289">
+          <caret line="32" column="68" lean-forward="false" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
           <folding>
-            <element signature="e#0#83#0" expanded="false" />
+            <element signature="e#0#62#0" expanded="false" />
+            <element signature="e#289#522#0" expanded="false" />
+          </folding>
+=======
+        <state relative-caret-position="278">
+          <caret line="51" column="25" lean-forward="true" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@ng-bootstrap/ng-bootstrap/rating/rating.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-86">
+          <caret line="125" column="27" lean-forward="false" selection-start-line="125" selection-start-column="27" selection-end-line="125" selection-end-column="27" />
+          <folding />
+=======
+        <state relative-caret-position="68">
+          <caret line="4" column="86" lean-forward="false" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="125">
+          <caret line="57" column="84" lean-forward="false" selection-start-line="57" selection-start-column="84" selection-end-line="57" selection-end-column="84" />
+          <folding />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/fanZone/itemForm/itemForm.component.html">
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="102">
+          <caret line="6" column="124" lean-forward="false" selection-start-line="6" selection-start-column="90" selection-end-line="6" selection-end-column="124" />
+          <folding />
+=======
+        <state relative-caret-position="612">
+          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+<<<<<<< HEAD
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+=======
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="255">
+          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding />
+=======
+        <state relative-caret-position="323">
+          <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="56" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/dashboard-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="102">
+          <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="48" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="459">
+          <caret line="56" column="50" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/dashboard.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+<<<<<<< HEAD
+          <caret line="9" column="67" lean-forward="false" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
+          <folding />
+=======
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/@theme/services/place.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="58">
+          <caret line="38" column="86" lean-forward="false" selection-start-line="38" selection-start-column="81" selection-end-line="38" selection-end-column="86" />
+          <folding />
+=======
+        <state relative-caret-position="175">
+          <caret line="32" column="61" lean-forward="false" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+<<<<<<< HEAD
+          <folding />
+=======
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="374">
+          <caret line="59" column="6" lean-forward="false" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="49" lean-forward="false" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="238">
+          <caret line="48" column="93" lean-forward="false" selection-start-line="48" selection-start-column="93" selection-end-line="48" selection-end-column="93" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/event/event.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="465">
+          <caret line="67" column="53" lean-forward="false" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
+          <folding />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-event/addEvent.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="51">
+          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="363">
+          <caret line="71" column="77" lean-forward="false" selection-start-line="71" selection-start-column="77" selection-end-line="71" selection-end-column="77" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-hall/addHall.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="18" />
+<<<<<<< HEAD
+        <state relative-caret-position="295">
+          <caret line="52" column="31" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="31" />
+          <folding />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+<<<<<<< HEAD
+        <state relative-caret-position="867">
+          <caret line="55" column="80" lean-forward="false" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
           <folding />
+=======
+        <state relative-caret-position="272">
+          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+<<<<<<< HEAD
+          <folding />
+=======
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/hall/hall.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+<<<<<<< HEAD
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+=======
+            <element signature="e#0#61#0" expanded="false" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/repertories/repertories.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+<<<<<<< HEAD
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+=======
+            <element signature="e#0#83#0" expanded="false" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/repertories/repertories.component.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="465">
+          <caret line="58" column="80" lean-forward="false" selection-start-line="58" selection-start-column="80" selection-end-line="58" selection-end-column="80" />
+          <folding />
+=======
+        <state relative-caret-position="204">
+          <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="18" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-projection/addProjection.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="374">
+          <caret line="54" column="2" lean-forward="true" selection-start-line="54" selection-start-column="2" selection-end-line="57" selection-end-column="0" />
+=======
+        <state relative-caret-position="198">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="136">
+          <caret line="8" column="76" lean-forward="true" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
+=======
         <state relative-caret-position="774">
           <caret line="47" column="93" lean-forward="false" selection-start-line="47" selection-start-column="84" selection-end-line="47" selection-end-column="93" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#48#0" expanded="false" />
+=======
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/placeList/placeList.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="176">
+          <caret line="51" column="25" lean-forward="true" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/addPlace/addPlace.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+=======
+        <state relative-caret-position="270">
+          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           </folding>
         </state>
       </provider>
@@ -611,23 +1380,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#59#0" expanded="false" />
+=======
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/dashboard.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="748">
+          <caret line="44" column="99" lean-forward="false" selection-start-line="44" selection-start-column="85" selection-end-line="44" selection-end-column="99" />
+=======
         <state relative-caret-position="918">
           <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#41#0" expanded="false" />
+=======
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#ng-template#0;n#ngb-rating#0;n#p#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/app/@theme/services/fanZone.service.ts">
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/add-projection/addProjection.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="174" lean-forward="false" selection-start-line="2" selection-start-column="174" selection-end-line="2" selection-end-column="174" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone.component.html">
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="606">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
@@ -754,11 +1554,17 @@
         <state relative-caret-position="936">
           <caret line="76" column="63" lean-forward="false" selection-start-line="76" selection-start-column="61" selection-end-line="76" selection-end-column="63" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#42#0" expanded="true" />
+=======
+            <element signature="e#0#41#0" expanded="true" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/app/@theme/components/card-picker/card-picker.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -768,6 +1574,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/@theme/components/card-picker/card-picker.component.scss">
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/itemForm/itemForm.component.html">
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -777,12 +1592,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone-items/fan-zone-items.component.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="630">
           <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="37" />
+=======
+        <state relative-caret-position="54">
+          <caret line="3" column="52" lean-forward="false" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/app/@theme/components/card-picker/card-picker.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -824,6 +1646,35 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/item-form/itemForm.component.scss">
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/itemCard/itemCard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place-detail/place-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="68" column="2" lean-forward="false" selection-start-line="68" selection-start-column="2" selection-end-line="69" selection-end-column="24" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/itemCard/itemCard.component.ts">
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
@@ -852,12 +1703,38 @@
     <entry file="file://$PROJECT_DIR$/src/app/@theme/components/datepicker-popup/datepicker-popup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
+<<<<<<< HEAD
           <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
+=======
+          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="36" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection-admin/projections.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="48" column="77" lean-forward="false" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/app/@theme/components/datepicker-popup/datepicker-popup.ts">
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/fanzone/fan-zone-items/fan-zone-items.component.ts">
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="581">
           <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
@@ -872,8 +1749,37 @@
         <state relative-caret-position="761">
           <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#48#0" expanded="true" />
+=======
+            <element signature="e#0#61#0" expanded="true" />
+>>>>>>> 28a502c42e3ab9b26fb31cbcceedcf3d8a578913
+>>>>>>> 91576d186bc94cdbde1e5ca19c965092c1fd7a75
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/repertory/repertory.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/projection/projection.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="51" column="12" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/dashboard/place/place-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="22" column="76" lean-forward="false" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
