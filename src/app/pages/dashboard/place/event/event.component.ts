@@ -62,4 +62,9 @@ export class EventComponent implements OnInit {
       });
 
   }
+  back() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id)
+  }
 }

@@ -43,4 +43,11 @@ export class ProjectionsComponent implements OnInit {
 
   }
 
+  back() {
+    const place = this.route.snapshot.params.place;
+    const id = this.route.snapshot.params.id;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/repertories-in-place-detail')
+
+  }
+
 }

@@ -48,4 +48,12 @@ export class ProjectionComponent implements OnInit {
     })
 
   }
+  back() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    const repertory = this.route.snapshot.params.idRepertory;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/repertory/' + repertory
+    + '/projections');
+
+  }
 }

@@ -53,4 +53,9 @@ export class RepertoriesComponent implements OnInit {
     const place = this.route.snapshot.params.place;
     this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add-projection' );
   }
+  back() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id  );
+  }
 }

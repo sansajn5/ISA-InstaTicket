@@ -51,4 +51,11 @@ export class AddProjectionComponent implements OnInit {
   //   dateFormat: 'dd.mm.yyyy',
   // };
 
+  exit() {
+    const place = this.route.snapshot.params.place;
+    this.id = this.route.snapshot.params.id;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + this.id + '/repertories-in-place-detail')
+
+  }
+
 }

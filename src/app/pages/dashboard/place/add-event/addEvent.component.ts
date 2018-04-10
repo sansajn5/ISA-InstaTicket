@@ -52,6 +52,12 @@ export class AddEventComponent {
     this.description = this.form.controls['description'];
   }
 
+  back() {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/events')
+  }
+
   createEvent(): any {
     const event = new EventModel(
       this.name.value,
@@ -72,4 +78,5 @@ export class AddEventComponent {
         this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/events');
       })
   }
+
 }
