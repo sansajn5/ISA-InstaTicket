@@ -17,12 +17,9 @@
 
 
       <label>Datum:</label>
-      <input name="date" class="form-control margin"  id="input-date"
-             placeholder="unesite datum"  >
-
-
-        <!--<my-date-picker name="mydate" [options]="myDatePickerOptions"-->
-                        <!--[(ngModel)]="date" required></my-date-picker>-->
+      <div  style="margin-bottom: 15px">
+       <ngbd-datepicker-popup id="date_picker"></ngbd-datepicker-popup>
+      </div>
 
       <label>Pocetak projekcije:</label>
       <input name="startTime" class="form-control margin"  id="input-startTime"

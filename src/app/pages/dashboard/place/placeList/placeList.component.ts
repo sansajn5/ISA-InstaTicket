@@ -62,5 +62,9 @@ export class PlaceListComponent implements OnInit {
 
   }
 
+  editPlace(id) {
+    this.router.navigateByUrl('dashboard/pages/place/' + this.place + '/edit/place/'  + id)
+  }
+
 
 }

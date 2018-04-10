@@ -4,7 +4,7 @@
        <div>
         <ngx-card-picker type={{item.name}} image={{image}} url="dashboard/pages/place/{{place}}/place/{{item.id}}"></ngx-card-picker>
         <div style="margin-bottom: 20px">
-          <button class="btn btn-hero-info">Izmeni</button>
+          <button class="btn btn-hero-info" (click)="editPlace( item.id )">Izmeni</button>
           <button class="btn btn-hero-info" (click)="deletePlace( item.id )" >Obrisi</button>
         </div>
         </div>
