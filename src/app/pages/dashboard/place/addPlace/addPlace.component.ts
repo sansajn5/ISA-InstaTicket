@@ -21,6 +21,7 @@ import {Place} from "../../../../@theme/models/place.model";
   place: Place;
 
   public method_name = 'DODAJ';
+  public mode: String;
 
 
   constructor(private placeService: PlaceService,
@@ -45,8 +46,8 @@ import {Place} from "../../../../@theme/models/place.model";
   }
 
   ngOnInit() {
-    const mode = this.route.snapshot.params.mode;
-    if ( mode == 'edit') {
+    this.mode = this.route.snapshot.params.mode;
+    if ( this.mode == 'edit') {
 
       const id = this.route.snapshot.params.id;
       this.placeService.getPlace(id).subscribe(data => {
@@ -57,7 +58,7 @@ import {Place} from "../../../../@theme/models/place.model";
         this.form.controls['type'].setValue(data.place.type);
 
       })
-    }else if (mode == 'add') {}
+    }else if (this.mode == 'add') {}
     else {
       this.router.navigateByUrl('dashboard/pages/place')
     }

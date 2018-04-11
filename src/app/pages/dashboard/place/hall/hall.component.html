@@ -12,7 +12,7 @@
 
       <tr *ngFor="let item of items">
         <th>{{item.name}}</th>
-        <th class="th">Izmeni</th>
+        <th class="th" (click)="editHall(item.id)">Izmeni</th>
         <th class="th" (click)="deleteHall(item.id)">Obrisi</th>
       </tr>
     </table>
