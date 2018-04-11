@@ -12,7 +12,7 @@ import {Hall} from "../../../../@theme/models/hall.model";
 
 })
 
-export class AddHallComponent implements OnInit{
+export class AddHallComponent implements OnInit {
 
 
   public form: FormGroup;

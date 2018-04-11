@@ -33,7 +33,14 @@ export class EventService {
     const token = localStorage.getItem('token')
     const body = JSON.stringify(event);
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.put(`${this.BASE_URL}/event/${id}`,{ headers: headers});
+    return this.http.put(`${this.BASE_URL}/event/${id}`, body ,{ headers: headers});
   }
+
+  getEvent(id): Observable<any> {
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/event/${id}`,{ headers: headers});
+  }
+
 
 }
