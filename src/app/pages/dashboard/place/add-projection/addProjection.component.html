@@ -1,38 +1,36 @@
 <div class="auth-block offset-3 col-md-6">
   <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
   <button class="btn btn-default" (click)="exit()" style="width: 10%;margin-left: 90%;background: #ebeff5"><i style="font-size: 40px" class="fa fa-times-circle"></i></button>
-  <h2 class="title margin ">Dodavanje Projekcije</h2>
-  <form  >
+  <form  [formGroup]="form" >
     <div class="form-group" >
 
       <label >{{type}}</label>
 
-      <select  class="form-control margin" >
+      <select  class="form-control margin" [formControl]="eventName" >
+        <option> </option>
         <option *ngFor="let eventPlace of eventsPlace " >{{eventPlace.name}}</option>
       </select>
 
-      <select  class="form-control margin" >
+      <select  class="form-control margin" [formControl]="hallName" >
+        <option> </option>
         <option *ngFor="let hall of halls " >{{hall.name}}</option>
       </select>
 
-
       <label>Datum:</label>
-      <div  style="margin-bottom: 15px">
+      <div  style="margin-bottom: 15px" >
        <ngbd-datepicker-popup id="date_picker"></ngbd-datepicker-popup>
       </div>
 
       <label>Pocetak projekcije:</label>
       <input name="startTime" class="form-control margin"  id="input-startTime"
-             placeholder="unesite vreme"  >
-
-
+             placeholder="unesite vreme" [formControl]="startTime" >
 
       <label>Zavrsetak projekcije:</label>
       <input name="endTime" class="form-control margin"  id="input-endTime"
-             placeholder="unesite vreme"  >
+             placeholder="unesite vreme" [formControl]="endTime" >
 
 
-      <button class="btn btn-hero-success" (click)="createPlace()" >Dodaj</button>
+      <button class="btn btn-hero-success" (click)="addProjection()" [disabled]="!form.valid"  >Dodaj</button>
 
     </div>
 

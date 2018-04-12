@@ -18,9 +18,9 @@ export class RepertoryComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.params.id;
+    const idRepertory = this.route.snapshot.params.idRepertory;
 
-    this.repertoryService.getAllProjectionInRepertory(id).subscribe(data => {
+    this.repertoryService.getAllProjectionInRepertory(idRepertory).subscribe(data => {
       this.items = data.projections;
       this.movieImage = this.imageRoute + 'm.jpg';
     })
@@ -32,7 +32,7 @@ export class RepertoryComponent implements OnInit {
     const place = this.route.snapshot.params.place;
     const idRepertory = this.route.snapshot.params.idRepertory;
     this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/repertory/' + idRepertory
-      + '/projection/' +id);
+      + '/projection/' + id);
   }
 
   back() {

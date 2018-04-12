@@ -24,4 +24,11 @@ export class ProjectionService {
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
     return this.http.delete(`${this.BASE_URL}/projection/` + id,{ headers: headers});
   }
+
+  createProjection(projection: Projection , id): Observable<any> {
+    const token = localStorage.getItem('token')
+    const body = JSON.stringify(projection);
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.post(`${this.BASE_URL}/${id}/projection`, body , httpOptions).map(data => data);
+  }
 }

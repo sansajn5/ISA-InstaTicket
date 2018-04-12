@@ -21,7 +21,7 @@ const routes: Routes = [
   { path : ':place/place/:id/halls', component: HallComponent},
   { path : ':place/place/:id/repertory/:idRepertory/projections', component: RepertoryComponent},
   { path : ':place/place/:id/repertory/:idRepertory/projection/:idProjection' , component: ProjectionComponent},
-  { path: ':place/place/:id/repertories-in-place-detail', component: RepertoriesComponent},
+    { path: ':place/place/:id/repertories-in-place-detail', component: RepertoriesComponent},
   { path: ':mode/place', component: AddPlaceComponent},
   { path: ':place/:mode/place/:id', component: AddPlaceComponent},
   { path: ':place/place/:id/:mode/event' , component: AddEventComponent},
