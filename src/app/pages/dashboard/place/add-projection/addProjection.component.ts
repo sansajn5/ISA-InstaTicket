@@ -25,6 +25,8 @@ export class AddProjectionComponent implements OnInit {
   public startTime: AbstractControl;
   public endTime: AbstractControl;
   projection: Projection;
+  public method_name = 'DODAJ';
+  public mode: String;
 
   constructor(protected router: Router,
               private route: ActivatedRoute,
@@ -48,13 +50,9 @@ export class AddProjectionComponent implements OnInit {
 
   ngOnInit() {
     const place = this.route.snapshot.params.place;
+    const idProjection = this.route.snapshot.params.idProjection;
     this.id = this.route.snapshot.params.id;
 
-    if (place === 'cinemas') {
-      this.type = 'Film';
-    } else {
-      this.type = 'Predstava';
-    }
     this.placeService.getEventInPlace(this.id).subscribe(data => {
       this.eventsPlace = data.events;
     })
@@ -62,6 +60,37 @@ export class AddProjectionComponent implements OnInit {
     this.hallService.getHallsInPlace(this.id).subscribe(data => {
       this.halls = data.halls;
     })
+
+    this.mode = this.route.snapshot.params.mode;
+    if ( this.mode == 'edit') {
+      const id = this.route.snapshot.params.id;
+      this.projectionService.getProjection(idProjection).subscribe(data => {
+        this.method_name = 'IZMENI';
+        this.form.controls['eventName'].setValue(data.projection.event.name);
+        this.form.controls['hallName'].setValue( data.projection.hall.name);
+        this.form.controls['startTime'].setValue(data.projection.startTime);
+        this.form.controls['endTime'].setValue(data.projection.endTime);
+
+      })
+    }else if (this.mode == 'add') {
+    }
+    else {
+      this.router.navigateByUrl('dashboard/pages/place')
+    }
+
+    if (place === 'cinemas') {
+      this.type = 'Film';
+    } else {
+      this.type = 'Predstava';
+    }
+  }
+
+  confirmClick() {
+    if (this.method_name === 'DODAJ') {
+      this.addProjection();
+    } else {
+      this.editProjection();
+    }
   }
 
   addProjection(): any {
@@ -79,14 +108,17 @@ export class AddProjectionComponent implements OnInit {
         this.toastr.success('Uspesno dodavanje!');
         const idPlace = this.route.snapshot.params.id;
         const place = this.route.snapshot.params.place;
-        this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/repertories-in-place-detail' );
+        this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/repertories-in-place-detail');
       })
+  }
+
+  editProjection() {
+
   }
   exit() {
     const place = this.route.snapshot.params.place;
     this.id = this.route.snapshot.params.id;
     this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + this.id + '/repertories-in-place-detail')
-
   }
 
 }

@@ -48,10 +48,10 @@ export class RepertoriesComponent implements OnInit {
     this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/repertory/' + idRepertory)
   }
 
-  addProjection() {
+  openFormAddProjection() {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
-    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add-projection' );
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add/projection' );
   }
   back() {
     const id = this.route.snapshot.params.id;

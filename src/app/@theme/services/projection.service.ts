@@ -31,4 +31,10 @@ export class ProjectionService {
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
     return this.http.post(`${this.BASE_URL}/${id}/projection`, body , httpOptions).map(data => data);
   }
+
+  getVoteForEvent(id): Observable<any> {
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/${id}/vote`,{ headers: headers});
+  }
 }

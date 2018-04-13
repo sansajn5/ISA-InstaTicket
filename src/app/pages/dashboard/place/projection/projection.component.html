@@ -11,7 +11,7 @@
   </div>
   <div class="offset-5  col-md-5 cardWrapper">
     <div style="margin-bottom: 10px" >
-      <ngb-rating [(rate)]="starRate" max=5>
+      <ngb-rating [readonly]="true" [(rate)]="starRate" max=5>
         <ng-template let-fill="fill">
               <span class="star fill" [class.filled]="fill === 100" >
                 <i  class="ion-android-star" *ngIf="fill === 100" style="color: black" ></i>

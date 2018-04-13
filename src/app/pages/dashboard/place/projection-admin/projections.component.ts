@@ -50,4 +50,11 @@ export class ProjectionsComponent implements OnInit {
 
   }
 
+
+  openFormEditProjection(id) {
+    const idPlace = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/edit/projection/' + id );
+  }
+
 }
