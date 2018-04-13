@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
   }
 
   addPlace() {
-    this.router.navigateByUrl('dashboard/pages/place/add-place' );
+    this.router.navigateByUrl('dashboard/pages/place/add/place' );
   }
 
 

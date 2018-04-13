@@ -16,6 +16,7 @@ export class PlaceComponent implements OnInit {
    desc: string;
    adr: string;
    items = []
+   quickSeats = []
    type: string;
    place: string;
 
@@ -49,6 +50,10 @@ export class PlaceComponent implements OnInit {
 
     this.placeService.getVoteForPlace(id).subscribe(data => {
       this.starRate = data.vote;
+    })
+
+    this.placeService.getQuickSeats(id).subscribe(data=>{
+      this.quickSeats = data.seats;
     })
 
   }
@@ -85,5 +90,14 @@ export class PlaceComponent implements OnInit {
   back () {
     const place = this.route.snapshot.params.place;
     this.router.navigateByUrl('dashboard/pages/place/' + place )
+  }
+
+  quickReservation(id) {
+    this.placeService.quickReservation(id).toPromise()
+      .then(data => {
+        this.toastr.clear();
+        this.toastr.success('Uspesno obavljena rezervacija!');
+        this.quickSeats = this.quickSeats.filter(el => el.id != id);
+      })
   }
 }

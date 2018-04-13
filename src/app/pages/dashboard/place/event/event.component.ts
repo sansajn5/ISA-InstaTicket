@@ -46,7 +46,13 @@ export class EventComponent implements OnInit {
   openFormAddEvent() {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
-    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add-event')
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add/event')
+  }
+
+  editEvent(idEvent) {
+    const id = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/edit/event/' + idEvent )
   }
 
   deleteEvent(id): any {

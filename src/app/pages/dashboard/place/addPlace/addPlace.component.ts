@@ -1,6 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import {PlaceService} from "../../../../@theme/services/place.service";
 import {Place} from "../../../../@theme/models/place.model";
@@ -11,7 +11,7 @@ import {Place} from "../../../../@theme/models/place.model";
   styleUrls: ['./addPlace.component.scss'],
 
 })
- export class AddPlaceComponent {
+ export class AddPlaceComponent implements OnInit{
 
   public form: FormGroup;
   public name: AbstractControl;
@@ -20,15 +20,19 @@ import {Place} from "../../../../@theme/models/place.model";
   public description: AbstractControl;
   place: Place;
 
+  public method_name = 'DODAJ';
+  public mode: String;
+
 
   constructor(private placeService: PlaceService,
               protected router: Router,
               private fb: FormBuilder,
-              private toastr: ToastrService
+              private toastr: ToastrService,
+              private route: ActivatedRoute
                ) {
     this.form = this.fb.group({
       'name' : ['' , Validators.compose([Validators.required])],
-      'type' : ['Bioskop'],
+      'type' : ['Bioskop' ],
       'address' : [''],
       'description' : ['']
 
@@ -41,6 +45,33 @@ import {Place} from "../../../../@theme/models/place.model";
 
   }
 
+  ngOnInit() {
+    this.mode = this.route.snapshot.params.mode;
+    if ( this.mode == 'edit') {
+      const id = this.route.snapshot.params.id;
+      this.placeService.getPlace(id).subscribe(data => {
+        this.method_name = 'IZMENI';
+        this.form.controls['name'].setValue(data.place.name);
+        this.form.controls['address'].setValue(data.place.address);
+        this.form.controls['description'].setValue(data.place.descripton);
+        this.form.controls['type'].setValue(data.place.type);
+
+      })
+    }else if (this.mode == 'add') {
+    }
+    else {
+      this.router.navigateByUrl('dashboard/pages/place')
+    }
+  }
+
+  confirmClick() {
+    if (this.method_name === 'DODAJ') {
+      this.createPlace();
+    } else {
+      this.editPlace();
+    }
+  }
+
   createPlace(): any {
     const place = new Place(
       this.name.value,
@@ -48,7 +79,6 @@ import {Place} from "../../../../@theme/models/place.model";
       this.address.value,
       this.description.value,
     );
-    console.log(JSON.stringify(place))
     this.placeService.createPlace(place).toPromise()
       .then(data=> {
         this.toastr.clear();
@@ -57,6 +87,24 @@ import {Place} from "../../../../@theme/models/place.model";
         this.router.navigateByUrl('dashboard/pages');
       })
   }
+
+  editPlace() {
+    const place = new Place(
+      this.name.value,
+      this.type.value,
+      this.address.value,
+      this.description.value,
+    );
+    const id = this.route.snapshot.params.id;
+    this.placeService.editPlace(id , place).toPromise()
+      .then(data=> {
+        this.toastr.clear();
+        this.toastr.success('Uspesno izmenjeno!');
+        const placeID = this.route.snapshot.params.place;
+        this.router.navigateByUrl('dashboard/pages/place/' + placeID);
+      })
+  }
+
   exit() {
     this.router.navigateByUrl('dashboard/pages')
   }

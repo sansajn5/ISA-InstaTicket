@@ -33,7 +33,7 @@ export class HallComponent implements OnInit {
   openFormAddHall() {
     const id = this.route.snapshot.params.id;
     const place = this.route.snapshot.params.place;
-    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add-hall')
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/add/hall')
   }
 
   deleteHall(id): any {
@@ -48,6 +48,12 @@ export class HallComponent implements OnInit {
         this.toastr.error("Greska pri brisanju");
       });
 
+  }
+
+  editHall(id) {
+    const idPlace = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/edit/hall/'+id)
   }
 
   back() {
