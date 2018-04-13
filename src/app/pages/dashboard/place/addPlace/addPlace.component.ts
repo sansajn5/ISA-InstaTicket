@@ -32,7 +32,7 @@ import {Place} from "../../../../@theme/models/place.model";
                ) {
     this.form = this.fb.group({
       'name' : ['' , Validators.compose([Validators.required])],
-      'type' : ['Bioskop'],
+      'type' : ['Bioskop' ],
       'address' : [''],
       'description' : ['']
 
@@ -48,7 +48,6 @@ import {Place} from "../../../../@theme/models/place.model";
   ngOnInit() {
     this.mode = this.route.snapshot.params.mode;
     if ( this.mode == 'edit') {
-
       const id = this.route.snapshot.params.id;
       this.placeService.getPlace(id).subscribe(data => {
         this.method_name = 'IZMENI';
@@ -58,7 +57,8 @@ import {Place} from "../../../../@theme/models/place.model";
         this.form.controls['type'].setValue(data.place.type);
 
       })
-    }else if (this.mode == 'add') {}
+    }else if (this.mode == 'add') {
+    }
     else {
       this.router.navigateByUrl('dashboard/pages/place')
     }
