@@ -4,6 +4,7 @@ import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
 import {Item} from "../models/item.model";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Offer} from "../models/offer.model";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
@@ -46,16 +47,23 @@ export class FanZoneService {
   }
 
 
-  editItem(item: Item, id: any): Observable<any>{
+  editItem(item: Item, id: any): Observable<any> {
 
     const body = JSON.stringify(item);
 
-
-
-
-
     return this.http.put(`${this.BASE_URL}/edit-item/` + id, body, httpOptions).map(data => data)
+
   }
+  addOffer(offer: Offer): Observable<any> {
+
+    const body = JSON.stringify(offer);
+
+    return this.http.post(`${this.BASE_URL}/new-offer`, body, httpOptions).map(data => data);
+  }
+
+
+
+
 
 
 

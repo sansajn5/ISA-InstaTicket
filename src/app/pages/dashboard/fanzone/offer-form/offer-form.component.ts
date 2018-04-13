@@ -1,8 +1,9 @@
 import {Component, OnInit} from "@angular/core";
-import {AbstractControl, FormBuilder, FormGroup} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FanZoneService} from "../../../../@theme/services/fanZone.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {Offer} from "../../../../@theme/models/offer.model";
 
 @Component({
   selector : 'ngx-new-offer',
@@ -20,9 +21,9 @@ export class OfferFormComponent implements OnInit{
   public description: AbstractControl;
   public price: AbstractControl;
   public image: AbstractControl;
-  public date : AbstractControl;
+  public date: any;
 
-  licitation_date = "";
+  public dateValid: boolean = true;
 
   constructor(private fb: FormBuilder,
               protected router: Router,
@@ -33,10 +34,12 @@ export class OfferFormComponent implements OnInit{
 
     this.form = this.fb.group({
 
-      'name' : [''],
-      'description' : [''],
-      'price' : [''],
-      'image' : [''],
+      'name' : ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(50)])],
+      'description' : ['', Validators.compose([Validators.required,
+        Validators.minLength(3), Validators.maxLength(200)])],
+      'price' : ['', Validators.compose([Validators.required,
+        Validators.pattern('[0-9]+')])],
+      'image' : ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(50)])],
 
     });
 
@@ -58,11 +61,77 @@ export class OfferFormComponent implements OnInit{
 
   confirmClick(){
 
+    this.addNewOffer();
   }
+
+
+  checkDate(date: string) {
+
+    let entered_date = new Date(date);
+
+    let today_date = new Date();
+
+    if(entered_date <= today_date) {
+      this.dateValid = false;
+    }
+
+  }
+
+
+  addNewOffer() {
+
+
+
+
+    let date = document.getElementById('date_picker').getAttribute('date');
+
+    this.dateValid = true;
+    this.checkDate(date);
+
+    if (date === 'undefined-undefined-undefined') {
+
+
+
+      this.toastr.clear();
+      this.toastr.error('Obavezan unos datuma isticanja licitacije');
+
+    }
+
+    else if (!this.dateValid) {
+
+      this.toastr.clear();
+      this.toastr.error('Pogresno unet datum isticanja licitacije');
+
+    }
+
+    else {
+
+      const offer = new Offer(
+        this.name.value,
+        this.description.value,
+        this.image.value,
+        this.price.value,
+        date,
+      );
+      this.fanZoneService.addOffer(offer).toPromise()
+        .then(data=>{
+          this.toastr.clear();
+          this.toastr.success('Uspesno dodat oglas!');
+
+          this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+        })
+
+    }
+
+  }
+
+
+
+
 
   closeNewOfferForm(): void{
 
-    alert('DATUMM ' + document.getElementById('date_picker').getAttribute('date'));
+    //alert('DATUMM ' + document.getElementById('date_picker').getAttribute('date'));
 
     this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
 
