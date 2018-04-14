@@ -1,0 +1,29 @@
+
+<div class="card">
+
+
+  <img class="card-img-top" src="../../../assets/images/kitten-default.png" alt="Card image cap">
+
+  <div class="card-body">
+    <h4 class="card-title"> {{name}} </h4>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">Opis: {{description}} </p>
+  </div>
+
+  <div class="card-body">
+    <label class="card-text">Pocetna cena: {{price}} </label>
+  </div>
+
+
+  <div class="card-body">
+    <label class="card-text">Datum isticanja licitacije: {{date}}</label>
+  </div>
+
+        <button type="button" class="btn btn-primary " id="button_accept" (click)="acceptOfferRequest()"><i class="fa fa-check"></i></button>
+        <button type="button" class="btn btn-primary" id="button_reject" (click)="deleteOffer()"><i class="fa fa-ban"></i></button>
+
+</div>
+
+<br>

@@ -54,6 +54,8 @@ export class FanZoneService {
     return this.http.put(`${this.BASE_URL}/edit-item/` + id, body, httpOptions).map(data => data)
 
   }
+
+
   addOffer(offer: Offer): Observable<any> {
 
     const body = JSON.stringify(offer);
@@ -62,8 +64,24 @@ export class FanZoneService {
   }
 
 
+  getOffersRequests(): Observable<any> {
+
+    return this.http.get(`${this.BASE_URL}/get-offers-requests`)
+  }
 
 
+  acceptOfferRequest(id: any): Observable<any> {
+
+    return this.http.put(`${this.BASE_URL}/accept-offers-requests/`+ id, httpOptions).map(data => data);
+  }
+
+
+  deleteOffer(id: any): Observable<any> {
+
+    //const body = JSON.stringify(item);
+
+    return this.http.delete(`${this.BASE_URL}/delete-offer/`+ id, httpOptions).map(data => data);
+  }
 
 
 
