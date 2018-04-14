@@ -81,12 +81,6 @@ export class PlaceComponent implements OnInit {
     this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + id + '/repertories-in-place-detail')
   }
 
-  getStatistic() {
-    const id = this.route.snapshot.params.id;
-    const place = this.route.snapshot.params.place;
-    this.router.navigateByUrl('dashboard/' + place + '/place-detail/' + id + '/statistic')
-  }
-
   back () {
     const place = this.route.snapshot.params.place;
     this.router.navigateByUrl('dashboard/pages/place/' + place )
