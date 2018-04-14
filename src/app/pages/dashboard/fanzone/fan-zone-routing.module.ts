@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FanZoneItems } from './fan-zone-items/fan-zone-items.component';
 import {OfferFormComponent} from "./offer-form/offer-form.component";
+import {OffersRequestsComponent} from "./offers-requests/offers-requests.component";
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'fan-zone-items/:mode', component: ItemFormComponent },
     { path: 'fan-zone-items/:mode/:id', component: ItemFormComponent },
     { path: 'fan-zone-items/offers/offers/add', component: OfferFormComponent},
+    { path: 'fan-zone-items/offers/offers/requests', component: OffersRequestsComponent},
 
 ]
 

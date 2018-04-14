@@ -70,7 +70,10 @@ export class FanZoneItems {
     this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items/offers/offers/add');
   }
 
+  offersRequestsClick() {
 
+    this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items/offers/offers/requests');
+  }
 
   updateList(data) {
     console.log(data);
