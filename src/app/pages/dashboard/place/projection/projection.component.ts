@@ -12,6 +12,7 @@ export class ProjectionComponent implements OnInit {
 
   item: any;
   event: string;
+
   actors: string;
   type: string;
   director: string;
@@ -21,7 +22,7 @@ export class ProjectionComponent implements OnInit {
   startTime: string;
   endTime: string;
   date: string;
-  starRate=3;
+  starRate;
   imageRoute = '../../../assets/images/';
   image: string;
 
@@ -31,8 +32,9 @@ export class ProjectionComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params.id;
+    const idProjection = this.route.snapshot.params.idProjection;
 
-    this.projecionService.getProjection(id).subscribe(data => {
+    this.projecionService.getProjection(idProjection).subscribe(data => {
       this.item = data.projection;
       this.event = data.projection.event.name;
       this.director = data.projection.event.director;
@@ -45,7 +47,13 @@ export class ProjectionComponent implements OnInit {
       this.endTime = data.projection.endTime;
       this.date = data.projection.date;
       this.image = this.imageRoute + 'm.jpg';
+
+      this.projecionService.getVoteForEvent(idProjection).subscribe(data => {
+        this.starRate = data.vote;
+      })
     })
+
+
 
   }
   back() {

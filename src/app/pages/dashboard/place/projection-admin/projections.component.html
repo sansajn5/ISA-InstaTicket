@@ -11,7 +11,7 @@
       </tr>
       <tr *ngFor="let item of items">
         <th>{{item.event.name}}</th>
-        <th >Izmeni</th>
+        <th (click)="openFormEditProjection(item.id)">Izmeni</th>
         <th  (click)="deleteProjection(item.id)">Obrisi</th>
       </tr>
     </table>

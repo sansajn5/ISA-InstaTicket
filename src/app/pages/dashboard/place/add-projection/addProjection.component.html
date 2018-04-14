@@ -30,7 +30,7 @@
              placeholder="unesite vreme" [formControl]="endTime" >
 
 
-      <button class="btn btn-hero-success" (click)="addProjection()" [disabled]="!form.valid"  >Dodaj</button>
+      <button class="btn btn-hero-success" (click)="confirmClick()" [disabled]="!form.valid"  >{{method_name}}</button>
 
     </div>
 

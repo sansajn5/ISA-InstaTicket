@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: ':place/place/:id/:mode/event/:idEvent' , component: AddEventComponent},
   { path: ':place/place/:id/:mode/hall', component: AddHallComponent},
   { path: ':place/place/:id/:mode/hall/:idHall', component: AddHallComponent},
-  { path: ':place/place/:id/add-projection', component: AddProjectionComponent},
+  { path: ':place/place/:id/:mode/projection', component: AddProjectionComponent},
+  { path: ':place/place/:id/:mode/projection/:idProjection', component: AddProjectionComponent},
   { path: ':place/place/:id/repertory/:idRepertory', component: ProjectionsComponent},
   { path: ':place', component: PlaceListComponent},
 
