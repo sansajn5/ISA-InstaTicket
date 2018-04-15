@@ -9,7 +9,7 @@
   <div *ngFor="let offer of offers" class="col-md-4 col-sm-6 col-12">
 
 
-        <ngx-offer-request-card-card (refreshOffersRequests)="updateOfferRequests($event)" id={{offer.id}} name={{offer.name}} description={{offer.description}} price={{offer.startPrice}} image={{offer.image}} date={{offer.endDate}}> </ngx-offer-request-card-card>
+        <ngx-offer-request-card (refreshOffersRequests)="updateOfferRequests($event)" id={{offer.id}} name={{offer.name}} description={{offer.description}} price={{offer.startPrice}} image={{offer.image}} date={{offer.endDate}}> </ngx-offer-request-card>
 
   </div>
 </div>

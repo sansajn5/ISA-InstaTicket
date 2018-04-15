@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
 export class FanZoneItems {
 
     items = []
+    offers = []
 
   public class_tab1 = 'nav-link';
   public class_tab2 = 'nav-link';
@@ -28,6 +29,15 @@ export class FanZoneItems {
       this.class_tab2 = 'nav-link';
 
     })
+
+    this.fanZoneService.getOffers().subscribe(data => {
+      console.log(data);
+      this.offers = data.offers;
+      this.class_tab1 = 'nav-link active';
+      this.class_tab2 = 'nav-link';
+
+    })
+
 
   }
 

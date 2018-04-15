@@ -1,0 +1,42 @@
+
+<div class="card">
+
+
+  <img class="card-img-top" src="../../../assets/images/cover2.jpg" alt="Card image cap">
+
+  <div class="card-body">
+    <h4 class="card-title"> {{name}} </h4>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">Opis: {{description}} </p>
+  </div>
+
+  <div class="card-body">
+    <label class="card-text">Pocetna cena: {{price}} RSD </label>
+  </div>
+
+
+  <div class="card-body">
+    <label class="card-text">Datum isticanja licitacije: {{date}}</label>
+  </div>
+
+  <div class="card-body">
+    <label class="card-text">Najbolja ponuda: <b>{{bestPrice}} RSD </b></label>
+  </div>
+
+
+  <div class="card-body">
+
+    <label class="card-text"><b> Licitacija: </b></label>
+    <div class="input-group">
+      <input [ngModel]="bidPrice" (keyup)="onKeyPrice($event)" type="text" class="form-control" placeholder="Unesite ponudu">
+      <span class="input-group-btn">
+          <button  class="button-res btn btn-default" type="button" (click)="addNewBid()"> Potvrdi </button>
+        </span>
+    </div>
+  </div>
+
+</div>
+
+<br>

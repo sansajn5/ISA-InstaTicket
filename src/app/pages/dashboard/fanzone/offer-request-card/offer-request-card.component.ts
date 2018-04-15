@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 
 
 @Component({
-  selector : 'ngx-offer-request-card-card',
+  selector : 'ngx-offer-request-card',
   templateUrl: './offer-request-card.component.html',
   styleUrls: ['./offer-request-card.component.scss'],
 })

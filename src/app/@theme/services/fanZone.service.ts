@@ -5,6 +5,7 @@ import {Observer} from "rxjs/Observer";
 import {Item} from "../models/item.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Offer} from "../models/offer.model";
+import {Bid} from "../models/bid.model";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
@@ -82,6 +83,21 @@ export class FanZoneService {
 
     return this.http.delete(`${this.BASE_URL}/delete-offer/`+ id, httpOptions).map(data => data);
   }
+
+  getOffers(): Observable<any> {
+
+    return this.http.get(`${this.BASE_URL}/get-offers`)
+  }
+
+
+  addNewBid(bid: Bid, id: any): Observable<any> {
+
+    const body = JSON.stringify(bid);
+
+    return this.http.post(`${this.BASE_URL}/new-bid/` + id, body, httpOptions).map(data => data)
+
+  }
+
 
 
 

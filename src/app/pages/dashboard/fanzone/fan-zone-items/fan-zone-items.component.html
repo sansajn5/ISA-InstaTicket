@@ -34,18 +34,17 @@
 
         <br>
         <button  (click)="addNewOffer()" class="btn btn-default button_center" type="button"> Dodaj oglas </button> <button (click)="offersRequestsClick()" class="btn btn-default button_other" type="button"> Zahtevi </button>
+        <br>
+        <br>
 
+        <div class="row">
+          <div *ngFor="let offer of offers" class="col-md-4 col-sm-6 col-12">
 
+            <ngx-offer-card id={{offer.id}} name={{offer.name}} description={{offer.description}} image={{offer.image}} price={{offer.startPrice}} date={{offer.endDate}} bestPrice={{offer.bestPrice}}></ngx-offer-card>
 
-        <div>
-          <br>
-          <p> Oglasi polovni </p>
+          </div>
         </div>
 
-        <div>
-          <br>
-          <p> Oglasi polovni </p>
-        </div>
 
 
     </div>
