@@ -7,7 +7,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
 
-import {StatisticComponent} from "./statistic/statistic.component";
 
 
 @NgModule({
@@ -18,7 +17,6 @@ import {StatisticComponent} from "./statistic/statistic.component";
   ],
   declarations: [
     DashboardComponent,
-    StatisticComponent,
   ]
 })
 export class DashboardModule { }

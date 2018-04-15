@@ -6,6 +6,7 @@ import { RouterModule } from "@angular/router";
 const routes: Routes = [
     { path: '', component: DashboardComponent },
     { path: 'fan-zone' , loadChildren: './fanzone/fan-zone.module#FanZoneModule' },
+    { path: 'statistic' , loadChildren: './statistic/statistic.module#StatisticModule' },
     { path: 'place' , loadChildren: './place/place.module#PlaceModule' },
 ];
 
