@@ -2,8 +2,7 @@
 <div>
   <button class="btn btn-default" (click)="back()" style="width: 6%;background: #ebeff5;height: 60px"><i style="font-size: 40px" class="fa  fa-arrow-circle-left"></i></button>
 </div>
-<div *ngIf="raiting">
-  <h3 style="margin-bottom: 20px">Prosecna ocena {{type}}</h3>
+<div *ngIf="raiting" style="margin-top: 20px">
   <div >
     <table>
       <tr>
@@ -25,13 +24,14 @@
           </ng-template>
         </ngb-rating></th>
         <th class="th" (click)="getAllEvent(item.id ,item.name)">Pogledaj {{event}}</th>
-        <th class="th" >Pogleda posecenost</th>
-        <th class="th">Pogledaj prihode</th>
+        <th class="th" (click)="showAttendance( item.id )">Pogledaj posecenost</th>
+        <th class="th" (click)="showInCome( item.id )">Pogledaj prihode</th>
       </tr>
     </table>
   </div>
 
   <div *ngIf="choosePlace"  style="margin-top: 30px">
+    <button class="btn btn-default" (click)="exit()" style="width: 10%;margin-left: 90%;background: #ebeff5"><i style="font-size: 40px" class="fa fa-times-circle"></i></button>
     <h3 style="margin-bottom: 20px">{{choosePlaceName}}</h3>
     <table>
       <tr>
@@ -40,7 +40,7 @@
       </tr>
       <tr *ngFor="let ev of events">
         <th>{{ev.name}}</th>
-        <th style="text-align: center"> <ngb-rating [readonly]="true" [(rate)]="starRate" max=5>
+        <th style="text-align: center"> <ngb-rating [readonly]="true" [(rate)]=" ev.vote" max=5>
           <ng-template let-fill="fill">
 
               <span class="star fill" [class.filled]="fill === 100" >
