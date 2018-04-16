@@ -92,12 +92,31 @@ export class FanZoneService {
 
   addNewBid(bid: Bid, id: any): Observable<any> {
 
+    const token = localStorage.getItem('token')
     const body = JSON.stringify(bid);
 
-    return this.http.post(`${this.BASE_URL}/new-bid/` + id, body, httpOptions).map(data => data)
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.post(`${this.BASE_URL}/new-bid/` + id, body, { headers: headers}).map(data => data)
 
   }
 
+
+  getBidsForOffer(id: any): Observable<any> {
+
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+
+    return this.http.get(`${this.BASE_URL}/get-bids-for-offer/`+ id, { headers: headers}).map(data => data)
+  }
+
+
+  acceptBid(id: any): Observable<any> {
+
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+
+    return this.http.post(`${this.BASE_URL}/accept-bid/`+ id, { headers: headers}).map(data => data)
+  }
 
 
 
