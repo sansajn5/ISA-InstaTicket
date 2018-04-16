@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {PlaceService} from "../../../../@theme/services/place.service";
 import {NbSpinnerService} from "@nebular/theme";
 import {ToastrService} from "ngx-toastr";
+import {EventService} from "../../../../@theme/services/event.service";
 
 @Component({
   selector: 'ngx-statisitic',
@@ -13,8 +14,6 @@ import {ToastrService} from "ngx-toastr";
 export class StatisticComponent implements OnInit{
 
   public raiting = true;
-  public people = false;
-  public money = false;
   type: string;
   place: string;
   event: string;
@@ -24,13 +23,14 @@ export class StatisticComponent implements OnInit{
   choosePlaceName: string;
   items = []
   events = []
-  starRate=2;
+  starRate;
 
   constructor (private route: ActivatedRoute,
                private placeService: PlaceService,
                private spinnerService: NbSpinnerService,
                private toastr: ToastrService,
-               protected router: Router){
+               protected router: Router,
+               private eventService: EventService ) {
 
   }
 
@@ -50,7 +50,6 @@ export class StatisticComponent implements OnInit{
 
     this.place = this.route.snapshot.params.place;
     this.place === 'cinemas' ? this.setCinemas() : this.setTheathres();
-
   }
 
   setCinemas() {
@@ -71,22 +70,7 @@ export class StatisticComponent implements OnInit{
 
 
   showRaiting() {
-
     this.raiting = true;
-    this.people = false;
-    this.money = false;
-  }
-
-  showAttendance() {
-    this.raiting = false;
-    this.people = true;
-    this.money = false;
-  }
-
-  showInCome() {
-    this.raiting = false;
-    this.people = false;
-    this.money = true;
   }
 
   back() {
@@ -98,8 +82,22 @@ export class StatisticComponent implements OnInit{
       this.events = data.events;
     })
     this.choosePlace = true;
-    this.choosePlaceName = name;
+    this.choosePlaceName = name
 
+  }
+
+  exit() {
+  this.choosePlace = false;
+  }
+
+  showAttendance(id) {
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/statistic/' + place + '/' + id + '/attendence')
+  }
+
+  showInCome(id) {
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/statistic/' + place + '/' + id + '/in-come')
   }
 
 }

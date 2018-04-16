@@ -72,6 +72,6 @@ export class PlaceService {
   quickReservation(id): Observable<any> {
     const token = localStorage.getItem('token')
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.put(`${this.BASE_URL}/quick-seats/${id}`,{ headers: headers});
+    return this.http.put(`${this.BASE_URL}/quick-seats/${id}` , { headers: headers});
   }
 }
