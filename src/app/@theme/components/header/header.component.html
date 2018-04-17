@@ -12,7 +12,7 @@
   class="header-container"
   [class.right]="position === 'normal'">
   <nb-action>
-    <nb-user [menu]="userMenu" [name]="user" (menuClick)="logout($event)" ></nb-user>
+    <nb-user [menu]="userMenu" [name]="user" (menuClick)="menuClick($event)" ></nb-user>
   </nb-action>
   <nb-action class="control-item" disabled icon="nb-notifications"></nb-action>
   <nb-action class="control-item" icon="nb-email"></nb-action>

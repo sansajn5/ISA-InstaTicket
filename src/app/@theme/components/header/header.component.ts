@@ -16,7 +16,10 @@ export class HeaderComponent implements OnInit {
 
   user: any;
 
-  userMenu = [{title: 'Odjavi se'}];
+  userMenu = [
+    { title: 'My Profile' },  
+    { title: 'Odjavi se' },
+  ];
 
   constructor(private sidebarService: NbSidebarService,
               private router: Router,
@@ -35,6 +38,15 @@ export class HeaderComponent implements OnInit {
 
   goToHome() {
     this.router.navigateByUrl('');
+  }
+
+  menuClick(event) {
+    if(event.title === 'Odjavi se') {
+      this.logout();
+    } else if (event.title === 'My Profile') {
+      const username = localStorage.getItem('user');
+      this.router.navigateByUrl(`dashboard/user/profile/${username}`);
+    }
   }
 
   logout() {

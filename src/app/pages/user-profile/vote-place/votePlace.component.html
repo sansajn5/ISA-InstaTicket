@@ -1,0 +1,24 @@
+<button class="btn btn-default" (click)="back()" style="width: 6%;background: #ebeff5"><i style="font-size: 40px" class="fa  fa-arrow-circle-left"></i></button>
+
+<div style="background: white;text-align: center;margin-top: 10%;" class="offset-3 col-md-6" *ngIf="isVote== false">
+   <div >
+    <h3 >{{type}} : {{namePlace}}</h3>
+    <h3>Ocena ambijenta:     <ngb-rating [(rate)]="starRate" max=5>
+      <ng-template let-fill="fill">
+
+                <span class="star fill" [class.filled]="fill === 100" >
+                  <i  class="ion-android-star" *ngIf="fill === 100" style="color: black" ></i>
+                  <i  class="ion-android-star-outline" *ngIf="fill !== 100"></i>
+                </span>
+      </ng-template>
+    </ngb-rating>
+    </h3>
+     <button style="margin-bottom: 20px;margin-top: 20px" class="btn btn-hero-success" (click)="createVote()">Glasaj</button>
+   </div>
+  </div>
+
+
+<div style="text-align: center;margin-top: 10%;" class="offset-3 col-md-6" *ngIf="isVote ==true ">
+  <h1>Izvrsili ste glasanje.</h1>
+
+</div>

@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NbSpinnerService } from '@nebular/theme';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { UserProfileService } from '../../../@theme/services/user-profile.service';
+import { User } from '../../../@theme/models/user.model';
+import { ToastrService } from 'ngx-toastr';
+import {ReservationService} from "../../../@theme/services/reservation.service";
 
 @Component({
     selector: 'ngx-profile',
@@ -9,34 +14,130 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
+    public profile: string;
     public profileImage: string;
-    public profileUsername: string;
+    public profileUser = new User('','','','','','','','','');
+    public isMyAccount: boolean;
 
     public friends: any[];
     public recentVisitis: any[];
+    public requests: any[];
 
-    constructor(private spinnerService: NbSpinnerService, private router: Router) {}
+    reservations = []
 
-    ngOnInit() {
-        this.friends = [
-            {user: 'nick', type: 'mobile'},
-            {user: 'eva', type: 'home'},
-            {user: 'jack', type: 'mobile'},
-            {user: 'lee', type: 'mobile'},
-            {user: 'alan', type: 'home'},
-            {user: 'kate', type: 'work'},
-        ]
+    constructor(private spinnerService: NbSpinnerService,
+                private router: Router,
+                private route: ActivatedRoute,
+                private userProfileService: UserProfileService,
+                private toastr: ToastrService,
+                private reservationService: ReservationService) {
 
-        this.recentVisitis = [
-            {user: 'nick', type: 'mobile'},
-            {user: 'eva', type: 'home'},
-            {user: 'jack', type: 'mobile'},
-            {user: 'lee', type: 'mobile'},
-            {user: 'alan', type: 'home'},
-            {user: 'kate', type: 'work'},
-        ]
-        this.profileUsername = "sansajn"
-        this.profileImage = '../../../../assets/images/alan.png'
+        route.params.subscribe(param => {
+            this.profile = param.username;
+            const currentUser = localStorage.getItem('user');
+            this.isMyAccount = (this.profile === currentUser) ? true : false;
+            this.setProfileData();
+            this.setFriendList();
+        });
+
     }
 
+    setProfileData() {
+        if(this.isMyAccount) {
+            this.spinnerService.registerLoader(this.userProfileService.getProfileInfo(null).toPromise()
+                .then(data => {
+                    this.profileUser = new User(data.username, null , null, data.firstName, data.lastName, data.email, data.city, data.address, data.number);
+            }));
+            this.spinnerService.load();
+
+            this.checkFriendRequestList();
+
+            this.recentVisitis = [
+                {user: 'nick', type: 'mobile'},
+                {user: 'eva', type: 'home'},
+                {user: 'jack', type: 'mobile'},
+                {user: 'lee', type: 'mobile'},
+                {user: 'alan', type: 'home'},
+                {user: 'kate', type: 'work'},
+            ]
+            this.profileImage = '../../../../assets/images/alan.png'
+        } else {
+            this.spinnerService.registerLoader(this.userProfileService.getProfileInfo(this.profile).toPromise()
+                .then(data => {
+                    this.profileUser = new User(data.username, null , null, data.firstName, data.lastName, data.email, data.city, data.address, data.number);
+            }));
+            this.spinnerService.load();
+
+            this.recentVisitis = [
+
+            ]
+            this.profileImage = '../../../../assets/images/alan.png'
+        }
+    }
+
+    setFriendList() {
+        if(this.isMyAccount) {
+            this.spinnerService.registerLoader(this.userProfileService.getProfileFriends(null).toPromise()
+                .then(data => {
+                    this.friends = data.friends;
+            }));
+            this.spinnerService.load();
+        } else {
+            this.spinnerService.registerLoader(this.userProfileService.getProfileFriends(this.profile).toPromise()
+                .then(data => {
+                    this.friends = data.friends;
+            }));
+            this.spinnerService.load();
+        }
+    }
+
+    addFriend(email) {
+        this.userProfileService.sendFriendRequest(email).toPromise().then(() => {
+            this.toastr.info('You have sent friend request', 'Info');
+        }).catch(error => {
+            this.toastr.error('Please try again in few seconds','Server error');
+        })
+    }
+
+    checkFriendRequestList() {
+        this.userProfileService.getFriendRequests().toPromise().then((data) => {
+            this.requests = data.requests;
+        })
+    }
+
+    editAccount() {
+        const user = new User('','','',this.profileUser.firstName,this.profileUser.lastName,this.profileUser.email,this.profileUser.city,this.profileUser.address,this.profileUser.number);
+        this.userProfileService.updateBasicProfileData(user).toPromise().then(() =>{
+            this.toastr.success('Account information has been updated', 'Info');
+        }).catch(error => {
+            this.toastr.error('Please try again in few seconds','Server error');
+        })
+    }
+
+    acceptFriendRequest(email) {
+        this.userProfileService.acceptFriendRequest(email).toPromise().then(() => {
+            this.toastr.info('You have accepted friend request', 'Info');
+            this.setFriendList();
+            this.checkFriendRequestList();
+        }).catch(error => {
+            this.toastr.error('Please try again in few seconds','Server error');
+        })
+    }
+
+    ngOnInit() {
+      this.reservationService.getUserReservation().subscribe(data => {
+        this.reservations = data.reservations;
+      })
+    }
+
+  voteForPlace(id) {
+      const username = this.route.snapshot.params.username
+      this.router.navigateByUrl('dashboard/user/profile/' + username + '/vote-for-place/' + id );
+  }
+
+  voteForEvent(id , idEvent) {
+    const username = this.route.snapshot.params.username
+    this.router.navigateByUrl('dashboard/user/profile/' + username + '/vote-for-event/' + id +
+    '/event/' + idEvent);
+  }
 }

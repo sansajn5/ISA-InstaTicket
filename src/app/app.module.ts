@@ -18,8 +18,10 @@ import {RepertoryService} from "./@theme/services/repertory.service";
 import {ProjectionService} from "./@theme/services/projection.service";
 import {HallService} from "./@theme/services/hall.service";
 import {EventService} from "./@theme/services/event.service";
-
-
+import { UserProfileService } from "./@theme/services/user-profile.service";
+import {ReservationService} from "./@theme/services/reservation.service";
+import {VoteForPlaceService} from "./@theme/services/vote-for-place.service";
+import {VoteForEventService} from "./@theme/services/vote-for-event.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -46,6 +48,10 @@ import {EventService} from "./@theme/services/event.service";
     HallService,
     EventService,
     HallService,
+    UserProfileService,
+    ReservationService,
+    VoteForPlaceService,
+    VoteForEventService,
   ],
 })
 export class AppModule {

@@ -16,6 +16,7 @@ export class RegisterComponent {
   public form: FormGroup;
   public username: AbstractControl;
   public password: AbstractControl;
+  public rePassword: AbstractControl;
   public email: AbstractControl;
   public name: AbstractControl;
   public lastName: AbstractControl;
@@ -33,6 +34,7 @@ export class RegisterComponent {
     this.form = this.fb.group({
       'username': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(12)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
+      're-password': ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
       'email': ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
       'name': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(12)])],
       'lastName': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(12)])],
@@ -43,6 +45,7 @@ export class RegisterComponent {
 
     this.username = this.form.controls['username'];
     this.password = this.form.controls['password'];
+    this.rePassword = this.form.controls['re-password'];
     this.email = this.form.controls['email'];
     this.name = this.form.controls['name'];
     this.lastName = this.form.controls['lastName'];
@@ -54,6 +57,7 @@ export class RegisterComponent {
   signUp(): any {
     const user = new User(this.username.value,
                           this.password.value,
+                          this.rePassword.value,
                           this.name.value,
                           this.lastName.value,
                           this.email.value,
@@ -61,17 +65,21 @@ export class RegisterComponent {
                           this.address.value,
                           this.number.value,
                           );
-    this.spinnerService.registerLoader(this.authService.signUp(user).toPromise()
-      .then(data => {
-        this.toastr.clear();
-        this.toastr.success('Procitajte Vas email' + this.email.value, 'Uspešna registracija');
-        return this.router.navigateByUrl('auth/login');
-      })
-      .catch(
-        error => {
-          this.toastr.error('Doslo je do greske na serveru', 'Greska' );
-        }))
-    this.spinnerService.load();
+    if(this.password.value !== this.rePassword.value)
+       this.toastr.error('Unete sifre se moraju podudarati!');
+    else {
+      this.spinnerService.registerLoader(this.authService.signUp(user).toPromise()
+        .then(data => {
+          this.toastr.clear();
+          this.toastr.success('Procitajte Vas email' + this.email.value, 'Uspešna registracija');
+          return this.router.navigateByUrl('auth/login');
+        })
+        .catch(
+          error => {
+            this.toastr.error('Doslo je do greske na serveru', 'Greska' );
+          }))
+      this.spinnerService.load();
+      }
   }
 
   onLogin(): void {
