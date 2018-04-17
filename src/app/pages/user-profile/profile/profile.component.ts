@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UserProfileService } from '../../../@theme/services/user-profile.service';
 import { User } from '../../../@theme/models/user.model';
 import { ToastrService } from 'ngx-toastr';
+import {ReservationService} from "../../../@theme/services/reservation.service";
 
 @Component({
     selector: 'ngx-profile',
@@ -22,12 +23,15 @@ export class ProfileComponent implements OnInit {
     public recentVisitis: any[];
     public requests: any[];
 
-    constructor(private spinnerService: NbSpinnerService, 
+    reservations = []
+
+    constructor(private spinnerService: NbSpinnerService,
                 private router: Router,
                 private route: ActivatedRoute,
                 private userProfileService: UserProfileService,
-                private toastr: ToastrService) {
-                   
+                private toastr: ToastrService,
+                private reservationService: ReservationService) {
+
         route.params.subscribe(param => {
             this.profile = param.username;
             const currentUser = localStorage.getItem('user');
@@ -35,7 +39,7 @@ export class ProfileComponent implements OnInit {
             this.setProfileData();
             this.setFriendList();
         });
-                
+
     }
 
     setProfileData() {
@@ -56,7 +60,7 @@ export class ProfileComponent implements OnInit {
                 {user: 'alan', type: 'home'},
                 {user: 'kate', type: 'work'},
             ]
-            this.profileImage = '../../../../assets/images/alan.png' 
+            this.profileImage = '../../../../assets/images/alan.png'
         } else {
             this.spinnerService.registerLoader(this.userProfileService.getProfileInfo(this.profile).toPromise()
                 .then(data => {
@@ -65,7 +69,7 @@ export class ProfileComponent implements OnInit {
             this.spinnerService.load();
 
             this.recentVisitis = [
-         
+
             ]
             this.profileImage = '../../../../assets/images/alan.png'
         }
@@ -121,6 +125,19 @@ export class ProfileComponent implements OnInit {
     }
 
     ngOnInit() {
-        
+      this.reservationService.getUserReservation().subscribe(data => {
+        this.reservations = data.reservations;
+      })
     }
+
+  voteForPlace(id) {
+      const username = this.route.snapshot.params.username
+      this.router.navigateByUrl('dashboard/user/profile/' + username + '/vote-for-place/' + id );
+  }
+
+  voteForEvent(id , idEvent) {
+    const username = this.route.snapshot.params.username
+    this.router.navigateByUrl('dashboard/user/profile/' + username + '/vote-for-event/' + id +
+    '/event/' + idEvent);
+  }
 }

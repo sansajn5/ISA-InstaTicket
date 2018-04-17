@@ -4,24 +4,36 @@
             <div class="col-xxxl-5 col-md-5" style="display:inline-block;">
                 <div class="row" style="margin-top: 20px;">
                     <img class="img-thumbnail" src="{{profileImage}}">
-                    <button *ngIf="!isMyAccount" class="col-md-9 btn btn-hero-info" (click)="addFriend(profileUser.email)">Add Friend</button>
+                    <button *ngIf="!isMyAccount" class="col-md-10 btn btn-hero-info" (click)="addFriend(profileUser.email)">Add Friend</button>
                 </div>
                 <div class="row" style="margin-top:15px;">
-                    <nb-card [size]="large" class="col-md-9">
+                    <nb-card [size]="large" class="col-md-10">
                         <nb-tabset fullWidth>
-                            <nb-tab tabTitle="Friends">
+                            <nb-tab tabTitle="Prijatelji">
                                 <div class="contact" *ngFor="let friend of friends">
                                   <nb-user [name]="friend.username" [title]="friend.email" size="large"></nb-user>
                                   <i class="i-contact nb-phone"></i>
                                 </div>
                               </nb-tab>
-                              <nb-tab tabTitle="Recent Visits">
-                                <div class="contact" *ngFor="let visit of recentVisitis">
-                                  <nb-user [name]="visit.user" [title]="visit.type" size="large"></nb-user>
-                                  <span class="time">{{ visit.username }}</span>
+                              <nb-tab tabTitle="Rezervacije">
+                                <div class="contact" *ngFor="let res of reservations">
+                                  <div class="row" style="border-style: groove;border-width: 3px;margin-left: 15px;margin-right: 15px;margin-bottom: 15px">
+                                    <div style=" display: inline-block; text-align: center;margin-top: 23px;margin-bottom: 7px" class="col-md-6">
+                                      <h4>{{ res.reservation.projection.event.name }}</h4>
+                                      <h5>{{ res.reservation.projection.event.place.name }}</h5>
+                                    </div>
+                                    <div class="col-md-6" style="display: inline-block;text-align: center">
+                                      <button class="btn  btn-hero-success" style="margin-bottom: 7px;margin-top: 7px" (click)="voteForEvent( res.reservation.projection.id , res.reservation.projection.event.id  )">Oceni projekciju</button>
+                                      <button  class="btn  btn-hero-success" style="margin-bottom: 7px" (click)="voteForPlace( res.reservation.projection.event.place.id )">Oceni ambijent</button>
+
+                                    </div>
+                                  </div>
+
+
+
                                 </div>
                             </nb-tab>
-                            <nb-tab *ngIf="isMyAccount" tabTitle="Friend Requests">
+                            <nb-tab *ngIf="isMyAccount" tabTitle="Zahtevi za prijateljstvo">
                                 <div class="contact" *ngFor="let request of requests">
                                     <nb-user [name]="request.username" [title]="request.email" size="large"></nb-user>
                                   <i (click)="acceptFriendRequest(request.email)" class="fa fa-check"></i>
@@ -42,7 +54,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="col-md-3" style="display:inline-block">
-                                        <label for="inputFirstName">First Name</label>
+                                        <label for="inputFirstName">Ime:</label>
                                     </div>
                                     <div class="col-md-8" style="display:inline-block">
                                         <input [readonly]="!isMyAccount" [(ngModel)]="profileUser.firstName" type="text" class="form-control" id="inputFirstName" placeholder="First Name">
@@ -54,7 +66,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="col-md-3" style="display:inline-block">
-                                        <label for="inputLastName">Last Name</label>
+                                        <label for="inputLastName">Prezime:</label>
                                     </div>
                                     <div class="col-md-8" style="display:inline-block">
                                         <input [readonly]="!isMyAccount" [(ngModel)]="profileUser.lastName" type="text" class="form-control" id="inputLastName" placeholder="Last Name">
@@ -66,7 +78,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="col-md-3" style="display:inline-block">
-                                        <label for="inputEmail">Email</label>
+                                        <label for="inputEmail">Email:</label>
                                     </div>
                                     <div class="col-md-8" style="display:inline-block">
                                         <input type="email" [readonly]="true" [(ngModel)]="profileUser.email" class="form-control" id="inputEmail" placeholder="Email">
@@ -78,7 +90,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="col-md-3" style="display:inline-block">
-                                        <label for="inputCity">City</label>
+                                        <label for="inputCity">Grad:</label>
                                     </div>
                                     <div class="col-md-8" style="display:inline-block">
                                         <input type="text" [readonly]="!isMyAccount" [(ngModel)]="profileUser.city" class="form-control" id="inputCity" placeholder="City">
@@ -90,7 +102,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="col-md-3" style="display:inline-block">
-                                        <label for="inputAddress">Address</label>
+                                        <label for="inputAddress">Adresa:</label>
                                     </div>
                                     <div class="col-md-8" style="display:inline-block">
                                         <input type="text" [readonly]="!isMyAccount" [(ngModel)]="profileUser.address" class="form-control" id="inputAddress" placeholder="Address">
@@ -102,7 +114,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="col-md-3" style="display:inline-block">
-                                        <label for="inputNumber">Number</label>
+                                        <label for="inputNumber">Broj:</label>
                                     </div>
                                     <div class="col-md-8" style="display:inline-block">
                                         <input type="text" [readonly]="!isMyAccount" [(ngModel)]="profileUser.number" class="form-control" id="inputNumber" placeholder="Number">
@@ -110,7 +122,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="button" (click)="editAccount()" class="btn btn-primary">Submit</button>
+                        <button type="button" (click)="editAccount()" class="btn btn-hero-success" style="margin-bottom: 20px">Izmeni</button>
                     </nb-card-body>
                 </nb-card>
             </div>
