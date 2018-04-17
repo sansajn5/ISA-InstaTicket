@@ -10,6 +10,8 @@ import {NgbdDatepickerPopup} from "../../../@theme/components/datepicker-popup/d
 import {OffersRequestsComponent} from "./offers-requests/offers-requests.component";
 import {OfferRequestCardComponent} from "./offer-request-card/offer-request-card.component";
 import {OfferCardComponent} from "./offer-card/offer-card.component";
+import {BidsComponent} from "./bids/bids.component";
+import {BidComponent} from "./bid/bid.component";
 
 const FAN_ZONE_COMPONENTS = [
     FanZoneComponent,
@@ -20,6 +22,8 @@ const FAN_ZONE_COMPONENTS = [
     OffersRequestsComponent,
     OfferRequestCardComponent,
     OfferCardComponent,
+    BidsComponent,
+    BidComponent,
 ]
 
 @NgModule({

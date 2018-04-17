@@ -54,4 +54,10 @@ export class OfferCardComponent {
     this.bidPrice = event.target.value;
 
   }
+
+  bidsClick(){
+
+    this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items/offers/offers/bids/' + this.id);
+  }
+
 }

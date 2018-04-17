@@ -1,0 +1,23 @@
+<table class="table">
+
+  <thead>
+  <tr>
+    <th scope="col">R.br.</th>
+    <th scope="col">Korisnik</th>
+    <th scope="col">Ponuda</th>
+  </tr>
+  </thead>
+
+  <tbody >
+
+    <tr>
+      <th scope="row">{{ordNum}}.</th>
+      <td>{{username}}</td>
+      <td>{{sum}} RSD</td>
+      <td>
+        <button type="button" class="btn btn-primary " id="button_accept" (click)="acceptBid()"><i class="fa fa-check-circle" ></i> Prihvati</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

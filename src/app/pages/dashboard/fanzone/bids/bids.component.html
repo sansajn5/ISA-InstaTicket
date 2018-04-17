@@ -1,0 +1,14 @@
+
+<button class="btn btn-primary-outline pull-right basic_col" (click)="closingClick()"><i class="fa fa-times-circle"></i></button>
+<br>
+
+<div >
+  <label><h4> Ponude za oglas: <b>" <u>{{name}}</u> "</b></h4></label>
+</div>
+
+
+<div *ngFor="let bid of bids">
+
+      <ngx-bid id={{bid.id}} ordNum={{bid.ordNum}} username={{bid.userName}} sum={{bid.sum}} ></ngx-bid>
+
+</div>
