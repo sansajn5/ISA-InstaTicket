@@ -14,19 +14,22 @@
   <div class="form-group">
     <label>Naziv: </label>
     <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Unesite naziv"
-           [formControl]="name" id="input_offer_name">
+           [formControl]="name" id="input_offer_name"
+           [class.form-control-danger]="name.invalid && name.touched" autofocus>
   </div>
 
   <div class="form-group">
     <label>Opis: </label>
     <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Unesite opis"
-           [formControl]="description" id="input_offer_desc">
+           [formControl]="description" id="input_offer_desc"
+           [class.form-control-danger]="description.invalid && description.touched" autofocus>
 
     <br>
     <label>Slika: </label>
     <div class="input-group">
         <input type="text" class="form-control"
-               [formControl]="image" id="input_item_image">
+               [formControl]="image" id="input_item_image"
+               [class.form-control-danger]="image.invalid && image.touched" autofocus>
         <span class="input-group-btn">
             <button id="button_other" class="btn btn-default" type="button"> Izaberi </button>
         </span>
@@ -36,7 +39,8 @@
   <div class="form-group">
     <label>Početna cena: </label>
     <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Unesite početnu cenu"
-           [formControl]="price" id="input_offer_price">
+           [formControl]="price" id="input_offer_price"
+           [class.form-control-danger]="price.invalid && price.touched" autofocus>
   </div>
 
 

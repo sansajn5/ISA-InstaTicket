@@ -32,12 +32,16 @@
   <div class="card-body">
 
     <label class="card-text"><b> Licitacija: </b></label>
-    <div class="input-group">
-      <input [ngModel]="bidPrice" (keyup)="onKeyPrice($event)" type="text" class="form-control" placeholder="Unesite ponudu">
-      <span class="input-group-btn">
-          <button  class="button-res btn btn-default" type="button" (click)="addNewBid()"> Potvrdi </button>
-        </span>
-    </div>
+      <form>
+        <div class="input-group">
+          <input [ngModel]="bidPrice" (keyup)="onKeyPrice($event)" type="text" class="form-control" placeholder="Unesite ponudu"
+                 [formControl]="bPrice" id="input_offer_price"
+                 [class.form-control-danger]="bPrice.invalid && bPrice.touched" autofocus>
+          <span class="input-group-btn">
+            <button  class="button-res btn btn-default" type="button" (click)="addNewBid()"> Potvrdi </button>
+          </span>
+        </div>
+      </form>
   </div>
 
 </div>
