@@ -37,12 +37,11 @@ export class LoginComponent {
     const user = new User(this.username.value, this.password.value);
     this.spinnerService.registerLoader(this.authService.signIn(user).toPromise()
       .then(data => {
-        console.log(data);
         localStorage.setItem('token', data.id_token);
         localStorage.setItem('user', data.username);
         localStorage.setItem('role',data.role);
         this.toastr.clear();
-        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + data.username);
+        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli ' + data.username);
         this.router.navigateByUrl('dashboard');
       })
       .catch(

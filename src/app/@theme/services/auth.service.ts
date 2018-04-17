@@ -25,9 +25,7 @@ export class AuthService {
   signIn(user: User): Observable<any> {
     const body = JSON.stringify(user);
     return this.http.post(this.BASE_URL + '/authenticate', body, httpOptions)
-      .map( data => data);
   }
-
 
   /**
    * Method /POST
@@ -38,7 +36,6 @@ export class AuthService {
   signUp(user: User): Observable<any> {
     const body = JSON.stringify(user);
     return this.http.post(`${this.BASE_URL}/sign-up`, body, httpOptions)
-      .map(data => data);
   }
 
   activeAccount(key: string): Observable<any> {
@@ -47,7 +44,6 @@ export class AuthService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
       params,
     })
-    .map(data => data);
   }
 
   /**
