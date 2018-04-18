@@ -1,0 +1,45 @@
+:host {
+    
+    grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: #2196F3;
+        padding: 10px;
+    }
+    
+      .grid-item {
+        width: 8%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding-left: 2px;
+        padding-right: 2px;
+        font-size: 9px;
+        height: 35px;
+        text-align: center;
+    }
+
+    .grid-item:hover {
+        cursor: pointer;
+    }
+//reserved
+    .red {
+        background-color: red !important;
+    }
+//free classic
+    .green {
+        background-color: green !important;
+    }
+//vip
+    .gold {
+        background-color: gold !important;
+    }
+//not seat
+    .grey {
+        background-color: gray !important;
+    }
+//fast
+    .orange {
+        background-color: orange !important;
+    }
+
+}
