@@ -17,6 +17,7 @@ export class ResourceComponent implements OnInit {
   from: string;
   to: string;
   attendenceList = []
+  inComeList = []
 
   constructor (private route: ActivatedRoute,
                protected router: Router,
@@ -60,6 +61,18 @@ export class ResourceComponent implements OnInit {
         })
 
 
+    }else {
+      const attendence = new AttendanceModel(
+        document.getElementById('date_picker_from').getAttribute('date'),
+        document.getElementById('date_picker_to').getAttribute('date'),
+      );
+      this.placeService.getInCome(id, attendence).toPromise()
+        .then(data=> {
+          this.inComeList = data.list;
+          console.log( this.inComeList)
+          this.toastr.clear();
+          this.toastr.success('Uspesno !');
+        })
     }
   }
 
