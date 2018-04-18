@@ -34,12 +34,14 @@
         <tr>
           <th scope="row">Mesto preuzimanja: </th>
           <td>
-            <select id="placeCombo" class="combobox" [(ngModel)]="selectedPlace">
-              <option *ngFor="let place of places" [ngValue]="place">
-                {{place.name}}
-              </option>
-
-            </select>
+            <form>
+              <select id="placeCombo" class="combobox" [formControl]="placeName" >
+                <option></option>
+                <option *ngFor="let place of places">
+                  {{place.name}}
+                </option>
+              </select>
+            </form>
           </td>
         </tr>
 
