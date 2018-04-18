@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Offer} from "../models/offer.model";
 import {Bid} from "../models/bid.model";
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
+import {ItemReservation} from "../models/itemReservation.model";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
@@ -138,6 +139,15 @@ export class FanZoneService {
 
     return this.http.get(`${this.BASE_URL}/reserve-item/`+ id, { headers: headers}).map(data => data)
 
+  }
+
+  confirmItemReservation(itemReservation: ItemReservation) : Observable<any> {
+
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    const body = JSON.stringify(itemReservation);
+
+    return this.http.post(`${this.BASE_URL}/confirm-item-reservation`, body, { headers: headers}).map(data => data)
   }
 
 

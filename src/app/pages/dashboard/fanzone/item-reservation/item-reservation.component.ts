@@ -4,6 +4,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import {forEach} from "@angular/router/src/utils/collection";
 import {PlaceService} from "../../../../@theme/services/place.service";
+import {AbstractControl, FormBuilder, Validators} from "@angular/forms";
+import {ItemReservation} from "../../../../@theme/models/itemReservation.model";
 
 @Component({
   selector: 'ngx-item-reservation',
@@ -19,9 +21,9 @@ export class ItemReservationComponent implements OnInit {
   price: string;
   image: string;
   userName: string;
-  placeName: string = '';
 
-  selectedPlace: Object = {};
+  public placeName: AbstractControl;
+
 
   places: any = []
 
@@ -29,7 +31,15 @@ export class ItemReservationComponent implements OnInit {
               private placeService: PlaceService,
               protected router: Router,
               private toastr: ToastrService,
-              private route: ActivatedRoute,) {
+              private route: ActivatedRoute,
+              private fb: FormBuilder,) {
+
+    this.form = this.fb.group({
+
+      'placeName': ['', Validators.compose([Validators.required])];
+    });
+
+    this.placeName = this.form.controls['placeName'];
   }
 
 
@@ -73,8 +83,6 @@ export class ItemReservationComponent implements OnInit {
 
 
 
-
-
   }
 
   closingClick() {
@@ -86,15 +94,36 @@ export class ItemReservationComponent implements OnInit {
 
   confirmReservation() {
 
-    if(this.selectedPlace.name === 'null') {
+    if(this.placeName.value === '') {
 
-      this.toastr.error('Niste uneli mesto preuzimanja rekvizita!');
+      this.toastr.clear();
+      this.toastr.error('Niste uneli mesto preuzimanja rekvizita');
     }
     else{
 
-      this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
-      this.fanZoneService.changeMessage('official');
+      const itemReservation = new ItemReservation(
+        this.id,
+        this.userName,
+        this.placeName.value,
+      );
+
+
+
+      this.fanZoneService.confirmItemReservation(itemReservation).toPromise()
+        .then(data=>{
+          this.toastr.clear();
+          this.toastr.success('Uspesno rezervisan rekvizit pod nazivom: ' + data.item.name);
+
+          this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+          this.fanZoneService.changeMessage('official');
+        })
+
+
+
+
     }
+
+
 
   }
 }

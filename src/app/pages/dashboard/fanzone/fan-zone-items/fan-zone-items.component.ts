@@ -28,7 +28,13 @@ export class FanZoneItems implements OnInit{
 
     this.fanZoneService.getItems().subscribe(data => {
 
-      this.items = data.items;
+      //this.items = data.items;
+
+      for(let item of data.items) {
+        if(item.sold === false) {
+          this.items.push(item);
+        }
+      }
 
     })
 
