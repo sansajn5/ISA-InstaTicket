@@ -26,6 +26,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
   title: 'Statistika',
   icon: 'fa fa-book',
   link: '/dashboard/pages/statistic',
+  children: [
+    {
+      title: 'Bioskopi',
+      link: '/dashboard/pages/statistic/cinemas',
+    },
+    {
+      title: 'Pozorista',
+      link: '/dashboard/pages/statistic/theathres',
+    },
+  ]
   },
 
 

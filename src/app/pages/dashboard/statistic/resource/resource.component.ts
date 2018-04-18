@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
+import {NbColorHelper} from "@nebular/theme";
 
 @Component ({
   selector: 'ngx-resource',
@@ -10,9 +11,13 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class ResourceComponent implements OnInit {
 
   mode: string;
+chart;
+
   constructor (private route: ActivatedRoute,
                protected router: Router) {
+
   }
+
   ngOnInit() {
     const mode = this.route.snapshot.params.mode;
     if (mode == 'attendence') {
@@ -29,4 +34,5 @@ export class ResourceComponent implements OnInit {
     const place = this.route.snapshot.params.place;
     this.router.navigateByUrl('dashboard/pages/statistic/' + place )
   }
+
 }

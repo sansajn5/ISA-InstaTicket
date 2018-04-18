@@ -94,7 +94,10 @@ export class ItemReservationComponent implements OnInit {
 
   confirmReservation() {
 
+
     if(this.placeName.value === '') {
+
+
 
       this.toastr.clear();
       this.toastr.error('Niste uneli mesto preuzimanja rekvizita');
@@ -122,8 +125,6 @@ export class ItemReservationComponent implements OnInit {
 
 
     }
-
-
 
   }
 }
