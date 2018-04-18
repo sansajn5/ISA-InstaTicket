@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import { FanZoneService } from "../../../../@theme/services/fanZone.service";
 import { Router } from "@angular/router";
 
@@ -7,10 +7,12 @@ import { Router } from "@angular/router";
     templateUrl: './fan-zone-items.component.html',
     styleUrls: ['./fan-zone-items.component.scss']
 })
-export class FanZoneItems {
+export class FanZoneItems implements OnInit{
 
-    items = []
-    offers = []
+  items = []
+  offers = []
+
+  message: string = 'official';
 
   public class_tab1 = 'nav-link';
   public class_tab2 = 'nav-link';
@@ -22,22 +24,36 @@ export class FanZoneItems {
 
   ngOnInit() {
 
+    this.fanZoneService.currentMessage.subscribe(message => this.message = message)
+
     this.fanZoneService.getItems().subscribe(data => {
-      console.log(data);
+
       this.items = data.items;
-      this.class_tab1 = 'nav-link active';
-      this.class_tab2 = 'nav-link';
 
     })
 
     this.fanZoneService.getOffers().subscribe(data => {
-      console.log(data);
+
       this.offers = data.offers;
-      this.class_tab1 = 'nav-link active';
-      this.class_tab2 = 'nav-link';
 
     })
 
+    if (this.message === 'official'){
+
+      this.class_tab1 = 'nav-link active';
+      this.class_tab2 = 'nav-link';
+      this.show_items = true;
+      this.show_offers = false;
+    }
+    else {
+
+      this.class_tab2 = 'nav-link active';
+      this.class_tab1 = 'nav-link';
+      this.show_items = false;
+      this.show_offers = true;
+    }
+
+    this.message = 'official';
 
   }
 
@@ -54,10 +70,13 @@ export class FanZoneItems {
   officialShopClick() {
     this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
 
+
     this.class_tab1 = 'nav-link active';
     this.class_tab2 = 'nav-link';
     this.show_items = true;
     this.show_offers = false;
+
+    this.fanZoneService.changeMessage('official');
 
   }
 
@@ -70,6 +89,8 @@ export class FanZoneItems {
 
     this.show_items = false;
     this.show_offers = true;
+
+    this.fanZoneService.changeMessage('offers');
 
 
   }

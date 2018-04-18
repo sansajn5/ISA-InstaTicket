@@ -56,6 +56,13 @@ export class ItemCardComponent {
       })
   }
 
+  itemReservation() {
+
+    console.log('haha')
+
+    this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items/item/reservation/' + this.id);
+  }
+
 
 
 }
