@@ -81,6 +81,7 @@ export class ItemFormComponent implements OnInit{
       }
       else{
         this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items')
+        this.fanZoneService.changeMessage('official');
       }
 
 
@@ -92,6 +93,7 @@ export class ItemFormComponent implements OnInit{
 
 
     this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+    this.fanZoneService.changeMessage('official');
 
   }
 
@@ -123,6 +125,7 @@ export class ItemFormComponent implements OnInit{
         this.toastr.success('Uspesno dodat rekvizit!');
 
         this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+        this.fanZoneService.changeMessage('official');
       })
   }
 
@@ -144,6 +147,7 @@ export class ItemFormComponent implements OnInit{
         this.toastr.success('Uspesno izmenjen rekvizit!');
 
         this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+        this.fanZoneService.changeMessage('official');
 
         this.refreshList.emit(data);
       })

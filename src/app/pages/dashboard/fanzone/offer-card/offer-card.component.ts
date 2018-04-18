@@ -25,27 +25,65 @@ export class OfferCardComponent {
 
   bidPrice: any = '';
 
+  public bidValid: boolean = true;
+
+  public form: FormGroup;
+  public bPrice: AbstractControl;
+
   @Output() refreshOffersRequests: EventEmitter<any> = new EventEmitter()
 
   constructor(private fanZoneService: FanZoneService,
               protected router: Router,
-              private toastr: ToastrService) {}
+              private toastr: ToastrService,
+              private fb: FormBuilder,) {
 
+
+
+    this.form = this.fb.group({
+
+
+      'bPrice' : ['', Validators.compose([Validators.required,
+        Validators.pattern('[0-9]+')])],
+
+    });
+
+    this.bPrice = this.form.controls['bPrice'];
+
+  }
+
+
+  checkBid(bidPrice: String) {
+
+      if(Number(bidPrice) <= Number(this.bestPrice)) {
+        this.bidValid = false;
+      }
+  }
 
 
   addNewBid() {
 
+    this.bidValid = true;
+    this.checkBid(this.bidPrice);
 
+    if(!this.bidValid) {
 
-    const bid = new Bid(this.bidPrice);
+      this.toastr.error('Morate uneti veću ponudu od trenutno najbolje!');
+    }
+    else{
 
-    this.fanZoneService.addNewBid(bid, this.id).toPromise()
-      .then(data=>{
-        this.toastr.clear();
-        this.toastr.success('Uspesno dodata ponuda!');
+      const bid = new Bid(this.bidPrice);
 
-        this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
-      })
+      this.fanZoneService.addNewBid(bid, this.id).toPromise()
+        .then(data=>{
+          this.toastr.clear();
+          this.toastr.success('Uspesno dodata ponuda!');
+
+          this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+          this.fanZoneService.changeMessage('offers');
+        })
+
+    }
+
 
   }
 

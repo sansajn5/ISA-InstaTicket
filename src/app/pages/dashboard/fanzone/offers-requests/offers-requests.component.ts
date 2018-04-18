@@ -11,7 +11,8 @@ export class OffersRequestsComponent {
 
   offers = [];
 
-  constructor(private fanZoneService: FanZoneService, protected router: Router) {}
+  constructor(private fanZoneService: FanZoneService,
+              protected router: Router) {}
 
 
 
@@ -26,6 +27,7 @@ export class OffersRequestsComponent {
   closingClick() {
 
     this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+    this.fanZoneService.changeMessage('offers');
   }
 
   updateOfferRequests(data) {

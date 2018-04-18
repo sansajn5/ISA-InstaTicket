@@ -39,6 +39,7 @@ export class BidsComponent implements OnInit{
   closingClick() {
 
     this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+    this.fanZoneService.changeMessage('offers');
   }
 
 

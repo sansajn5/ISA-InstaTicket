@@ -24,9 +24,17 @@ export class AddProjectionComponent implements OnInit {
   public hallName: AbstractControl;
   public startTime: AbstractControl;
   public endTime: AbstractControl;
+  public regular: AbstractControl;
+  public vip: AbstractControl;
+  public sale: AbstractControl;
   projection: Projection;
   public method_name = 'DODAJ';
   public mode: String;
+
+  public showClassicSeats: boolean;
+  public row = 0;
+  public colum = 0;
+  public fullGrid = [];
 
   constructor(protected router: Router,
               private route: ActivatedRoute,
@@ -40,12 +48,19 @@ export class AddProjectionComponent implements OnInit {
       'hallName': ['', Validators.compose([Validators.required]) ],
       'startTime': ['', Validators.compose([Validators.required])],
       'endTime': ['', Validators.compose([Validators.required])],
+      'regular': ['', Validators.compose([Validators.required]) ],
+      'vip': ['', Validators.compose([Validators.required])],
+      'sale': ['', Validators.compose([Validators.required])]
+      
 
     })
     this.eventName = this.form.controls['eventName'];
     this.hallName = this.form.controls['hallName'];
     this.startTime = this.form.controls['startTime'];
     this.endTime = this.form.controls['endTime'];
+    this.regular = this.form.controls['regular'];
+    this.vip = this.form.controls['vip'];
+    this.sale = this.form.controls['sale'];
   }
 
   ngOnInit() {
@@ -70,9 +85,18 @@ export class AddProjectionComponent implements OnInit {
         this.form.controls['hallName'].setValue( data.projection.hall.name);
         this.form.controls['startTime'].setValue(data.projection.startTime);
         this.form.controls['endTime'].setValue(data.projection.endTime);
+        this.form.controls['regular'].setValue(data.projection.regularPrice);
+        this.form.controls['vip'].setValue(data.projection.vipPrice);
+        this.form.controls['sale'].setValue(data.projection.sale);
 
+        this.fullGrid = data.seats;
+        const hall = this.halls.filter(el => el.name === this.hallName.value)[0]
+        this.row = hall.row;
+        this.colum = hall.col;
+        this.showClassicSeats = true;
       })
     }else if (this.mode == 'add') {
+
     }
     else {
       this.router.navigateByUrl('dashboard/pages/place')
@@ -83,6 +107,7 @@ export class AddProjectionComponent implements OnInit {
     } else {
       this.type = 'Predstava';
     }
+    this.showClassicSeats = false;
   }
 
   confirmClick() {
@@ -99,7 +124,11 @@ export class AddProjectionComponent implements OnInit {
       this.hallName.value,
       this.startTime.value,
       this.endTime.value,
-      document.getElementById('date_picker').getAttribute('date')
+      document.getElementById('date_picker').getAttribute('date'),
+      this.fullGrid,
+      this.regular.value,
+      this.vip.value,
+      this.sale.value
     );
     const id = this.route.snapshot.params.id;
     this.projectionService.createProjection(projection, id).toPromise()
@@ -113,12 +142,49 @@ export class AddProjectionComponent implements OnInit {
   }
 
   editProjection() {
-
+    const projectionId = this.route.snapshot.params.idProjection;
+    const projection = new Projection(
+      this.eventName.value,
+      this.hallName.value,
+      this.startTime.value,
+      this.endTime.value,
+      document.getElementById('date_picker').getAttribute('date'),
+      this.fullGrid,
+      this.regular.value,
+      this.vip.value,
+      this.sale.value
+    );
+    const id = this.route.snapshot.params.id;
+    this.projectionService.editProjection(projection, id, projectionId).toPromise()
+      .then(data=> {
+        this.toastr.clear();
+        this.toastr.success('Uspesno izvrsene izmene!');
+        const idPlace = this.route.snapshot.params.id;
+        const place = this.route.snapshot.params.place;
+        this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/repertories-in-place-detail');
+      })
   }
   exit() {
     const place = this.route.snapshot.params.place;
     this.id = this.route.snapshot.params.id;
     this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + this.id + '/repertories-in-place-detail')
+  }
+
+  changedCombo() {
+    const hall = this.halls.filter(el => el.name === this.hallName.value)[0]
+    if(hall) {
+      this.row = hall.row;
+      this.colum = hall.col;
+      this.showClassicSeats = true;
+    }else {
+      this.fullGrid = [];
+      this.showClassicSeats = false;
+    }
+  }
+
+  gridIsSet(event) {
+    this.fullGrid = event;
+    this.showClassicSeats = false;
   }
 
 }

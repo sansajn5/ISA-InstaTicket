@@ -119,6 +119,7 @@ export class OfferFormComponent implements OnInit{
           this.toastr.success('Uspesno dodat oglas!');
 
           this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+          this.fanZoneService.changeMessage('offers');
         })
 
     }
@@ -134,6 +135,7 @@ export class OfferFormComponent implements OnInit{
     //alert('DATUMM ' + document.getElementById('date_picker').getAttribute('date'));
 
     this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+    this.fanZoneService.changeMessage('offers');
 
   }
 

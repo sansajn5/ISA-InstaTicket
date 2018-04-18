@@ -41,6 +41,7 @@ export class BidComponent implements OnInit {
         this.toastr.success('Oglas prodat korisniku "' + data.bid.userName + '"');
 
         this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
+        this.fanZoneService.changeMessage('offers');
       })
   }
 

@@ -12,18 +12,21 @@ import {OfferRequestCardComponent} from "./offer-request-card/offer-request-card
 import {OfferCardComponent} from "./offer-card/offer-card.component";
 import {BidsComponent} from "./bids/bids.component";
 import {BidComponent} from "./bid/bid.component";
+import {ItemReservationComponent} from "./item-reservation/item-reservation.component";
 
 const FAN_ZONE_COMPONENTS = [
     FanZoneComponent,
     ItemFormComponent,
     FanZoneItems,
     ItemCardComponent,
+    ItemReservationComponent,
     OfferFormComponent,
     OffersRequestsComponent,
     OfferRequestCardComponent,
     OfferCardComponent,
     BidsComponent,
     BidComponent,
+
 ]
 
 @NgModule({

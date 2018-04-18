@@ -33,6 +33,7 @@ import {
 import {
   FooterComponent,
   HeaderComponent,
+  GridPickerComponent,
 } from './components';
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
 import {
@@ -67,6 +68,7 @@ const COMPONENTS = [
   SampleLayoutComponent,
   CardPickerComponent,
   NgbdDatepickerPopup,
+  GridPickerComponent,
 ];
 
 const PIPES = [
