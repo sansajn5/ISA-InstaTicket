@@ -21,25 +21,32 @@
        <ngbd-datepicker-popup id="date_picker"></ngbd-datepicker-popup>
       </div>
 
-      <label>Pocetak projekcije:</label>
-      <input name="startTime" class="form-control margin"  id="input-startTime"
-             placeholder="unesite vreme" [formControl]="startTime" >
+      <label>Pocetak projekcije (format xx:xx):</label>
+      <input name="startTimee" class="form-control margin"  id="input-startTime"
+             placeholder="unesite vreme" [formControl]="startTime"
+             [class.form-control-danger]="startTime.invalid && startTime.touched">
 
-      <label>Zavrsetak projekcije:</label>
+
+      <label>Zavrsetak projekcije (format xx:xx):</label>
       <input name="endTime" class="form-control margin"  id="input-endTime"
-             placeholder="unesite vreme" [formControl]="endTime" >
+             placeholder="unesite vreme" [formControl]="endTime"
+             [class.form-control-danger]="endTime.invalid && endTime.touched">
 
       <label>Cena karte:</label>
       <input name="regular" class="form-control margin"  id="input-regular"
-             placeholder="Unesite cenu karte" [formControl]="regular" >
-      
+             placeholder="Unesite cenu karte" [formControl]="regular"
+             [class.form-control-danger]="regular.invalid && regular.touched">
+
+
       <label>Cena VIP karte:</label>
       <input name="vip" class="form-control margin"  id="input-vip"
-      placeholder="Unesite cenu vip" [formControl]="vip" >
+      placeholder="Unesite cenu vip" [formControl]="vip"
+             [class.form-control-danger]="vip.invalid && vip.touched">
 
       <label>Popust na brzu kartu (%):</label>
       <input name="sale" class="form-control margin"  id="input-sale"
-      placeholder="Unesite popust za brze karte" [formControl]="sale" >
+      placeholder="Unesite popust za brze karte" [formControl]="sale"
+             [class.form-control-danger]="sale.invalid && sale.touched">
 
 
       <button class="btn btn-hero-success" (click)="confirmClick()" [disabled]="!form.valid"  >{{method_name}}</button>
@@ -49,23 +56,23 @@
           <div style="margin-top: 50px;">
             <div *ngIf="mode != 'add'" class="">
               <span style="height:25px; width:25px; border:1px black solid; background-color:red; display:inline-block"></span>
-              <h4 style="display:inline-block;">Rezervisano</h4> 
+              <h4 style="display:inline-block;">Rezervisano</h4>
             </div>
             <div class="">
                 <span style="height:25px; width:25px; border:1px black solid; background-color:green; display:inline-block"></span>
-                <h4 style="display:inline-block;">Sediste (slobodno)</h4> 
+                <h4 style="display:inline-block;">Sediste (slobodno)</h4>
             </div>
             <div class="">
                 <span style="height:25px; width:25px; border:1px black solid; background-color:gold; display:inline-block"></span>
-                <h4 style="display:inline-block;">VIP (slobodno)</h4> 
+                <h4 style="display:inline-block;">VIP (slobodno)</h4>
             </div>
             <div class="">
                 <span style="height:25px; width:25px; border:1px black solid; background-color:gray; display:inline-block"></span>
-                <h4 style="display:inline-block;">Prolaz</h4> 
+                <h4 style="display:inline-block;">Prolaz</h4>
             </div>
             <div class="">
                 <span style="height:25px; width:25px; border:1px black solid; background-color:orange; display:inline-block"></span>
-                <h4 style="display:inline-block;">Brza rezervacija (slobodno)</h4> 
+                <h4 style="display:inline-block;">Brza rezervacija (slobodno)</h4>
             </div>
           </div>
         </div>

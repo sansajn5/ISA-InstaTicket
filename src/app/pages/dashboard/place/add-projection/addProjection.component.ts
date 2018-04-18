@@ -46,12 +46,18 @@ export class AddProjectionComponent implements OnInit {
     this.form = this.fb.group({
       'eventName': ['', Validators.compose([Validators.required])],
       'hallName': ['', Validators.compose([Validators.required]) ],
-      'startTime': ['', Validators.compose([Validators.required])],
-      'endTime': ['', Validators.compose([Validators.required])],
-      'regular': ['', Validators.compose([Validators.required]) ],
-      'vip': ['', Validators.compose([Validators.required])],
-      'sale': ['', Validators.compose([Validators.required])]
-      
+      'startTime': ['', Validators.compose([Validators.required,
+        Validators.pattern('[0-9]{2}\:[0-9]{2}')]
+        )],
+      'endTime':  ['', Validators.compose([Validators.required,
+        Validators.pattern('[0-9]{2}\:[0-9]{2}')]
+      )],
+      'regular': ['', Validators.compose([Validators.required,
+        Validators.pattern('[0-9]+')]
+      )],
+      'vip': ['', Validators.compose([Validators.required, Validators.pattern('[0-9]+')])],
+      'sale': ['', Validators.compose([Validators.required, Validators.pattern('[0-9]+')])]
+
 
     })
     this.eventName = this.form.controls['eventName'];

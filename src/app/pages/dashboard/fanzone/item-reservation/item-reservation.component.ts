@@ -86,7 +86,7 @@ export class ItemReservationComponent implements OnInit {
 
   confirmReservation() {
 
-    if(this.selectedPlace.name === 'null') {
+   /* if(this.selectedPlace.name === 'null') {
 
       this.toastr.error('Niste uneli mesto preuzimanja rekvizita!');
     }
@@ -95,6 +95,6 @@ export class ItemReservationComponent implements OnInit {
       this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
       this.fanZoneService.changeMessage('official');
     }
-
+*/
   }
 }
