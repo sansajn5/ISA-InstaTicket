@@ -1,0 +1,23 @@
+<button class="btn btn-primary-outline pull-right basic_col" (click)="closeEditBidForm()"><i class="fa fa-times-circle"></i></button>
+
+<br>
+<br>
+<br>
+
+
+<div class="card-body">
+
+  <label class="card-text"><h4> Izmena ponude za oglas: <b>" <u>{{offerName}}</u> "</b></h4></label>
+  <br>
+  <form>
+    <div class="input-group">
+      <input [ngModel]="bidPrice" (keyup)="onKeyPrice($event)" type="text" class="form-control" placeholder="Unesite ponudu"
+             [formControl]="bPrice" id="input_offer_price"
+             [class.form-control-danger]="bPrice.invalid && bPrice.touched" autofocus>
+      <span class="input-group-btn">
+            <button  class="button_center btn btn-default" type="button" (click)="confirmEditing()" [class.btn-pulse]="submitted"
+                     [disabled]="!form.valid"> Potvrdi izmenu</button>
+          </span>
+    </div>
+  </form>
+</div>

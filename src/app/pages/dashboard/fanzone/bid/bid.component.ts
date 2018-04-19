@@ -16,6 +16,9 @@ export class BidComponent implements OnInit {
   @Input() sum: any;
   @Input() ordNum: any;
   @Input() username: any;
+  @Input() offerId: any;
+
+  editAllowed: boolean = false;
 
 
   constructor(private fanZoneService: FanZoneService,
@@ -26,6 +29,12 @@ export class BidComponent implements OnInit {
 
 
   ngOnInit() {
+
+    const logged = localStorage.getItem('user');
+
+    if(this.username == logged) {
+      this.editAllowed = true;
+    }
   }
 
 
@@ -43,6 +52,11 @@ export class BidComponent implements OnInit {
         this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items');
         this.fanZoneService.changeMessage('offers');
       })
+  }
+
+  editBid() {
+
+    this.router.navigateByUrl('dashboard/pages/fan-zone/fan-zone-items/offers/offers/bids/edit/' + this.offerId + '/' + this.id);
   }
 
 
