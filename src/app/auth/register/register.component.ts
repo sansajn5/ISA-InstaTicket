@@ -34,7 +34,7 @@ export class RegisterComponent {
     this.form = this.fb.group({
       'username': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(12)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
-      're-password': ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
+      'rePassword': ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
       'email': ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
       'name': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(12)])],
       'lastName': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(12)])],
@@ -45,7 +45,7 @@ export class RegisterComponent {
 
     this.username = this.form.controls['username'];
     this.password = this.form.controls['password'];
-    this.rePassword = this.form.controls['re-password'];
+    this.rePassword = this.form.controls['rePassword'];
     this.email = this.form.controls['email'];
     this.name = this.form.controls['name'];
     this.lastName = this.form.controls['lastName'];
