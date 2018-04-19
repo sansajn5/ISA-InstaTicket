@@ -21,6 +21,9 @@ export class ResourceComponent implements OnInit {
   sumAttendence;
   sumInCome;
 
+  data: any;
+  options: any;
+
   constructor (private route: ActivatedRoute,
                protected router: Router,
                private placeService: PlaceService,
@@ -38,6 +41,57 @@ export class ResourceComponent implements OnInit {
       const place = this.route.snapshot.params.place;
       this.router.navigateByUrl('dashboard/pages/statistic/' + place )
     }
+
+    this.setChart()
+  }
+
+  setChart() {
+    this.data = {
+      labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+      datasets: [{
+        data: [65, 59, 80, 81, 56, 55, 40],
+        label: 'Series A',
+        backgroundColor: NbColorHelper.hexToRgbA('blue', 0.8),
+      }, {
+        data: [28, 48, 40, 19, 86, 27, 90],
+        label: 'Series B',
+        backgroundColor: NbColorHelper.hexToRgbA('blue', 0.8),
+      }],
+    };
+
+    this.options = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+        labels: {
+          fontColor: 'red',
+        },
+      },
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: false,
+              color: 'red',
+            },
+            ticks: {
+              fontColor: 'red',
+            },
+          },
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: true,
+              color: 'red',
+            },
+            ticks: {
+              fontColor: 'red',
+            },
+          },
+        ],
+      },
+    };
   }
 
   back() {
