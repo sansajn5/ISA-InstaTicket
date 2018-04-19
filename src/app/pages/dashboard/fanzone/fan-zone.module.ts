@@ -13,6 +13,8 @@ import {OfferCardComponent} from "./offer-card/offer-card.component";
 import {BidsComponent} from "./bids/bids.component";
 import {BidComponent} from "./bid/bid.component";
 import {ItemReservationComponent} from "./item-reservation/item-reservation.component";
+import {BidFormComponent} from "./bid-form/bid-form.component";
+import {BidFormEditComponent} from "./bid-form-edit/bid-form-edit.component";
 
 const FAN_ZONE_COMPONENTS = [
     FanZoneComponent,
@@ -26,6 +28,8 @@ const FAN_ZONE_COMPONENTS = [
     OfferCardComponent,
     BidsComponent,
     BidComponent,
+    BidFormComponent,
+    BidFormEditComponent,
 
 ]
 

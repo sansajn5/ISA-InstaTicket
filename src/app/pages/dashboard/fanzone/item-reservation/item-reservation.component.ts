@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import {forEach} from "@angular/router/src/utils/collection";
 import {PlaceService} from "../../../../@theme/services/place.service";
-import {AbstractControl, FormBuilder, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ItemReservation} from "../../../../@theme/models/itemReservation.model";
 
 @Component({
@@ -22,6 +22,7 @@ export class ItemReservationComponent implements OnInit {
   image: string;
   userName: string;
 
+  public form: FormGroup;
   public placeName: AbstractControl;
 
 
@@ -36,7 +37,7 @@ export class ItemReservationComponent implements OnInit {
 
     this.form = this.fb.group({
 
-      'placeName': ['', Validators.compose([Validators.required])];
+      'placeName': ['', Validators.compose([Validators.required])],
     });
 
     this.placeName = this.form.controls['placeName'];
