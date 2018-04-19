@@ -34,16 +34,16 @@
     </div>
     <div class="form-group">
       <label for="input-password2" class="sr-only">Re-Password</label>
-      <input name="re-password" [formControl]="re-password" type="password" id="input-password2"
+      <input name="rePassword" [formControl]="rePassword" type="password" id="input-password2"
              class="form-control" placeholder="Ponovite sifru"
-             [class.form-control-danger]="re-password.invalid && re-password.touched"
+             [class.form-control-danger]="rePassword.invalid && rePassword.touched"
       >
-      <small class="form-text error" *ngIf="re-password.invalid && re-password.touched && re-password.errors?.required">
+      <small class="form-text error" *ngIf="rePassword.invalid && rePassword.touched && rePassword.errors?.required">
         Ponovljena Šifra je obavezna!
       </small>
       <small
         class="form-text error"
-        *ngIf="re-password.invalid && re-password.touched && (re-password.errors?.minlength || re-password.errors?.maxlength)">
+        *ngIf="rePassword.invalid && rePassword.touched && (rePassword.errors?.minlength || rePassword.errors?.maxlength)">
         Duzina sifre mora biti izmedju 6 i 12 karaktera
       </small>
     </div>
