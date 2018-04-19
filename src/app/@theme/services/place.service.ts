@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {Place} from "../models/place.model";
+import {AttendanceModel} from "../models/Attendance.model";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
@@ -72,5 +73,19 @@ export class PlaceService {
     const token = localStorage.getItem('token')
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
     return this.http.get(`${this.BASE_URL}/quick-seats/${id}` , { headers: headers});
+  }
+
+  getAttendence(id, attendance: AttendanceModel): Observable<any>{
+    const token = localStorage.getItem('token')
+    const body = JSON.stringify(attendance);
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.put(`${this.BASE_URL}/attendence/${id}`, body, { headers: headers})
+  }
+
+  getInCome(id, attendance: AttendanceModel): Observable<any>{
+    const token = localStorage.getItem('token')
+    const body = JSON.stringify(attendance);
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.put(`${this.BASE_URL}/in-come/${id}`, body, { headers: headers})
   }
 }
