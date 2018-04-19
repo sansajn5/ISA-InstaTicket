@@ -61,7 +61,7 @@ export class ResourceComponent implements OnInit {
           this.attendenceList = data.list;
           this.sumAttendence = data.sum;
           console.log( this.attendenceList);
-          console.log( this.sum)
+          console.log( this.sumAttendence)
           this.toastr.clear();
           this.toastr.success('Uspesno !');
         })
