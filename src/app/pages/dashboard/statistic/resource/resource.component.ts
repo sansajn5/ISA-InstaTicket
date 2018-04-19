@@ -46,8 +46,10 @@ export class ResourceComponent implements OnInit {
   getStatistic() {
     const mode = this.route.snapshot.params.mode;
     const id = this.route.snapshot.params.id;
-
-    if (mode == 'attendence') {
+    if(document.getElementById('date_picker_from').getAttribute('date') === 'undefined-undefined-undefined'){
+      this.toastr.clear();
+      this.toastr.success('Morate uneti pocetno vreme za dan ili period dana !');
+    } else if (mode == 'attendence') {
       const attendence = new AttendanceModel(
         document.getElementById('date_picker_from').getAttribute('date'),
         document.getElementById('date_picker_to').getAttribute('date'),
@@ -61,7 +63,7 @@ export class ResourceComponent implements OnInit {
         })
 
 
-    }else {
+    }else  {
       const attendence = new AttendanceModel(
         document.getElementById('date_picker_from').getAttribute('date'),
         document.getElementById('date_picker_to').getAttribute('date'),
