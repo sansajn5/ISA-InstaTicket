@@ -18,6 +18,8 @@ export class ResourceComponent implements OnInit {
   to: string;
   attendenceList = []
   inComeList = []
+  sumAttendence;
+  sumInCome;
 
   constructor (private route: ActivatedRoute,
                protected router: Router,
@@ -57,7 +59,9 @@ export class ResourceComponent implements OnInit {
       this.placeService.getAttendence(id, attendence).toPromise()
         .then(data=> {
           this.attendenceList = data.list;
-          console.log( this.attendenceList)
+          this.sumAttendence = data.sum;
+          console.log( this.attendenceList);
+          console.log( this.sum)
           this.toastr.clear();
           this.toastr.success('Uspesno !');
         })
@@ -71,7 +75,9 @@ export class ResourceComponent implements OnInit {
       this.placeService.getInCome(id, attendence).toPromise()
         .then(data=> {
           this.inComeList = data.list;
+          this.sumInCome = data.sum;
           console.log( this.inComeList)
+          console.log( this.sumInCome)
           this.toastr.clear();
           this.toastr.success('Uspesno !');
         })
