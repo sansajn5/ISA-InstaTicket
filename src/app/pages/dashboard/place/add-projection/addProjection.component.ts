@@ -30,6 +30,7 @@ export class AddProjectionComponent implements OnInit {
   projection: Projection;
   public method_name = 'DODAJ';
   public mode: String;
+  public date: AbstractControl;
 
   public showClassicSeats: boolean;
   public row = 0;
@@ -94,6 +95,7 @@ export class AddProjectionComponent implements OnInit {
         this.form.controls['regular'].setValue(data.projection.regularPrice);
         this.form.controls['vip'].setValue(data.projection.vipPrice);
         this.form.controls['sale'].setValue(data.projection.sale);
+        this.date = data.projection.date;
         this.fullGrid = data.seats;
         const hall = this.halls.filter(el => el.name === this.hallName.value)[0]
         this.row = hall.row;

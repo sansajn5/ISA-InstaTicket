@@ -2,19 +2,6 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// Import angular2-fusioncharts
-import { FusionChartsModule } from 'angular2-fusioncharts';
-
-// Import FusionCharts library and chart modules
-import * as FusionCharts from 'fusioncharts';
-import * as Charts from 'fusioncharts/fusioncharts.charts';
-import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
-
-// Pass the fusioncharts library and chart modules
-FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
-
-import { NgxEchartsModule } from 'ngx-echarts';
-// import { MyDatePickerModule } from 'mydatepicker';
 
 import {
   NbActionsModule,
@@ -42,8 +29,7 @@ import {
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CardPickerComponent } from './components/card-picker/card-picker.component';
-import {NgbdDatepickerPopup} from "./components/datepicker-popup/datepicker-popup";
-
+import {NgbdDatepickerPopup} from './components/datepicker-popup/datepicker-popup';
 
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
@@ -69,6 +55,7 @@ const COMPONENTS = [
   CardPickerComponent,
   NgbdDatepickerPopup,
   GridPickerComponent,
+
 ];
 
 const PIPES = [
@@ -90,7 +77,7 @@ const NB_THEME_PROVIDERS = [
 ];
 
 @NgModule({
-  imports: [...BASE_MODULES, ...NB_MODULES ,  FusionChartsModule ],
+  imports: [...BASE_MODULES, ...NB_MODULES ],
   exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
   declarations: [...COMPONENTS, ...PIPES],
 })

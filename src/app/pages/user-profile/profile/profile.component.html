@@ -15,7 +15,7 @@
                                   <i class="i-contact nb-phone"></i>
                                 </div>
                               </nb-tab>
-                              <nb-tab tabTitle="Rezervacije">
+                              <nb-tab tabTitle="Iskoriscene rezervacije">
                                 <div class="contact" *ngFor="let res of reservations">
                                   <div class="row" style="border-style: groove;border-width: 3px;margin-left: 15px;margin-right: 15px;margin-bottom: 15px">
                                     <div style=" display: inline-block; text-align: center;margin-top: 23px;margin-bottom: 7px" class="col-md-6">
@@ -28,11 +28,24 @@
 
                                     </div>
                                   </div>
-
-
-
                                 </div>
                             </nb-tab>
+
+                          <nb-tab tabTitle="Aktivne rezervacije">
+                            <div class="contact" *ngFor="let act of active">
+                              <div class="row" style="border-style: groove;border-width: 3px;margin-left: 15px;margin-right: 15px;margin-bottom: 15px">
+                                <div style=" display: inline-block; text-align: center;margin-top: 23px;margin-bottom: 7px" class="col-md-6">
+                                  <h4>{{ act.reservation.projection.event.name }}</h4>
+                                  <h5>{{ act.reservation.projection.event.place.name }}</h5>
+                                </div>
+                                <div class="col-md-6" style="display: inline-block;text-align: center">
+                                  <button class="btn  btn-hero-success" style="margin-top: 35px" >Odustani</button>
+
+                                </div>
+                              </div>
+                            </div>
+
+                          </nb-tab>
                             <nb-tab *ngIf="isMyAccount" tabTitle="Zahtevi za prijateljstvo">
                                 <div class="contact" *ngFor="let request of requests">
                                     <nb-user [name]="request.username" [title]="request.email" size="large"></nb-user>
@@ -40,6 +53,8 @@
                                   <i (click)="deleteFriendRequest(request.email)" class="fa fa-trash"></i>
                                 </div>
                             </nb-tab>
+
+
                         </nb-tabset>
                     </nb-card>
                 </div>

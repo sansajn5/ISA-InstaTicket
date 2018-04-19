@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
     public recentVisitis: any[];
     public requests: any[];
 
+    active = []
     reservations = []
 
     constructor(private spinnerService: NbSpinnerService,
@@ -128,6 +129,12 @@ export class ProfileComponent implements OnInit {
       this.reservationService.getUserReservation().subscribe(data => {
         this.reservations = data.reservations;
       })
+
+      this.reservationService.getUserActiveReservation().subscribe(data => {
+        this.active = data.reservations;
+      })
+      console.log(this.reservations)
+      console.log(this.active)
     }
 
   voteForPlace(id) {

@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   user: any;
 
   userMenu = [
-    { title: 'My Profile' },  
+    { title: 'Moj profil' },
     { title: 'Odjavi se' },
   ];
 
@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
   menuClick(event) {
     if(event.title === 'Odjavi se') {
       this.logout();
-    } else if (event.title === 'My Profile') {
+    } else if (event.title === 'Moj profil') {
       const username = localStorage.getItem('user');
       this.router.navigateByUrl(`dashboard/user/profile/${username}`);
     }
