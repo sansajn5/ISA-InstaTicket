@@ -17,7 +17,9 @@ export class HeaderComponent implements OnInit {
   user: any;
 
   userMenu = [
+
     { title: 'Moj profil' },
+
     { title: 'Odjavi se' },
   ];
 
@@ -48,6 +50,12 @@ export class HeaderComponent implements OnInit {
       this.router.navigateByUrl(`dashboard/user/profile/${username}`);
     }
   }
+
+  settingsClick() {
+
+    this.router.navigateByUrl(`dashboard/pages/admin-settings`);
+  }
+
 
   logout() {
     this.authService.logout();

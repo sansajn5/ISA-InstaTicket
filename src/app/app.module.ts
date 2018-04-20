@@ -22,6 +22,7 @@ import { UserProfileService } from "./@theme/services/user-profile.service";
 import {ReservationService} from "./@theme/services/reservation.service";
 import {VoteForPlaceService} from "./@theme/services/vote-for-place.service";
 import {VoteForEventService} from "./@theme/services/vote-for-event.service";
+import {AdminSettingsService} from "./@theme/services/admin-settings.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -52,6 +53,8 @@ import {VoteForEventService} from "./@theme/services/vote-for-event.service";
     ReservationService,
     VoteForPlaceService,
     VoteForEventService,
+    AdminSettingsService,
+
   ],
 })
 export class AppModule {

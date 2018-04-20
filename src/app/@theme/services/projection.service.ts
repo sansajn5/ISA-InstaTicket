@@ -11,6 +11,7 @@ const { headers: headers} = {
 export class ProjectionService {
 
   private BASE_URL = 'http://localhost:8090/api/projection';
+  private RESERVATION_URL = 'http://localhost:8090/api/reservation';
 
   constructor(private http: HttpClient) {
   }
@@ -43,5 +44,12 @@ export class ProjectionService {
     const body = JSON.stringify(projection);
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
     return this.http.post(`${this.BASE_URL}/${id}/projection/${projectionId}`, body , { headers: headers})
+  }
+
+  reserveTickets(friends,seats,projectionId,id) {
+    const token = localStorage.getItem('token')
+    const body = JSON.stringify({invatations: friends, seats: seats});
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.post(`${this.RESERVATION_URL}/${id}/projection/${projectionId}/reserve`, body , { headers: headers})
   }
 }
