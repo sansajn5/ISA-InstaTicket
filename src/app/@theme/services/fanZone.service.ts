@@ -43,9 +43,11 @@ export class FanZoneService {
 
   addNewItem(item: Item): Observable<any>{
 
+    const token = localStorage.getItem('token')
     const body = JSON.stringify(item);
 
-    return this.http.post(`${this.BASE_URL}/new-item`, body, httpOptions).map(data => data);
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.post(`${this.BASE_URL}/new-item`, body, { headers: headers}).map(data => data);
   }
 
   deleteItem(id: any): Observable<any> {
@@ -73,9 +75,11 @@ export class FanZoneService {
 
   addOffer(offer: Offer): Observable<any> {
 
+    const token = localStorage.getItem('token')
     const body = JSON.stringify(offer);
 
-    return this.http.post(`${this.BASE_URL}/new-offer`, body, httpOptions).map(data => data);
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.post(`${this.BASE_URL}/new-offer`, body,{ headers: headers} ).map(data => data);
   }
 
 

@@ -15,7 +15,7 @@
     <div *ngIf="show_items" class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="official-shop-tab">
 
       <br>
-      <button (click)="addNewItem()"  class="btn btn-hero-info" type="button"><i class="fa fa-plus-circle"></i> Dodaj rekvizit </button>
+      <button *ngIf="actionAllowed" (click)="addNewItem()" class="btn btn-hero-info" type="button"><i class="fa fa-plus-circle"></i> Dodaj rekvizit </button>
       <br>
 
       <br>
@@ -33,7 +33,7 @@
     <div *ngIf="show_offers" class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="offers-tab">
 
         <br>
-        <button  (click)="addNewOffer()" class="btn btn-hero-info" type="button"><i class="fa fa-plus-circle"></i> Dodaj oglas </button> <button (click)="offersRequestsClick()" class="btn btn-hero-primary" type="button"><i class="fa fa-question-circle"></i> Zahtevi </button>
+        <button  (click)="addNewOffer()" class="btn btn-hero-info" type="button"><i class="fa fa-plus-circle"></i> Dodaj oglas </button> <button *ngIf="actionAllowed" (click)="offersRequestsClick()" class="btn btn-hero-primary" type="button"><i class="fa fa-question-circle"></i> Zahtevi </button>
         <br>
         <br>
 

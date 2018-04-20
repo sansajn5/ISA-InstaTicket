@@ -14,7 +14,7 @@
   <nb-action>
     <nb-user [menu]="userMenu" [name]="user" (menuClick)="menuClick($event)" ></nb-user>
   </nb-action>
-  <nb-action class="control-item" icon="nb-gear" (click)="settingsClick()" ></nb-action>
+  <nb-action  *ngIf="settingsAllowed" class="control-item" icon="nb-gear" (click)="settingsClick()" ></nb-action>
   <nb-action class="control-item" disabled icon="nb-notifications"></nb-action>
   <nb-action class="control-item" icon="nb-email"></nb-action>
 
