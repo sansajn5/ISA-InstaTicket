@@ -1,0 +1,15 @@
+<button class="btn btn-primary-outline pull-right basic_col" (click)="close()"><i class="fa fa-times-circle"></i></button>
+
+<br>
+
+<div>
+  <label><h3>Administratori za: "<u> {{name}} </u>"</h3></label>
+</div>
+
+<br>
+
+<div *ngFor="let user of users">
+
+  <ngx-admin-place-card placeId="{{id}}" id="{{user.id}}" username="{{user.username}}"></ngx-admin-place-card>
+
+</div>

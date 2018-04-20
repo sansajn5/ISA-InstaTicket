@@ -10,6 +10,9 @@ import {AdminSettingsPlaceComponent} from "./admin-settings-place/admin-settings
 import {AdminSettingsFanzoneComponent} from "./admin-settings-fanzone/admin-settings-fanzone.component";
 import {AdminSystemCardComponent} from "./admin-system-card/admin-system-card.component";
 import {AdminFanZoneCardComponent} from "./admin-fanzone-card/admin-fanzone-card.component";
+import {AdminPlaceButtonComponent} from "./admin-place-button/admin-place-button.component";
+import {AdminSettingsPlaceSpecificComponent} from "./admin-settings-place-specific/admin-settings-place-specific.component";
+import {AdminPlaceCardComponent} from "./admin-place-card/admin-place-card.component";
 
 const ADMIN_SETTINGS_COMPONENTS = [
   AdminSettingsComponent,
@@ -19,6 +22,9 @@ const ADMIN_SETTINGS_COMPONENTS = [
   AdminSettingsFanzoneComponent,
   AdminSystemCardComponent,
   AdminFanZoneCardComponent,
+  AdminPlaceButtonComponent,
+  AdminSettingsPlaceSpecificComponent,
+  AdminPlaceCardComponent,
 
 ]
 

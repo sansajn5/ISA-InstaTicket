@@ -7,7 +7,7 @@ import {AdminSettingsService} from "../../../../@theme/services/admin-settings.s
 
 
 @Component({
-  selector: 'ngx-admin-fanzone-place',
+  selector: 'ngx-admin-settings-fanzone',
   templateUrl: './admin-settings-fanzone.component.html',
   styleUrls: ['./admin-settings-fanzone.component.scss']
 })
