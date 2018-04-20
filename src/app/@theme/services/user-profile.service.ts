@@ -57,4 +57,11 @@ export class UserProfileService {
         const body = JSON.stringify({email: email});
         return this.http.post(`${this.BASE_URL}/user/accept-friend-request`, body, { headers: headers });
     }
+
+    getMyReservationInvitation(): Observable<any> {
+        const token = localStorage.getItem('token')
+        const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+        return this.http.get(`${this.BASE_URL}/user/get-reservation-invitations`, { headers: headers });
+    }
+    }
 }

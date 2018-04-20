@@ -18,8 +18,8 @@
 
 
       <label>Datum:</label>
-      <div *ngIf="m">
-        <label style="color: black">Prethodno izabrani datum :{{date}}</label>
+      <div>
+      <label *ngIf="m" style="color: black">Prethodno uneti datum projekcije : {{date}}</label>
       </div>
       <div  style="margin-bottom: 15px" >
        <ngbd-datepicker-popup id="date_picker" name="date"></ngbd-datepicker-popup>
@@ -47,8 +47,8 @@
       placeholder="Unesite cenu vip" [formControl]="vip"
              [class.form-control-danger]="vip.invalid && vip.touched">
 
-      <label>Popust na brzu kartu (%):</label>
-      <input name="sale" class="form-control margin"  id="input-sale"
+      <label>Popust na brzu kartu (:</label>
+      <input name="sale" class="form-control margin"  id="input-quick"
       placeholder="Unesite popust za brze karte" [formControl]="sale"
              [class.form-control-danger]="sale.invalid && vip.touched">
 
