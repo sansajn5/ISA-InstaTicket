@@ -22,7 +22,7 @@ export class RequestPasswordComponent {
               private spinnerService: NbSpinnerService,
               private toastr: ToastrService) {
     this.form = this.fb.group({
-      'email': ['', Validators.compose([Validators.required])],
+      'email': ['', Validators.compose([Validators.required , Validators.minLength(5), Validators.maxLength(20)])],
      });
     this.email = this.form.controls['email'];
 

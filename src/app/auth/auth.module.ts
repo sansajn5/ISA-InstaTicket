@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import {RegisterComponent} from './register/register.component';
 import {AccountActivationComponent} from './account-activation/account-activation.component';
 import {RequestPasswordComponent} from "./request-password/request-password.component";
+import {ChangePasswordComponent} from "./change-password/change-password.component";
 
 const AUTH_COMPONENTS = [
   AuthComponent,
@@ -13,6 +14,7 @@ const AUTH_COMPONENTS = [
   RegisterComponent,
   AccountActivationComponent,
   RequestPasswordComponent,
+  ChangePasswordComponent,
 ];
 
 @NgModule({
