@@ -12,6 +12,10 @@ export class FanZoneItems implements OnInit{
   items = []
   offers = []
 
+  roles: any;
+
+  actionAllowed: boolean = false;
+
   message: string = 'official';
 
   public class_tab1 = 'nav-link';
@@ -60,6 +64,22 @@ export class FanZoneItems implements OnInit{
     }
 
     this.message = 'official';
+
+    this.roles = localStorage.getItem('role')
+
+    var rolesSliced = this.roles.slice(1, -1);
+    var rolesSplited = rolesSliced.split(',');
+
+    for(let role of rolesSplited){
+
+      if (role.replace(/\s/g, '') === 'FANZONE_ADMIN') {
+
+        this.actionAllowed = true;
+      }
+
+    }
+
+
 
   }
 

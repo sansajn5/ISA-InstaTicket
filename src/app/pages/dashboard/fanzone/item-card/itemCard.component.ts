@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 import { Router } from '@angular/router';
 import {FanZoneService} from "../../../../@theme/services/fanZone.service";
 import {ToastrService} from "ngx-toastr";
@@ -11,7 +11,7 @@ import {ToastrService} from "ngx-toastr";
 })
 
 
-export class ItemCardComponent {
+export class ItemCardComponent implements OnInit {
 
   @Input() image: string;
   @Input() name: string;
@@ -22,6 +22,9 @@ export class ItemCardComponent {
   @Output() refreshList:EventEmitter<any> = new EventEmitter()
 
   public visible = true;
+
+  actionAllowed: boolean = false;
+  roles: any;
 
   constructor(private fanZoneService: FanZoneService,
               protected router: Router,
@@ -34,6 +37,19 @@ export class ItemCardComponent {
 
   ngOnInit() {
 
+    this.roles = localStorage.getItem('role')
+
+    var rolesSliced = this.roles.slice(1, -1);
+    var rolesSplited = rolesSliced.split(',');
+
+    for(let role of rolesSplited){
+
+      if (role.replace(/\s/g, '') === 'FANZONE_ADMIN') {
+
+        this.actionAllowed = true;
+      }
+
+    }
 
   }
 
