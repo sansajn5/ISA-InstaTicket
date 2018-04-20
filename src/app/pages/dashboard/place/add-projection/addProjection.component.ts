@@ -36,6 +36,7 @@ export class AddProjectionComponent implements OnInit {
   public row = 0;
   public colum = 0;
   public fullGrid = [];
+  public m: boolean;
 
   constructor(protected router: Router,
               private route: ActivatedRoute,
@@ -85,6 +86,7 @@ export class AddProjectionComponent implements OnInit {
 
     this.mode = this.route.snapshot.params.mode;
     if ( this.mode == 'edit') {
+      this.m = true;
       const id = this.route.snapshot.params.id;
       this.projectionService.getProjection(idProjection).subscribe(data => {
         this.method_name = 'IZMENI';
@@ -95,7 +97,7 @@ export class AddProjectionComponent implements OnInit {
         this.form.controls['regular'].setValue(data.projection.regularPrice);
         this.form.controls['vip'].setValue(data.projection.vipPrice);
         this.form.controls['sale'].setValue(data.projection.sale);
-        this.date = data.projection.date;
+        this.date = (data.projection.date);
         this.fullGrid = data.seats;
         const hall = this.halls.filter(el => el.name === this.hallName.value)[0]
         this.row = hall.row;
@@ -103,7 +105,7 @@ export class AddProjectionComponent implements OnInit {
         this.showClassicSeats = true;
       })
     }else if (this.mode == 'add') {
-
+      this.m = false;
     }
     else {
       this.router.navigateByUrl('dashboard/pages/place')

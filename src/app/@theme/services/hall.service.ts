@@ -16,7 +16,9 @@ export class HallService {
   }
 
   getHallsInPlace(id): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/${id}/halls-in-place` )
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/${id}/halls-in-place` ,{ headers: headers})
   }
 
   createHall(hall: Hall , id): Observable<any> {
@@ -41,6 +43,9 @@ export class HallService {
   }
 
   getHall(id): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/hall/${id}` )
+
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/hall/${id}` , { headers: headers})
   }
 }

@@ -16,12 +16,15 @@ export class RepertoryService {
   }
 
   getAllProjectionInRepertory (id): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/all-projections/${id}` )
+
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/all-projections/${id}` , { headers: headers};
   }
 
   deleteRepertory(id: any): Observable<any> {
     const token = localStorage.getItem('token')
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.delete(`${this.BASE_URL}/repertory/` + id,{ headers: headers});
+    return this.http.delete(`${this.BASE_URL}/repertory/` + id ,{ headers: headers});
   }
 }
