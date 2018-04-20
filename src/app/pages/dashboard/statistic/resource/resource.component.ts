@@ -23,6 +23,11 @@ export class ResourceComponent implements OnInit {
 
   data: any;
   options: any;
+  attendence = false;
+  inCome = false;
+  dataInCome : any;
+  optionsInCome: any;
+  today: number = Date.now();
 
   constructor (private route: ActivatedRoute,
                protected router: Router,
@@ -40,22 +45,23 @@ export class ResourceComponent implements OnInit {
     } else {
       const place = this.route.snapshot.params.place;
       this.router.navigateByUrl('dashboard/pages/statistic/' + place )
-    }
-
-    this.setChart()
+    }.console.log(this.today)
   }
 
   setChart() {
+    let labes = [];
+    let dates = [];
+    this.attendenceList.forEach( elementUnizu => {
+      labes.push(elementUnizu.date)
+      dates.push(elementUnizu.attendence)
+    })
+
     this.data = {
-      labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
-      datasets: [{
-        data: [65, 59, 80, 81, 56, 55, 40],
-        label: 'Series A',
-        backgroundColor: NbColorHelper.hexToRgbA('blue', 0.8),
-      }, {
-        data: [28, 48, 40, 19, 86, 27, 90],
-        label: 'Series B',
-        backgroundColor: NbColorHelper.hexToRgbA('blue', 0.8),
+        labels: labes,
+          datasets: [{
+        data: dates,
+            label: 'Posecenost' ,
+        backgroundColor: 'rgba(0, 0, 255, 0.6)',
       }],
     };
 
@@ -64,7 +70,8 @@ export class ResourceComponent implements OnInit {
       responsive: true,
       legend: {
         labels: {
-          fontColor: 'red',
+          fontColor: 'black',
+          tooltipFontWeight: 5 ,
         },
       },
       scales: {
@@ -72,10 +79,11 @@ export class ResourceComponent implements OnInit {
           {
             gridLines: {
               display: false,
-              color: 'red',
+              color: 'black',
             },
             ticks: {
-              fontColor: 'red',
+              fontColor: 'black',
+
             },
           },
         ],
@@ -83,10 +91,72 @@ export class ResourceComponent implements OnInit {
           {
             gridLines: {
               display: true,
-              color: 'red',
+              color: 'black',
             },
             ticks: {
-              fontColor: 'red',
+              fontColor: 'black',
+              beginAtZero: true,
+              max: 10,
+              min: 0,
+              stepSize: 5
+            },
+          },
+        ],
+      },
+    };
+  }
+
+  setChartInCome() {
+    let labes = [];
+    let dates = [];
+    this.inComeList.forEach( elementUnizu => {
+      labes.push(elementUnizu.date)
+      dates.push(elementUnizu.attendence)
+    })
+
+    this.dataInCome = {
+      labels: labes,
+      datasets: [{
+        data: dates,
+        label: 'Posecenost' ,
+        backgroundColor: 'rgba(0, 0, 255, 0.6)',
+      }],
+    };
+
+    this.optionsInCome = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+        labels: {
+          fontColor: 'black',
+          tooltipFontWeight: 5 ,
+        },
+      },
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: false,
+              color: 'black',
+            },
+            ticks: {
+              fontColor: 'black',
+
+            },
+          },
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: true,
+              color: 'black',
+            },
+            ticks: {
+              fontColor: 'black',
+              beginAtZero: true,
+              max: 3000,
+              min: 0,
+              stepSize: 1000
             },
           },
         ],
@@ -118,8 +188,10 @@ export class ResourceComponent implements OnInit {
           console.log( this.sumAttendence)
           this.toastr.clear();
           this.toastr.success('Uspesno !');
+          this.setChart()
+          this.attendence = true;
+          this.inCome = false;
         })
-
 
     }else  {
       const attendence = new AttendanceModel(
@@ -134,6 +206,9 @@ export class ResourceComponent implements OnInit {
           console.log( this.sumInCome)
           this.toastr.clear();
           this.toastr.success('Uspesno !');
+          this.setChartInCome();
+          this.attendence = false;
+          this.inCome = true;
         })
     }
   }
