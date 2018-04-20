@@ -63,5 +63,5 @@ export class UserProfileService {
         const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
         return this.http.get(`${this.BASE_URL}/user/get-reservation-invitations`, { headers: headers });
     }
-    }
+    
 }
