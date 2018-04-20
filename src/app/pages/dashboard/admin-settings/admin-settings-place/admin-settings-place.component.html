@@ -5,3 +5,9 @@
 <div>
   <label><h3>Administratori bioskopa i pozorista: </h3></label>
 </div>
+
+<br>
+
+<div *ngFor="let place of places">
+  <ngx-admin-place-button id="{{place.id}}" name="{{place.name}}"> </ngx-admin-place-button>
+</div>

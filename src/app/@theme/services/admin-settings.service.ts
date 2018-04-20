@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Observable} from "rxjs/Observable";
+import {AdminRoleModel} from "../models/adminRole.model";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
@@ -41,6 +42,31 @@ export class AdminSettingsService {
 
   deleteFanZoneAdminRole(id: any): Observable<any> {
     return this.http.put(`${this.BASE_URL}/delete-fanzone-admin-role/` + id, httpOptions).map(data => data);
+  }
+
+  addPlaceAdminRole(adminRole: AdminRoleModel, id: any): Observable<any> {
+
+    const token = localStorage.getItem('token')
+    const body = JSON.stringify(adminRole);
+
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.post(`${this.BASE_URL}/place-admin-role/` + id, body, { headers: headers}).map(data => data)
+
+  }
+
+  getEmployedPlaceAdmins(id: any): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/employed-place-admins/` + id, httpOptions).map(data => data);
+  }
+
+
+  deletePlaceAdminRole(adminRole: AdminRoleModel, id: any): Observable<any> {
+
+    const token = localStorage.getItem('token')
+    const body = JSON.stringify(adminRole);
+
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.post(`${this.BASE_URL}/delete-place-admin-role/` + id, body, { headers: headers}).map(data => data)
+
   }
 
 }

@@ -3,6 +3,7 @@ import { FanZoneService } from "../../../../@theme/services/fanZone.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import {forEach} from "@angular/router/src/utils/collection";
+import {PlaceService} from "../../../../@theme/services/place.service";
 
 
 @Component({
@@ -12,8 +13,11 @@ import {forEach} from "@angular/router/src/utils/collection";
 })
 export class AdminSettingsPlaceComponent implements OnInit {
 
+  places: any = [];
 
-  constructor(private fanZoneService: FanZoneService,
+
+  constructor(private placeService: PlaceService,
+              private fanZoneService: FanZoneService,
               protected router: Router,
               private toastr: ToastrService,
               private route: ActivatedRoute,) {
@@ -23,6 +27,27 @@ export class AdminSettingsPlaceComponent implements OnInit {
   ngOnInit() {
 
 
+    this.placeService.getCinemas().toPromise()
+      .then(data=>{
+
+        for(let place of data.cinemas){
+          this.places.push(place);
+
+        }
+
+
+      })
+
+    this.placeService.getTheathres().toPromise()
+      .then(data=>{
+
+        for(let place of data.theaters){
+          this.places.push(place);
+
+        }
+
+
+      })
   }
 
   close(){
