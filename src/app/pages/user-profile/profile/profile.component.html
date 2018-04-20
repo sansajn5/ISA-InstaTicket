@@ -6,6 +6,13 @@
                     <img class="img-thumbnail" src="{{profileImage}}">
                     <button *ngIf="!isMyAccount" class="col-md-10 btn btn-hero-info" (click)="addFriend(profileUser.email)">Add Friend</button>
                 </div>
+
+                <br>
+                <div>
+                  <ngx-rank points="{{points}}"></ngx-rank>
+                </div>
+                <br>
+
                 <div class="row" style="margin-top:15px;">
                     <nb-card [size]="large" class="col-md-10">
                         <nb-tabset fullWidth>

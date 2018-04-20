@@ -23,6 +23,8 @@ export class ProfileComponent implements OnInit {
     public recentVisitis: any[];
     public requests: any[];
 
+    public points;
+
     active = []
     reservations = []
 
@@ -48,10 +50,13 @@ export class ProfileComponent implements OnInit {
             this.spinnerService.registerLoader(this.userProfileService.getProfileInfo(null).toPromise()
                 .then(data => {
                     this.profileUser = new User(data.username, null , null, data.firstName, data.lastName, data.email, data.city, data.address, data.number);
+                    this.points = data.points;
             }));
             this.spinnerService.load();
 
             this.checkFriendRequestList();
+
+
 
             this.recentVisitis = [
                 {user: 'nick', type: 'mobile'},
