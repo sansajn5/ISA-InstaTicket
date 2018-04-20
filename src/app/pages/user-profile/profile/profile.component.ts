@@ -133,8 +133,7 @@ export class ProfileComponent implements OnInit {
       this.reservationService.getUserActiveReservation().subscribe(data => {
         this.active = data.reservations;
       })
-      console.log(this.reservations)
-      console.log(this.active)
+      this.setReservationInvitations();
     }
 
   voteForPlace(id) {
@@ -146,5 +145,11 @@ export class ProfileComponent implements OnInit {
     const username = this.route.snapshot.params.username
     this.router.navigateByUrl('dashboard/user/profile/' + username + '/vote-for-event/' + id +
     '/event/' + idEvent);
+  }
+
+  setReservationInvitations() {
+      this.userProfileService.getMyReservationInvitation().toPromise().then(data => {
+          console.log(data);
+      })
   }
 }

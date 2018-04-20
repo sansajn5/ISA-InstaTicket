@@ -15,6 +15,10 @@ export class HeaderComponent implements OnInit {
   @Input() position = 'normal';
 
   user: any;
+  roles: any;
+
+
+  settingsAllowed: boolean = false;
 
   userMenu = [
 
@@ -31,6 +35,21 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.user = localStorage.getItem('user');
+
+    this.roles = localStorage.getItem('role')
+
+    var rolesSliced = this.roles.slice(1, -1);
+    var rolesSplited = rolesSliced.split(',');
+
+    for(let role of rolesSplited){
+
+      if (role.replace(/\s/g, '') === 'SUPER_ADMIN') {
+
+        this.settingsAllowed = true;
+      }
+
+    }
+
   }
 
   toggleSidebar(): boolean {
