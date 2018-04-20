@@ -63,5 +63,19 @@ export class UserProfileService {
         const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
         return this.http.get(`${this.BASE_URL}/user/get-reservation-invitations`, { headers: headers });
     }
+
+    acceptReservationInvitation(id: string): Observable<any> {
+        const token = localStorage.getItem('token')
+        const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+        const body = JSON.stringify({id: id, response: true});
+        return this.http.put(`${this.BASE_URL}/user/set-reservation-invitation`, body, { headers: headers });
+    }
+
+    declineReservationInvitation(id): Observable<any> {
+        const token = localStorage.getItem('token')
+        const body = JSON.stringify({id: id, response: false});
+        const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+        return this.http.put(`${this.BASE_URL}/user/set-reservation-invitation`,body, { headers: headers });
+    }
     
 }
