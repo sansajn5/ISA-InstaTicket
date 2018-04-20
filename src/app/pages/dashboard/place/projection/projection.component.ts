@@ -137,8 +137,11 @@ export class ProjectionComponent implements OnInit {
     let array = [];
     if(localStorage.getItem('inv')){
       array = JSON.parse(localStorage.getItem('inv'));
-      array.push(email);
-      localStorage.setItem('inv',JSON.stringify(array));
+      if(array.indexOf(email) != -1) {
+        alert('ops');
+        array.push(email);
+        localStorage.setItem('inv',JSON.stringify(array));
+      }
     } else {
       array.push(email);
       localStorage.setItem('inv', JSON.stringify(array));

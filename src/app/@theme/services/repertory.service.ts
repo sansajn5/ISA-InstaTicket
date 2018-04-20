@@ -19,7 +19,7 @@ export class RepertoryService {
 
     const token = localStorage.getItem('token')
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
-    return this.http.get(`${this.BASE_URL}/all-projections/${id}` , { headers: headers};
+    return this.http.get(`${this.BASE_URL}/all-projections/${id}` , { headers: headers});
   }
 
   deleteRepertory(id: any): Observable<any> {
