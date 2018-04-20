@@ -18,6 +18,16 @@ export class ResourceComponent implements OnInit {
   to: string;
   attendenceList = []
   inComeList = []
+  sumAttendence;
+  sumInCome;
+
+  data: any;
+  options: any;
+  attendence = false;
+  inCome = false;
+  dataInCome : any;
+  optionsInCome: any;
+  today: number = Date.now();
 
   constructor (private route: ActivatedRoute,
                protected router: Router,
@@ -35,7 +45,123 @@ export class ResourceComponent implements OnInit {
     } else {
       const place = this.route.snapshot.params.place;
       this.router.navigateByUrl('dashboard/pages/statistic/' + place )
-    }
+    }.console.log(this.today)
+  }
+
+  setChart() {
+    let labes = [];
+    let dates = [];
+    this.attendenceList.forEach( elementUnizu => {
+      labes.push(elementUnizu.date)
+      dates.push(elementUnizu.attendence)
+    })
+
+    this.data = {
+        labels: labes,
+          datasets: [{
+        data: dates,
+            label: 'Posecenost' ,
+        backgroundColor: 'rgba(0, 0, 255, 0.6)',
+      }],
+    };
+
+    this.options = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+        labels: {
+          fontColor: 'black',
+          tooltipFontWeight: 5 ,
+        },
+      },
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: false,
+              color: 'black',
+            },
+            ticks: {
+              fontColor: 'black',
+
+            },
+          },
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: true,
+              color: 'black',
+            },
+            ticks: {
+              fontColor: 'black',
+              beginAtZero: true,
+              max: 10,
+              min: 0,
+              stepSize: 5
+            },
+          },
+        ],
+      },
+    };
+  }
+
+  setChartInCome() {
+    let labes = [];
+    let dates = [];
+    this.inComeList.forEach( elementUnizu => {
+      labes.push(elementUnizu.date)
+      dates.push(elementUnizu.attendence)
+    })
+
+    this.dataInCome = {
+      labels: labes,
+      datasets: [{
+        data: dates,
+        label: 'Posecenost' ,
+        backgroundColor: 'rgba(0, 0, 255, 0.6)',
+      }],
+    };
+
+    this.optionsInCome = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+        labels: {
+          fontColor: 'black',
+          tooltipFontWeight: 5 ,
+        },
+      },
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: false,
+              color: 'black',
+            },
+            ticks: {
+              fontColor: 'black',
+
+            },
+          },
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: true,
+              color: 'black',
+            },
+            ticks: {
+              fontColor: 'black',
+              beginAtZero: true,
+              max: 3000,
+              min: 0,
+              stepSize: 1000
+            },
+          },
+        ],
+      },
+    };
   }
 
   back() {
@@ -46,8 +172,10 @@ export class ResourceComponent implements OnInit {
   getStatistic() {
     const mode = this.route.snapshot.params.mode;
     const id = this.route.snapshot.params.id;
-
-    if (mode == 'attendence') {
+    if(document.getElementById('date_picker_from').getAttribute('date') === 'undefined-undefined-undefined'){
+      this.toastr.clear();
+      this.toastr.success('Morate uneti pocetno vreme za dan ili period dana !');
+    } else if (mode == 'attendence') {
       const attendence = new AttendanceModel(
         document.getElementById('date_picker_from').getAttribute('date'),
         document.getElementById('date_picker_to').getAttribute('date'),
@@ -55,13 +183,17 @@ export class ResourceComponent implements OnInit {
       this.placeService.getAttendence(id, attendence).toPromise()
         .then(data=> {
           this.attendenceList = data.list;
-          console.log( this.attendenceList)
+          this.sumAttendence = data.sum;
+          console.log( this.attendenceList);
+          console.log( this.sumAttendence)
           this.toastr.clear();
           this.toastr.success('Uspesno !');
+          this.setChart()
+          this.attendence = true;
+          this.inCome = false;
         })
 
-
-    }else {
+    }else  {
       const attendence = new AttendanceModel(
         document.getElementById('date_picker_from').getAttribute('date'),
         document.getElementById('date_picker_to').getAttribute('date'),
@@ -69,9 +201,14 @@ export class ResourceComponent implements OnInit {
       this.placeService.getInCome(id, attendence).toPromise()
         .then(data=> {
           this.inComeList = data.list;
+          this.sumInCome = data.sum;
           console.log( this.inComeList)
+          console.log( this.sumInCome)
           this.toastr.clear();
           this.toastr.success('Uspesno !');
+          this.setChartInCome();
+          this.attendence = false;
+          this.inCome = true;
         })
     }
   }

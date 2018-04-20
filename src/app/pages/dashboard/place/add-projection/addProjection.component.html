@@ -18,7 +18,7 @@
 
       <label>Datum:</label>
       <div  style="margin-bottom: 15px" >
-       <ngbd-datepicker-popup id="date_picker"></ngbd-datepicker-popup>
+       <ngbd-datepicker-popup id="date_picker" name="date"></ngbd-datepicker-popup>
       </div>
 
       <label>Pocetak projekcije (format xx:xx):</label>
@@ -46,7 +46,7 @@
       <label>Popust na brzu kartu (%):</label>
       <input name="sale" class="form-control margin"  id="input-sale"
       placeholder="Unesite popust za brze karte" [formControl]="sale"
-             [class.form-control-danger]="sale.invalid && sale.touched">
+             [class.form-control-danger]="sale.invalid && vip.touched">
 
 
       <button class="btn btn-hero-success" (click)="confirmClick()" [disabled]="!form.valid"  >{{method_name}}</button>

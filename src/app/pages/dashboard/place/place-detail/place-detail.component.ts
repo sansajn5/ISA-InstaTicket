@@ -55,8 +55,9 @@ export class PlaceComponent implements OnInit {
     this.placeService.getQuickSeats(id).subscribe(data=>{
       this.quickSeats = data.seats;
     })
-
   }
+
+
 
   getEvents() {
     const id = this.route.snapshot.params.id;

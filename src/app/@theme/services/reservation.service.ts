@@ -20,4 +20,10 @@ export class ReservationService {
     return this.http.get(`${this.BASE_URL}/my-reservations`,{ headers: headers});
   }
 
+  getUserActiveReservation(): Observable<any> {
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/active/my-reservations`,{ headers: headers});
+  }
+
 }

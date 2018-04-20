@@ -26,8 +26,7 @@ export class NgbdDatepickerPopup {
   public dateInput: AbstractControl;
 
   constructor(private fb: FormBuilder,
-              private cdRef:ChangeDetectorRef,
-              ){
+              private cdRef: ChangeDetectorRef ){
 
     this.form = this.fb.group({
       'dateInput' : [''],
