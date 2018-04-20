@@ -85,6 +85,9 @@ import {Place} from "../../../../@theme/models/place.model";
         this.toastr.success('Uspesno dodat bioskop ili pozoriste!');
 
         this.router.navigateByUrl('dashboard/pages');
+      })  .catch(
+      error => {
+        this.toastr.error('Doslo je do greske na serveru! Proverite da li ste uneli vec postojeci naziv!', 'Greska' );
       })
   }
 
@@ -102,6 +105,9 @@ import {Place} from "../../../../@theme/models/place.model";
         this.toastr.success('Uspesno izmenjeno!');
         const placeID = this.route.snapshot.params.place;
         this.router.navigateByUrl('dashboard/pages/place/' + placeID);
+      }) .catch(
+      error => {
+        this.toastr.error('Doslo je do greske na serveru! Proverite da li ste uneli vec postojeci naziv!', 'Greska' );
       })
   }
 

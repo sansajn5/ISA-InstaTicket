@@ -7,6 +7,6 @@ export class Projection {
               public seatDTO: any,
               public regularPrice: number,
               public vipPrice: number,
-              public balconyPrice: number
+              public balconyPrice: number,
   ) {}
 }

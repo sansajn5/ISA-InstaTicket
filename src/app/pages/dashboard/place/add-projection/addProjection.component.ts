@@ -103,6 +103,7 @@ export class AddProjectionComponent implements OnInit {
         this.row = hall.row;
         this.colum = hall.col;
         this.showClassicSeats = true;
+        this.m = true;
       })
     }else if (this.mode == 'add') {
       this.m = false;
@@ -147,6 +148,9 @@ export class AddProjectionComponent implements OnInit {
         const idPlace = this.route.snapshot.params.id;
         const place = this.route.snapshot.params.place;
         this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/repertories-in-place-detail');
+      }) .catch(
+      error => {
+        this.toastr.error('Doslo je do greske na serveru! Proverite da li ste uneli vec postojecu projekciju!', 'Greska' );
       })
   }
 
@@ -171,6 +175,9 @@ export class AddProjectionComponent implements OnInit {
         const idPlace = this.route.snapshot.params.id;
         const place = this.route.snapshot.params.place;
         this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + idPlace + '/repertories-in-place-detail');
+      }) .catch(
+      error => {
+        this.toastr.error('Doslo je do greske na serveru! Proverite da li ste uneli vec postojecu projekciju!', 'Greska' );
       })
   }
   exit() {

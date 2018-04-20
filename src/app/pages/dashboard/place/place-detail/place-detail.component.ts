@@ -15,8 +15,10 @@ export class PlaceComponent implements OnInit {
    nameTitle: string;
    desc: string;
    adr: string;
+   rep = []
    items = []
    quickSeats = []
+   quick = []
    type: string;
    place: string;
 
@@ -45,7 +47,8 @@ export class PlaceComponent implements OnInit {
     })
 
     this.placeService.getRepertoriesInPlace(id).subscribe(data => {
-      this.items = data.repertories;
+      this.rep = data.repertories;
+      this.checkDate()
     })
 
     this.placeService.getVoteForPlace(id).subscribe(data => {
@@ -53,11 +56,38 @@ export class PlaceComponent implements OnInit {
     })
 
     this.placeService.getQuickSeats(id).subscribe(data=>{
-      this.quickSeats = data.seats;
+      this.quick = data.seats;
+      this.checkDateQuick()
+    })
+
+
+  }
+
+  checkDateQuick() {
+    let today_date = new Date();
+    this.quick.forEach( item => {
+      let split = []
+      split = item.projection.date.split('-');
+      let date =(split[2] + '-' + split[1] + '-' +  split[0]) ;
+      let entered_date = new Date(date);
+      if (entered_date >= today_date) {
+        this.quickSeats.push(item)
+      }
     })
   }
 
-
+  checkDate() {
+    let today_date = new Date();
+    this.rep.forEach( item => {
+      let split = []
+      split = item.date.split('-');
+      let date =(split[2] + '-' + split[1] + '-' +  split[0]) ;
+      let entered_date = new Date(date);
+      if (entered_date >= today_date) {
+          this.items.push(item)
+      }
+    })
+  }
 
   getEvents() {
     const id = this.route.snapshot.params.id;
