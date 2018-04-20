@@ -5,12 +5,14 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { NgModule } from '@angular/core';
 import {RegisterComponent} from './register/register.component';
 import {AccountActivationComponent} from './account-activation/account-activation.component';
+import {RequestPasswordComponent} from "./request-password/request-password.component";
 
 const AUTH_COMPONENTS = [
   AuthComponent,
   LoginComponent,
   RegisterComponent,
   AccountActivationComponent,
+  RequestPasswordComponent,
 ];
 
 @NgModule({

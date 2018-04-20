@@ -55,4 +55,7 @@ export class LoginComponent {
     this.router.navigateByUrl('auth/sign-up');
   }
 
+  forgotPassword(): void {
+    this.router.navigateByUrl('auth/forgot-password')
+  }
 }

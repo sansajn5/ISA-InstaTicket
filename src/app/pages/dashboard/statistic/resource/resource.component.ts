@@ -45,7 +45,7 @@ export class ResourceComponent implements OnInit {
     } else {
       const place = this.route.snapshot.params.place;
       this.router.navigateByUrl('dashboard/pages/statistic/' + place )
-    }.console.log(this.today)
+    }
   }
 
   setChart() {
