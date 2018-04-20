@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { User } from '../models/user.model';
+import {RequestPassword} from "../models/RequestPassword";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
@@ -53,6 +54,11 @@ export class AuthService {
   logout(): void {
     this.http.get(`${this.BASE_URL}/logout`, httpOptions)
     localStorage.clear();
+  }
+
+  requestPassword(requestPassword: RequestPassword): Observable<any> {
+    const body = JSON.stringify(requestPassword);
+    return this.http.post(`${this.BASE_URL}/request-password`, body, httpOptions)
   }
 
 

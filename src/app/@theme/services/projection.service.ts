@@ -3,9 +3,7 @@ import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {Projection} from "../models/projection.model";
 
-const { headers: headers} = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
-};
+
 
 @Injectable()
 export class ProjectionService {
@@ -17,7 +15,9 @@ export class ProjectionService {
   }
 
   getProjection (id): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/projection/${id}` )
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/projection/${id}` ,{ headers: headers})
   }
 
   deleteProjection(id: any): Observable<any> {

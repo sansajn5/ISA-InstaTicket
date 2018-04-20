@@ -18,19 +18,27 @@ export class PlaceService {
   constructor(private http: HttpClient) {}
 
   getCinemas(): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/cinemas`)
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/cinemas` ,{ headers: headers})
   }
 
   getTheathres(): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/theaters`)
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/theaters`,{ headers: headers})
   }
 
   getPlace(id): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/place/${id}` )
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/place/${id}`,{ headers: headers} )
   }
 
   getRepertoriesInPlace (id): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/${id}/repertories` )
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/${id}/repertories`,{ headers: headers} )
   }
 
   createPlace(place: Place): Observable<any> {
@@ -41,7 +49,9 @@ export class PlaceService {
   }
 
   getEventInPlace(id): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/${id}/event-in-place` )
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/${id}/event-in-place` ,{ headers: headers} )
   }
 
   editPlace(id , place: Place): Observable<any> {

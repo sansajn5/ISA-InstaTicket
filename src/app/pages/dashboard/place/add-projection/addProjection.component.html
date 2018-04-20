@@ -16,7 +16,11 @@
         <option *ngFor="let hall of halls "  >{{hall.name}}</option>
       </select>
 
+
       <label>Datum:</label>
+      <div *ngIf="m">
+        <label style="color: black">Prethodno izabrani datum :{{date}}</label>
+      </div>
       <div  style="margin-bottom: 15px" >
        <ngbd-datepicker-popup id="date_picker" name="date"></ngbd-datepicker-popup>
       </div>
