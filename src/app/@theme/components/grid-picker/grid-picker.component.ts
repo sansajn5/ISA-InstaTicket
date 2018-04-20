@@ -15,10 +15,12 @@ export class GridPickerComponent implements OnInit {
     @Input() editedGrid;
 
     @Output() gridIsSet: EventEmitter<any> = new EventEmitter<any>();
-    
+    @Output() gridIsSetForReservation: EventEmitter<any> = new EventEmitter<any>();
+
     public fullGrid = [];
     public grid = [];
     public numberOfOptions: number;
+    public counter = 0;
 
     constructor(private spinnerService: NbSpinnerService) {}
 
@@ -80,21 +82,20 @@ export class GridPickerComponent implements OnInit {
             else if(seat.state === 'NOT SEAT')
                 seat.state = 'CLASSIC'
         } else {
-            if(seat.state = 'RESERVED') {
+            if(seat.state === 'RESERVED' && seat.old) {
+                this.counter--;
                 seat.state = seat.old
             }
             else if(seat.state === 'CLASSIC') {
                seat.state = 'RESERVED'
                seat.old = 'CLASSIC'
+               this.counter++;
             }
             else if(seat.state === 'VIP') {
                 seat.state = 'RESERVED'
                 seat.old = 'VIP'
+                this.counter++;
              }
-             else if(seat.state === 'QUICK') {
-                seat.state = 'RESERVED'
-                seat.old = 'QUICK'
-            }
         }
     }
 
@@ -123,6 +124,9 @@ export class GridPickerComponent implements OnInit {
             })
         }
         this.gridIsSet.emit(arrayForApi);
+        if(this.mode !== 'ADMIN') {
+            this.gridIsSetForReservation.emit({field:arrayForApi, field2: this.counter});
+        }
     }
 
 
