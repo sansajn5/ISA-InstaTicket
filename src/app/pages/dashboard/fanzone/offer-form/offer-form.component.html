@@ -4,7 +4,7 @@
 <br>
 
 
-<form (ngSubmit)="confirmClick()" (keyup.enter)="form.valid && addNewItem()">
+<form (ngSubmit)="confirmClick()" (keyup.enter)="form.valid">
 
 
   <label><h3>{{title_name}} </h3></label>
@@ -54,6 +54,6 @@
   <br>
   <br>
   <button  id="button_center" class="btn btn-hero-info  btn-lg btn-block"
-           [class.btn-pulse]="submitted">Dodaj</button>
+          >Dodaj</button>
 
 </form>

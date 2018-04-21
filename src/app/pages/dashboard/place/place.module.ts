@@ -13,8 +13,10 @@ import {AddPlaceComponent} from "./addPlace/addPlace.component";
 import {AddEventComponent} from "./add-event/addEvent.component";
 import {AddHallComponent} from "./add-hall/addHall.component";
 import {AddProjectionComponent} from "./add-projection/addProjection.component";
+import { PlaceComponentMain } from "./place.component";
 
 const PLACE_COMPONENTS = [
+  PlaceComponentMain,
   PlaceListComponent,
   PlaceComponent,
   EventComponent,
