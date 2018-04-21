@@ -75,13 +75,13 @@ export class ProfileComponent implements OnInit {
         if(this.isMyAccount) {
             this.spinnerService.registerLoader(this.userProfileService.getProfileFriends(null).toPromise()
                 .then(data => {
-                    this.friends = data.friends;
+                    this.friends = data.friends.sort((a,b) => (a.username > b.username) ? 1 : ((a.username < b.username) ? -1 : 0));
             }));
             this.spinnerService.load();
         } else {
             this.spinnerService.registerLoader(this.userProfileService.getProfileFriends(this.profile).toPromise()
                 .then(data => {
-                    this.friends = data.friends;
+                    this.friends = data.friends.sort((a,b) => (a.username > b.username) ? 1 : ((a.username < b.username) ? -1 : 0));
             }));
             this.spinnerService.load();
         }
@@ -97,7 +97,7 @@ export class ProfileComponent implements OnInit {
 
     checkFriendRequestList() {
         this.userProfileService.getFriendRequests().toPromise().then((data) => {
-            this.requests = data.requests;
+            this.requests = data.requests.sort((a,b) => (a.username > b.username) ? 1 : ((a.username < b.username) ? -1 : 0));
         })
     }
 
@@ -129,13 +129,13 @@ export class ProfileComponent implements OnInit {
 
   setUserReservation() {
     this.reservationService.getUserReservation().subscribe(data => {
-        this.reservations = data.reservations;
+        this.reservations = data.reservations.sort( (a,b) => (a.reservation.projection.event > b.reservation.projection.event) ? 1 : ( (a.reservation.projection.event < b.reservation.projection.event) ? -1 : 0) );
       })
   }
 
   setUserActiveReservation() {
     this.reservationService.getUserActiveReservation().subscribe(data => {
-        this.active = data.reservations;
+        this.active = data.reservations.sort( (a,b) => (a.reservation.projection.event > b.reservation.projection.event) ? 1 : ( (a.reservation.projection.event < b.reservation.projection.event) ? -1 : 0) );
       })
   }
 
@@ -152,7 +152,7 @@ export class ProfileComponent implements OnInit {
 
   setReservationInvitations() {
       this.userProfileService.getMyReservationInvitation().toPromise().then(data => {
-          this.requestsForEvents = data.reservationInvList;
+          this.requestsForEvents = data.reservationInvList.sort( (a,b) => (a.username > b.username) ? 1 : ((a.username < b.username) ? -1 : 0));
       })
   }
   
