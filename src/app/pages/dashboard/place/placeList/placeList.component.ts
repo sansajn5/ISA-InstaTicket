@@ -27,8 +27,8 @@ export class PlaceListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-      this.place = this.route.snapshot.params.place;
-      this.place === 'cinemas' ? this.setCinemas() : this.setTheathres();
+    this.place = this.route.snapshot.params.place;
+    this.place === 'cinemas' ? this.setCinemas() : this.setTheathres();
   }
 
   setCinemas() {
@@ -65,6 +65,8 @@ export class PlaceListComponent implements OnInit {
   editPlace(id) {
     this.router.navigateByUrl('dashboard/pages/place/' + this.place + '/edit/place/'  + id)
   }
+
+
 
 
 }
