@@ -17,9 +17,10 @@ export class BidComponent implements OnInit {
   @Input() ordNum: any;
   @Input() username: any;
   @Input() offerId: any;
+  @Input() owner: any;
 
   editAllowed: boolean = false;
-
+  acceptAllowed: boolean = false;
 
   constructor(private fanZoneService: FanZoneService,
               protected router: Router,
@@ -34,6 +35,10 @@ export class BidComponent implements OnInit {
 
     if(this.username == logged) {
       this.editAllowed = true;
+    }
+
+    if(this.owner == logged) {
+      this.acceptAllowed = true;
     }
   }
 

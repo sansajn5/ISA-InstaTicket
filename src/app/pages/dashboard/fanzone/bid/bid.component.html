@@ -28,7 +28,7 @@
 
       </td>
       <td>
-        <button type="button" class="btn btn-hero-success " id="button_accept" (click)="acceptBid()" ><i class="fa fa-check-circle" ></i> Prihvati</button>
+        <button *ngIf="acceptAllowed" type="button" class="btn btn-hero-success " id="button_accept" (click)="acceptBid()" ><i class="fa fa-check-circle" ></i> Prihvati</button>
       </td>
     </tr>
 
