@@ -77,5 +77,12 @@ export class UserProfileService {
         const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
         return this.http.put(`${this.BASE_URL}/user/set-reservation-invitation`,body, { headers: headers });
     }
+
+    dropOutReservation(id): Observable<any> {
+        const token = localStorage.getItem('token')
+        const body = JSON.stringify({id: id});
+        const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+        return this.http.put(`${this.BASE_URL}/user/drop-reservation-state`,body, { headers: headers });
+    }
     
 }

@@ -46,7 +46,7 @@
                                   <h5>{{ act.reservation.projection.event.place.name }}</h5>
                                 </div>
                                 <div class="col-md-6" style="display: inline-block;text-align: center">
-                                  <button class="btn  btn-hero-success" style="margin-top: 35px" >Odustani</button>
+                                  <button (click)="deleteActiveReservation(act.id)" class="btn  btn-hero-success" style="margin-top: 35px" >Odustani</button>
                                 </div>
                               </div>
                             </div>

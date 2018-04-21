@@ -170,5 +170,11 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  deleteActiveReservation(id) {
+      this.userProfileService.dropOutReservation(id).toPromise().then(data => {
+        this.setUserActiveReservation();
+    })
+  }
+
 
 }
