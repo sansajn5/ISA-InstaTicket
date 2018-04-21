@@ -22,6 +22,9 @@ export class ProfileComponent implements OnInit {
     public friends: any[];
     public recentVisitis: any[];
     public requests: any[];
+    public requestsForEvents: any[];
+
+    public points;
 
     active = []
     reservations = []
@@ -48,19 +51,11 @@ export class ProfileComponent implements OnInit {
             this.spinnerService.registerLoader(this.userProfileService.getProfileInfo(null).toPromise()
                 .then(data => {
                     this.profileUser = new User(data.username, null , null, data.firstName, data.lastName, data.email, data.city, data.address, data.number);
+                    this.points = data.points;
             }));
             this.spinnerService.load();
 
             this.checkFriendRequestList();
-
-            this.recentVisitis = [
-                {user: 'nick', type: 'mobile'},
-                {user: 'eva', type: 'home'},
-                {user: 'jack', type: 'mobile'},
-                {user: 'lee', type: 'mobile'},
-                {user: 'alan', type: 'home'},
-                {user: 'kate', type: 'work'},
-            ]
             this.profileImage = '../../../../assets/images/alan.png'
         } else {
             this.spinnerService.registerLoader(this.userProfileService.getProfileInfo(this.profile).toPromise()
@@ -126,15 +121,23 @@ export class ProfileComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.reservationService.getUserReservation().subscribe(data => {
-        this.reservations = data.reservations;
-      })
-
-      this.reservationService.getUserActiveReservation().subscribe(data => {
-        this.active = data.reservations;
-      })
+      this.setUserActiveReservation();
+      this.setUserReservation();
       this.setReservationInvitations();
     }
+
+
+  setUserReservation() {
+    this.reservationService.getUserReservation().subscribe(data => {
+        this.reservations = data.reservations;
+      })
+  }
+
+  setUserActiveReservation() {
+    this.reservationService.getUserActiveReservation().subscribe(data => {
+        this.active = data.reservations;
+      })
+  }
 
   voteForPlace(id) {
       const username = this.route.snapshot.params.username
@@ -149,7 +152,29 @@ export class ProfileComponent implements OnInit {
 
   setReservationInvitations() {
       this.userProfileService.getMyReservationInvitation().toPromise().then(data => {
-          console.log(data);
+          this.requestsForEvents = data.reservationInvList;
       })
   }
+  
+  acceptReservationInvitation(id) {
+    this.userProfileService.acceptReservationInvitation(id).toPromise().then(data => {
+        this.setReservationInvitations();
+        this.setUserActiveReservation();
+        this.setUserReservation();
+    })
+  }
+
+  declineReservationInvitation(id) {
+    this.userProfileService.declineReservationInvitation(id).toPromise().then(data => {
+        this.setReservationInvitations();
+    })
+  }
+
+  deleteActiveReservation(id) {
+      this.userProfileService.dropOutReservation(id).toPromise().then(data => {
+        this.setUserActiveReservation();
+    })
+  }
+
+
 }
