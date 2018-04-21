@@ -32,5 +32,6 @@ export class PagesComponent implements OnInit {
        } else if (role.replace(/\s/g, '') !== 'ADMIN' && this.flag === false) {
          this.menu = MENU_USER;
        }
+    }
+   }
 }
-
