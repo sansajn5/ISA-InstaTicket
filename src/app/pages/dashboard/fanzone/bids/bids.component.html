@@ -17,6 +17,6 @@
 
 <div *ngFor="let bid of bids">
 
-      <ngx-bid offerId="{{bid.offer.id}}" id={{bid.id}} ordNum={{bid.ordNum}} username={{bid.userName}} sum={{bid.sum}} ></ngx-bid>
+      <ngx-bid offerId="{{bid.offer.id}}" id={{bid.id}} ordNum={{bid.ordNum}} username={{bid.userName}} sum={{bid.sum}} owner="{{bid.offer.owner}}"></ngx-bid>
 
 </div>
