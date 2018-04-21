@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   show:boolean = false;
   flag:boolean = false;
   imageRoute = '../../../assets/images/';
+  roles;
 
   constructor(protected router: Router
   ) {}
@@ -47,7 +48,5 @@ export class DashboardComponent implements OnInit {
   addPlace() {
     this.router.navigateByUrl('dashboard/pages/place/add/place' );
   }
-
-
 
 }
