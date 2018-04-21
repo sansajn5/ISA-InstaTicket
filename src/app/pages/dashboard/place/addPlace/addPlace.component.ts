@@ -103,8 +103,9 @@ import {Place} from "../../../../@theme/models/place.model";
       .then(data=> {
         this.toastr.clear();
         this.toastr.success('Uspesno izmenjeno!');
-        const placeID = this.route.snapshot.params.place;
-        this.router.navigateByUrl('dashboard/pages/place/' + placeID);
+        const placeID = this.route.snapshot.params.id;
+        const place = this.route.snapshot.params.place;
+        this.router.navigateByUrl('dashboard/pages/place/' + place + '/place/' + placeID);
       }) .catch(
       error => {
         this.toastr.error('Doslo je do greske na serveru! Proverite da li ste uneli vec postojeci naziv!', 'Greska' );
@@ -112,6 +113,8 @@ import {Place} from "../../../../@theme/models/place.model";
   }
 
   exit() {
-    this.router.navigateByUrl('dashboard/pages')
+    const placeID = this.route.snapshot.params.id;
+    const place = this.route.snapshot.params.place;
+    this.router.navigateByUrl('dashboard/pages/place/' + place );
   }
 }
