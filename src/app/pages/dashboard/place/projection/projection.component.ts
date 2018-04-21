@@ -131,6 +131,7 @@ export class ProjectionComponent implements OnInit {
     this.projecionService.reserveTickets(arrayOfFriends,seats,this.idPro,this.id).toPromise().then(data => {
       this.router.navigateByUrl('dashboard');
     })
+    localStorage.removeItem('inv');
   }
 
   addFriendToList(email) {
