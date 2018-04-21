@@ -63,8 +63,8 @@
     <div *ngIf="showQuestion" class="">
       <button class="btn btn-hero-success" (click)="showFriendsList()" >Pozovi Prijatelje!</button>
     </div>
-    <div class="">
-        <button *ngIf="counter > 0" class="btn btn-hero-success" (click)="reserve()" >Rezervisi</button>
+    <div class="" >
+        <button *ngIf="counter > 0" class="btn btn-hero-success" (click)="reserve()"  >Rezervisi</button>
       </div>
     <nb-card *ngIf="showFriends" [size]="large" class="col-md-10">
         <nb-tabset fullWidth>

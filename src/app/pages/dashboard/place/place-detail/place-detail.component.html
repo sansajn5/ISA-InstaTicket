@@ -3,6 +3,10 @@
 </div>
 <div class="row">
   <div class="col-md-4 cardWrapper ">
+    <div style="margin-bottom: 20px;margin-top: 20px;margin-left: 200px">
+      <button class="btn btn-hero-info" (click)="editPlace()" *ngIf="show_edit">Izmeni</button>
+      <button class="btn btn-hero-info" (click)="deletePlace()" *ngIf="show">Obrisi</button>
+    </div>
     <h2>{{nameTitle}}</h2>
     <div class="margin">
       <h4>Rejting:</h4>
@@ -34,9 +38,9 @@
 
   <div class="col-md-7 cardWrapper margin-repertory">
   <div class="position" >
-    <button class="btn btn-hero-info" (click)="getEvents()">{{type}}</button>
-    <button class="btn btn-hero-info" (click)="getHalls()">Sale</button>
-    <button class="btn btn-hero-info" (click)="getRepertories()">Repertoari</button>
+    <button class="btn btn-hero-info" (click)="getEvents()" *ngIf="show_edit">{{type}}</button>
+    <button class="btn btn-hero-info" (click)="getHalls()" *ngIf="show_edit">Sale</button>
+    <button class="btn btn-hero-info" (click)="getRepertories()" *ngIf="show_edit">Repertoari</button>
   </div>
     <h1  style="width: 100%; margin-bottom: 20px;background: #ebeff5;color: black;text-align: center" >Repertoari</h1>
     <table class="offset-4 col-md-4 ">

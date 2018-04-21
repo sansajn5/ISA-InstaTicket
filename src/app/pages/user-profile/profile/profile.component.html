@@ -46,8 +46,7 @@
                                   <h5>{{ act.reservation.projection.event.place.name }}</h5>
                                 </div>
                                 <div class="col-md-6" style="display: inline-block;text-align: center">
-                                  <button class="btn  btn-hero-success" style="margin-top: 35px" >Odustani</button>
-
+                                  <button (click)="deleteActiveReservation(act.id)" class="btn  btn-hero-success" style="margin-top: 35px" >Odustani</button>
                                 </div>
                               </div>
                             </div>
@@ -147,6 +146,17 @@
                         <button type="button" (click)="editAccount()" class="btn btn-hero-success" style="margin-bottom: 20px">Izmeni</button>
                     </nb-card-body>
                 </nb-card>
+                <nb-card *ngIf="isMyAccount" [size]="large" class="col-md-10" style="margin-top:50px;">
+                        <nb-tabset fullWidth>
+                            <nb-tab  tabTitle="Pozivi za dogadjaje">
+                                <div class="contact" *ngFor="let request of requestsForEvents">
+                                    <nb-user [name]="request.username" [title]="request.projection" size="large"></nb-user>
+                                  <i (click)="acceptReservationInvitation(request.id)" class="fa fa-check"></i>
+                                  <i (click)="declineReservationInvitation(request.id)" class="fa fa-trash"></i>
+                                </div>
+                            </nb-tab>
+                        </nb-tabset>
+                    </nb-card>
             </div>
         </nb-card>
     </div>

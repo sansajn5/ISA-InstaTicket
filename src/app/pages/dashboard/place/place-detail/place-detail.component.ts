@@ -3,6 +3,8 @@ import {Component, OnInit} from "@angular/core";;
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import {PlaceService} from "../../../../@theme/services/place.service";
+import {AdminSettingsService} from "../../../../@theme/services/admin-settings.service";
+import {AuthService} from "../../../../@theme/services/auth.service";
 
 @Component({
 
@@ -24,10 +26,19 @@ export class PlaceComponent implements OnInit {
 
    starRate ;
 
+   show_edit:boolean = false;
+   roles: any;
+   placeAdmins = []
+   currentUser;
+  show:boolean = false;
+  flag:boolean = false;
+
   constructor(private placeService: PlaceService,
               protected router: Router,
               private route: ActivatedRoute,
-              private toastr: ToastrService
+              private toastr: ToastrService,
+              private adminSetings: AdminSettingsService,
+              private authService: AuthService
   ) {}
 
 
@@ -60,6 +71,33 @@ export class PlaceComponent implements OnInit {
       this.checkDateQuick()
     })
 
+    this.authService.getAccount().subscribe(data=>{
+      this.currentUser = data.id;
+
+      this.adminSetings.getEmployedPlaceAdmins(id).subscribe(data=>{
+        this.placeAdmins = data.users;
+        for (let admin of this.placeAdmins) {
+          if (admin.id == this.currentUser) {
+            this.show_edit = true;
+          }
+        }
+      })
+    })
+
+    this.roles = localStorage.getItem('role')
+
+    var rolesSliced = this.roles.slice(1, -1);
+    var rolesSplited = rolesSliced.split(',');
+
+    for (let role of rolesSplited) {
+
+      if (role.replace(/\s/g, '') === 'SUPER_ADMIN') {
+        this.show = true;
+        this.flag=true;
+      } else if (role.replace(/\s/g, '') !== 'SUPER_ADMIN'&& this.flag === false){
+        this.show = false;
+      }
+    }
 
   }
 
@@ -124,5 +162,27 @@ export class PlaceComponent implements OnInit {
         this.toastr.success('Uspesno obavljena rezervacija!');
         this.quickSeats = this.quickSeats.filter(el => el.id != id);
       })
+  }
+
+  deletePlace (): any {
+    const idPlace = this.route.snapshot.params.id;
+    this.placeService.deletePlace(idPlace).toPromise()
+      .then(data => {
+        this.toastr.clear();
+        this.toastr.success('Uspesno obrisan bioskop ili pozoriste!');
+        const place = this.route.snapshot.params.place;
+        this.router.navigateByUrl('dashboard/pages/place/' + place)
+
+      })
+      .catch(err => {
+        this.toastr.error("Morate ukloniti administratore da bi obrisali bioskop/pozoriste");
+      });
+
+  }
+
+  editPlace() {
+    const place = this.route.snapshot.params.place;
+    const idPlace = this.route.snapshot.params.id;
+    this.router.navigateByUrl('dashboard/pages/place/' + place + '/edit/place/'  + idPlace)
   }
 }

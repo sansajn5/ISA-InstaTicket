@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
     public friends: any[];
     public recentVisitis: any[];
     public requests: any[];
+    public requestsForEvents: any[];
 
     public points;
 
@@ -55,17 +56,6 @@ export class ProfileComponent implements OnInit {
             this.spinnerService.load();
 
             this.checkFriendRequestList();
-
-
-
-            this.recentVisitis = [
-                {user: 'nick', type: 'mobile'},
-                {user: 'eva', type: 'home'},
-                {user: 'jack', type: 'mobile'},
-                {user: 'lee', type: 'mobile'},
-                {user: 'alan', type: 'home'},
-                {user: 'kate', type: 'work'},
-            ]
             this.profileImage = '../../../../assets/images/alan.png'
         } else {
             this.spinnerService.registerLoader(this.userProfileService.getProfileInfo(this.profile).toPromise()
@@ -85,13 +75,13 @@ export class ProfileComponent implements OnInit {
         if(this.isMyAccount) {
             this.spinnerService.registerLoader(this.userProfileService.getProfileFriends(null).toPromise()
                 .then(data => {
-                    this.friends = data.friends;
+                    this.friends = data.friends.sort((a,b) => (a.username > b.username) ? 1 : ((a.username < b.username) ? -1 : 0));
             }));
             this.spinnerService.load();
         } else {
             this.spinnerService.registerLoader(this.userProfileService.getProfileFriends(this.profile).toPromise()
                 .then(data => {
-                    this.friends = data.friends;
+                    this.friends = data.friends.sort((a,b) => (a.username > b.username) ? 1 : ((a.username < b.username) ? -1 : 0));
             }));
             this.spinnerService.load();
         }
@@ -107,7 +97,7 @@ export class ProfileComponent implements OnInit {
 
     checkFriendRequestList() {
         this.userProfileService.getFriendRequests().toPromise().then((data) => {
-            this.requests = data.requests;
+            this.requests = data.requests.sort((a,b) => (a.username > b.username) ? 1 : ((a.username < b.username) ? -1 : 0));
         })
     }
 
@@ -131,15 +121,23 @@ export class ProfileComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.reservationService.getUserReservation().subscribe(data => {
-        this.reservations = data.reservations;
-      })
-
-      this.reservationService.getUserActiveReservation().subscribe(data => {
-        this.active = data.reservations;
-      })
+      this.setUserActiveReservation();
+      this.setUserReservation();
       this.setReservationInvitations();
     }
+
+
+  setUserReservation() {
+    this.reservationService.getUserReservation().subscribe(data => {
+        this.reservations = data.reservations.sort( (a,b) => (a.reservation.projection.event > b.reservation.projection.event) ? 1 : ( (a.reservation.projection.event < b.reservation.projection.event) ? -1 : 0) );
+      })
+  }
+
+  setUserActiveReservation() {
+    this.reservationService.getUserActiveReservation().subscribe(data => {
+        this.active = data.reservations.sort( (a,b) => (a.reservation.projection.event > b.reservation.projection.event) ? 1 : ( (a.reservation.projection.event < b.reservation.projection.event) ? -1 : 0) );
+      })
+  }
 
   voteForPlace(id) {
       const username = this.route.snapshot.params.username
@@ -154,7 +152,29 @@ export class ProfileComponent implements OnInit {
 
   setReservationInvitations() {
       this.userProfileService.getMyReservationInvitation().toPromise().then(data => {
-          console.log(data);
+          this.requestsForEvents = data.reservationInvList.sort( (a,b) => (a.username > b.username) ? 1 : ((a.username < b.username) ? -1 : 0));
       })
   }
+  
+  acceptReservationInvitation(id) {
+    this.userProfileService.acceptReservationInvitation(id).toPromise().then(data => {
+        this.setReservationInvitations();
+        this.setUserActiveReservation();
+        this.setUserReservation();
+    })
+  }
+
+  declineReservationInvitation(id) {
+    this.userProfileService.declineReservationInvitation(id).toPromise().then(data => {
+        this.setReservationInvitations();
+    })
+  }
+
+  deleteActiveReservation(id) {
+      this.userProfileService.dropOutReservation(id).toPromise().then(data => {
+        this.setUserActiveReservation();
+    })
+  }
+
+
 }

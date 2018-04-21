@@ -62,4 +62,10 @@ export class AuthService {
   }
 
 
+  getAccount(): Observable<any> {
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/account` ,{ headers: headers})
+  }
+
 }
