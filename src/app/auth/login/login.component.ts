@@ -58,4 +58,8 @@ export class LoginComponent {
   forgotPassword(): void {
     this.router.navigateByUrl('auth/forgot-password')
   }
+
+  loginGuest(): void {
+    this.router.navigateByUrl('dashboard/pages/place')
+  }
 }
