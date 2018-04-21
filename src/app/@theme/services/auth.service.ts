@@ -61,11 +61,22 @@ export class AuthService {
     return this.http.post(`${this.BASE_URL}/request-password`, body, httpOptions)
   }
 
+  changedRole(pw, pw1) {
+    const body = JSON.stringify({password: pw, repassword: pw1, username:localStorage.getItem('user')});
+    localStorage.clear();
+    return this.http.put(`${this.BASE_URL}/changepassword`,body,httpOptions);
+  }
+
 
   getAccount(): Observable<any> {
     const token = localStorage.getItem('token')
     const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
     return this.http.get(`${this.BASE_URL}/account` ,{ headers: headers})
+  }
+
+  onGuest(): Observable<any>{
+    console.log('ok');
+    return this.http.get(`${this.BASE_URL}/guest` ,httpOptions);
   }
 
 }

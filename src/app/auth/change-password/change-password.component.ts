@@ -31,11 +31,17 @@ export class ChangePasswordComponent {
 
   }
 
-  onLogin(): void {
-    this.router.navigateByUrl('auth/login');
+  changePassword(): void {
+    if(this.password.value === this.rePassword.value) {
+      this.spinnerService.registerLoader(this.authService.changedRole(this.password.value,this.rePassword.value).toPromise().then(data => {
+        this.router.navigateByUrl('auth/login');
+      }))
+      this.spinnerService.load();
+    }else 
+    this.toastr.error('Sifre se moraju poklapati', 'Greska');
   }
 
-  changePassword(): void {
+  onLogin() {
     this.router.navigateByUrl('auth/login');
   }
 

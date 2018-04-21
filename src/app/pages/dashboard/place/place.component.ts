@@ -5,6 +5,6 @@ import {Component} from "@angular/core";
   templateUrl: './place.component.html'
 })
 
-export class PlaceComponent {
+export class PlaceComponentMain {
 
 }

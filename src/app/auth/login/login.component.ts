@@ -37,12 +37,17 @@ export class LoginComponent {
     const user = new User(this.username.value, this.password.value);
     this.spinnerService.registerLoader(this.authService.signIn(user).toPromise()
       .then(data => {
+        localStorage.setItem('user', data.username);
+        if(data.message === 'changed'){
+          this.router.navigateByUrl('auth/change-password');
+        }else {
         localStorage.setItem('token', data.id_token);
         localStorage.setItem('user', data.username);
         localStorage.setItem('role',data.role);
         this.toastr.clear();
         this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli ' + data.username);
         this.router.navigateByUrl('dashboard');
+        }
       })
       .catch(
         error => {
@@ -56,10 +61,16 @@ export class LoginComponent {
   }
 
   forgotPassword(): void {
-    this.router.navigateByUrl('auth/forgot-password')
+    // this.router.navigateByUrl('auth/forgot-password')
   }
 
-  loginGuest(): void {
-    this.router.navigateByUrl('dashboard/pages/place')
+  guestLogin() {
+    this.spinnerService.registerLoader(this.authService.onGuest().toPromise().then(data=> {
+      localStorage.setItem('user', data.username);
+      localStorage.setItem('token', data.id_token);
+        localStorage.setItem('user', data.username);
+        localStorage.setItem('role',data.role);
+        this.router.navigateByUrl('dashboard');
+    }))
   }
 }
