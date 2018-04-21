@@ -129,13 +129,13 @@ export class ProfileComponent implements OnInit {
 
   setUserReservation() {
     this.reservationService.getUserReservation().subscribe(data => {
-        this.reservations = data.reservations.sort( (a,b) => (a.reservation.projection.event > b.reservation.projection.event) ? 1 : ( (a.reservation.projection.event < b.reservation.projection.event) ? -1 : 0) );
+        this.reservations = data.reservations.sort( (a,b) => (a.reservation.projection.event.name > b.reservation.projection.event.name) ? 1 : ( (a.reservation.projection.event.name < b.reservation.projection.event.name) ? -1 : 0) );
       })
   }
 
   setUserActiveReservation() {
     this.reservationService.getUserActiveReservation().subscribe(data => {
-        this.active = data.reservations.sort( (a,b) => (a.reservation.projection.event > b.reservation.projection.event) ? 1 : ( (a.reservation.projection.event < b.reservation.projection.event) ? -1 : 0) );
+        this.active = data.reservations.sort( (a,b) => (a.reservation.projection.event.name > b.reservation.projection.event.name) ? 1 : ( (a.reservation.projection.event.name < b.reservation.projection.event.name) ? -1 : 0) );
       })
   }
 
@@ -170,10 +170,47 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  deleteActiveReservation(id) {
-      this.userProfileService.dropOutReservation(id).toPromise().then(data => {
-        this.setUserActiveReservation();
-    })
+  deleteActiveReservation(id,act) {
+      if(this.calculateStart(act.reservation.projection.startTime)) {
+        this.userProfileService.dropOutReservation(id).toPromise().then(data => {
+            this.setUserActiveReservation();
+            })
+      } else {
+          this.toastr.error('Ne mozete otkazati rezervaciju','Isteklo je vreme za otkazivanje');
+      }
+  }
+
+  deleteFriend(email) {
+      this.userProfileService.deleteFriend(email).toPromise().then(data => {
+          this.setFriendList();
+      })
+  }
+
+
+  calculateStart(some) {
+    const d = new Date();
+    const ntime = d.toString().split(' ')[4];
+    const nhours = ntime.split(':')[0];
+    const nmin = ntime.split(':')[1];
+    const hours = some.split(':')[0];
+    const min = some.split(':')[1];
+    let a;
+    let b; 
+    const r = parseInt(min) - parseInt(nmin);
+    if(r < 0) {
+        a = parseInt(hours) - 1;
+        b = 60 + r;
+    }else {
+        a = parseInt(hours)
+        b = parseInt(min);
+    } 
+
+    if(a == parseInt(nhours)) {
+        if(b - parseInt(nmin) < 30)
+            return false;
+        return true;
+    }else if( a -1 > parseInt(nhours))
+        return true;
   }
 
 

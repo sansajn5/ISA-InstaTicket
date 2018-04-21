@@ -84,5 +84,12 @@ export class UserProfileService {
         const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
         return this.http.put(`${this.BASE_URL}/user/drop-reservation-state`,body, { headers: headers });
     }
+
+    deleteFriend(email): Observable<any> {
+        const token = localStorage.getItem('token')
+        const body = JSON.stringify({email: email});
+        const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+        return this.http.post(`${this.BASE_URL}/user/delete-friend`,body, { headers: headers });
+    }
     
 }

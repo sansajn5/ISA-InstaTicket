@@ -61,6 +61,12 @@ export class AuthService {
     return this.http.post(`${this.BASE_URL}/request-password`, body, httpOptions)
   }
 
+  changedRole(pw, pw1) {
+    const body = JSON.stringify({password: pw, repassword: pw1, username:localStorage.getItem('user')});
+    localStorage.clear();
+    return this.http.put(`${this.BASE_URL}/changepassword`,body,httpOptions);
+  }
+
 
   getAccount(): Observable<any> {
     const token = localStorage.getItem('token')

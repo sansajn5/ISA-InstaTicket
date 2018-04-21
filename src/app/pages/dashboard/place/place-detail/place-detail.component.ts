@@ -121,7 +121,7 @@ export class PlaceComponent implements OnInit {
       split = item.date.split('-');
       let date =(split[2] + '-' + split[1] + '-' +  split[0]) ;
       let entered_date = new Date(date);
-      if (entered_date >= today_date) {
+      if (entered_date > today_date) {
           this.items.push(item)
       }
     })

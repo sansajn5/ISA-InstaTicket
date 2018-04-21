@@ -129,7 +129,7 @@ export class ProjectionComponent implements OnInit {
     if(localStorage.getItem('inv'))
       arrayOfFriends = JSON.parse(localStorage.getItem('inv'));
     this.projecionService.reserveTickets(arrayOfFriends,seats,this.idPro,this.id).toPromise().then(data => {
-      console.log(data);
+      this.router.navigateByUrl('dashboard');
     })
   }
 

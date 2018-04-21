@@ -19,7 +19,7 @@
                             <nb-tab tabTitle="Prijatelji">
                                 <div class="contact" *ngFor="let friend of friends">
                                   <nb-user [name]="friend.username" [title]="friend.email" size="large"></nb-user>
-                                  <i class="i-contact nb-phone"></i>
+                                  <i (click)="deleteFriend(friend.email)" class="i-contact fa fa-trash"></i>
                                 </div>
                               </nb-tab>
                               <nb-tab tabTitle="Iskoriscene rezervacije">
@@ -46,7 +46,7 @@
                                   <h5>{{ act.reservation.projection.event.place.name }}</h5>
                                 </div>
                                 <div class="col-md-6" style="display: inline-block;text-align: center">
-                                  <button (click)="deleteActiveReservation(act.id)" class="btn  btn-hero-success" style="margin-top: 35px" >Odustani</button>
+                                  <button (click)="deleteActiveReservation(act.id,act)" class="btn  btn-hero-success" style="margin-top: 35px" >Odustani</button>
                                 </div>
                               </div>
                             </div>
