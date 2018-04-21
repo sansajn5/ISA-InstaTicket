@@ -61,10 +61,16 @@ export class LoginComponent {
   }
 
   forgotPassword(): void {
-    this.router.navigateByUrl('auth/forgot-password')
+    // this.router.navigateByUrl('auth/forgot-password')
   }
 
-  loginGuest(): void {
-    this.router.navigateByUrl('dashboard/pages/place')
+  guestLogin() {
+    this.spinnerService.registerLoader(this.authService.onGuest().toPromise().then(data=> {
+      localStorage.setItem('user', data.username);
+      localStorage.setItem('token', data.id_token);
+        localStorage.setItem('user', data.username);
+        localStorage.setItem('role',data.role);
+        this.router.navigateByUrl('dashboard');
+    }))
   }
 }

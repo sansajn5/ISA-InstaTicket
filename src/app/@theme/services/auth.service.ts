@@ -74,4 +74,9 @@ export class AuthService {
     return this.http.get(`${this.BASE_URL}/account` ,{ headers: headers})
   }
 
+  onGuest(): Observable<any>{
+    console.log('ok');
+    return this.http.get(`${this.BASE_URL}/guest` ,httpOptions);
+  }
+
 }
