@@ -1,0 +1,46 @@
+<table class="table">
+
+  <thead>
+
+  </thead>
+
+  <tbody >
+
+
+
+    <tr>
+      <th scope="col">R.br.</th>
+      <th scope="row">{{ordNum}}</th>
+    </tr>
+
+    <tr>
+      <th scope="col">Korisnik:</th>
+      <td>{{username}}</td>
+    </tr>
+
+    <tr>
+      <th scope="col">Ponuda: </th>
+      <td>{{sum}} RSD</td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+      <td>
+        <button *ngIf="acceptAllowed" type="button" class="btn btn-hero-success " id="button_accept" (click)="acceptBid()" ><i class="fa fa-check-circle" ></i> Prihvati</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+      <td>
+        <button *ngIf="editAllowed" type="button" class="btn btn-hero-warning " (click)="editBid()" id="button_other" ><i class="fa fa-edit" ></i> Izmeni</button>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

@@ -37,12 +37,17 @@ export class LoginComponent {
     const user = new User(this.username.value, this.password.value);
     this.spinnerService.registerLoader(this.authService.signIn(user).toPromise()
       .then(data => {
+        localStorage.setItem('user', data.username);
+        if(data.message === 'changed'){
+          this.router.navigateByUrl('auth/change-password');
+        }else {
         localStorage.setItem('token', data.id_token);
-        localStorage.setItem('user', 'Nemanja');
+        localStorage.setItem('user', data.username);
+        localStorage.setItem('role',data.role);
         this.toastr.clear();
-        // this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + data.user.username);
-        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli' + 'Nemanja');
+        this.toastr.success('Prijavljivanje uspešno', 'Dobrodošli ' + data.username);
         this.router.navigateByUrl('dashboard');
+        }
       })
       .catch(
         error => {
@@ -55,4 +60,17 @@ export class LoginComponent {
     this.router.navigateByUrl('auth/sign-up');
   }
 
+  forgotPassword(): void {
+    // this.router.navigateByUrl('auth/forgot-password')
+  }
+
+  guestLogin() {
+    this.spinnerService.registerLoader(this.authService.onGuest().toPromise().then(data=> {
+      localStorage.setItem('user', data.username);
+      localStorage.setItem('token', data.id_token);
+        localStorage.setItem('user', data.username);
+        localStorage.setItem('role',data.role);
+        this.router.navigateByUrl('dashboard');
+    }))
+  }
 }

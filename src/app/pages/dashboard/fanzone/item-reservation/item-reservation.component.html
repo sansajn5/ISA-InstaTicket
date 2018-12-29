@@ -1,0 +1,55 @@
+<button class="btn btn-primary-outline pull-right basic_col" (click)="closingClick()"><i class="fa fa-times-circle"></i></button>
+<br>
+
+<div >
+  <label><h4> Rezervacija rekvizita: </h4></label>
+</div>
+
+<br>
+
+<div>
+
+  <table class="table">
+      <tbody>
+        <tr>
+          <th>Kupac: </th>
+          <td><label class="res-text"><b>{{userName}}</b></label></td>
+        </tr>
+        <tr>
+          <th scope="row">Naziv rekvizita: </th>
+          <td><label class="res-text"><b>{{name}}</b></label></td>
+        </tr>
+        <tr>
+          <th scope="row">Opis: </th>
+          <td><label class="res-text"><b>{{description}}</b></label></td>
+        </tr>
+        <tr>
+          <th scope="row">Cena: </th>
+          <td><label class="res-text"><b>{{price}} RSD</b></label></td>
+        </tr>
+        <tr>
+          <th scope="row">Slika: </th>
+          <td><label class="res-text"><b>{{image}}</b></label></td>
+        </tr>
+        <tr>
+          <th scope="row">Mesto preuzimanja: </th>
+          <td>
+            <form>
+              <select id="placeCombo" class="combobox" [formControl]="placeName" >
+                <option></option>
+                <option *ngFor="let place of places">
+                  {{place.name}}
+                </option>
+              </select>
+            </form>
+          </td>
+        </tr>
+
+      </tbody>
+  </table>
+
+  <br>
+  <br>
+  <button  id="button_center" class="btn btn-hero-info btn-lg btn-block" (click)="confirmReservation()">Potvrdi</button>
+
+</div>

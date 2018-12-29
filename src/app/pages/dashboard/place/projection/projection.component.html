@@ -1,0 +1,82 @@
+<div>
+  <button class="btn btn-default" (click)="back()" style="width: 6%;background: #ebeff5;margin-right: 10px"><i style="font-size: 40px" class="fa  fa-arrow-circle-left"></i></button>
+
+</div>
+<div class="offset-1 cardWrapper col-md-10">
+
+  <div class="h"></div>
+  <h1>{{event}}</h1>
+  <div class="offset-1">
+      <img src="{{image}}" class="img" >
+  </div>
+  <div class="offset-5  col-md-5 cardWrapper">
+    <div style="margin-bottom: 10px" >
+      <ngb-rating [readonly]="true" [(rate)]="starRate" max=5>
+        <ng-template let-fill="fill">
+              <span class="star fill" [class.filled]="fill === 100" >
+                <i  class="ion-android-star" *ngIf="fill === 100" style="color: black" ></i>
+                <i  class="ion-android-star-outline" *ngIf="fill !== 100"></i>
+              </span>
+        </ng-template>
+      </ngb-rating>
+      <span class="current-rate" style="color: black;">{{ starRate }}</span>
+    </div>
+
+    <p >Reziser:  {{director}}</p>
+    <p >Glumci:  {{actors}}</p>
+    <p >Zanr:  {{type}}</p>
+    <P>Trajanje:  {{duration}}</P>
+    <p>Opis: </p><p>{{description}}</p>
+    <p>{{descripton}}</p>
+    <div style=" height: 20px;"></div>
+    <p>Datum:  {{date}}</p>
+    <p>Sala:  {{hall}}</p>
+    <p>Vreme: {{startTime}} - {{endTime}}</p>
+    <p>Cena: Obicno mesto: {{regularPrice}} VIP mesto: {{vipPrice}} Brza Rezervacija: {{quickPrice}}</p>
+    <ng-container *ngIf="showClassicSeats">
+      <div class="col-md-12" style="margin-top:40px;">
+        <ngx-grid-picker [row]="row" [colum]="colum" [mode]="'USER'" type="edit" [editedGrid]="fullGrid" (gridIsSetForReservation)="onReserve($event)"></ngx-grid-picker>
+        <div style="margin-top: 50px;">
+          <div *ngIf="mode != 'add'" class="">
+            <span style="height:25px; width:25px; border:1px black solid; background-color:red; display:inline-block"></span>
+            <h4 style="display:inline-block;">Rezervisano</h4>
+          </div>
+          <div class="">
+              <span style="height:25px; width:25px; border:1px black solid; background-color:green; display:inline-block"></span>
+              <h4 style="display:inline-block;">Sediste (slobodno)</h4>
+          </div>
+          <div class="">
+              <span style="height:25px; width:25px; border:1px black solid; background-color:gold; display:inline-block"></span>
+              <h4 style="display:inline-block;">VIP (slobodno)</h4>
+          </div>
+          <div class="">
+              <span style="height:25px; width:25px; border:1px black solid; background-color:gray; display:inline-block"></span>
+              <h4 style="display:inline-block;">Prolaz</h4>
+          </div>
+          <div class="">
+              <span style="height:25px; width:25px; border:1px black solid; background-color:orange; display:inline-block"></span>
+              <h4 style="display:inline-block;">Brza rezervacija (slobodno)</h4>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="showQuestion" class="">
+      <button class="btn btn-hero-success" (click)="showFriendsList()" >Pozovi Prijatelje!</button>
+    </div>
+    <div class="" >
+        <button *ngIf="counter > 0" class="btn btn-hero-success" (click)="reserve()"  >Rezervisi</button>
+      </div>
+    <nb-card *ngIf="showFriends" [size]="large" class="col-md-10">
+        <nb-tabset fullWidth>
+          <nb-tab  tabTitle="Prijatelji">
+            <div class="contact" *ngFor="let friend of friends">
+              <nb-user [name]="friend.username" [title]="friend.email" size="large"></nb-user>
+              <i class="i-contact nb-phone" (click)="addFriendToList(friend.email)"></i>
+            </div>
+          </nb-tab>
+      </nb-tabset>
+  </nb-card>
+  </div>
+
+
+</div>

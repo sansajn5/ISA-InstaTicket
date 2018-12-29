@@ -1,0 +1,11 @@
+<div class="row" style="text-align: center;width: 100%">
+    <nb-card>
+      <div *ngFor="let item of items" class=" cardWrapper "  style="margin-left: 10px;margin-right: 10px;  " >
+       <div>
+        <ngx-card-picker type={{item.name}} image={{image}} url="dashboard/pages/place/{{place}}/place/{{item.id}}"></ngx-card-picker>
+
+        </div>
+      </div>
+    </nb-card>
+  </div>
+

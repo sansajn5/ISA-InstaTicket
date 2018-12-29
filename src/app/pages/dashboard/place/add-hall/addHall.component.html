@@ -1,0 +1,27 @@
+<div class="auth-block offset-3 col-md-6">
+  <!--<img class="logo" [src]="'assets/logo.png'" alt="logo">-->
+  <button class="btn btn-default offset-9" (click)="exit()" style="width: 10%;margin-left:90%;background: #ebeff5"><i style="font-size: 40px" class="fa fa-times-circle"></i></button>
+
+  <form [formGroup]="form" >
+    <div class="form-group" >
+      <label>Naziv:</label>
+      <input name="name" class="form-control margin"  id="input-name"
+             placeholder="unesite naziv sale" [formControl]="name" >
+      <small class="form-text error" *ngIf="name.errors?.required && name.touched ">
+        Naziv sale je obavezan!
+      </small>
+
+      <label >Broj redova:</label>
+      <input name="row" class="form-control margin" id="input-row" placeholder="unesite broj redova"
+             [formControl]="row" [class.form-control-danger]="row.invalid && row.touched">
+
+      <label >Broj kolona:</label>
+      <input name="col" class="form-control margin" id="input-col" placeholder="unesite broj kolona"
+             [formControl]="col" [class.form-control-danger]="col.invalid && col.touched">
+
+      <button class="btn btn-hero-success" (click)="confirmClick()" [disabled]="!form.valid" >{{method_name}}</button>
+    </div>
+
+  </form>
+</div>
+

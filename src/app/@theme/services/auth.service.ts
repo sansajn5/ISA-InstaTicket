@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { User } from '../models/user.model';
+import {RequestPassword} from "../models/RequestPassword";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
@@ -25,9 +26,7 @@ export class AuthService {
   signIn(user: User): Observable<any> {
     const body = JSON.stringify(user);
     return this.http.post(this.BASE_URL + '/authenticate', body, httpOptions)
-      .map( data => data);
   }
-
 
   /**
    * Method /POST
@@ -38,7 +37,6 @@ export class AuthService {
   signUp(user: User): Observable<any> {
     const body = JSON.stringify(user);
     return this.http.post(`${this.BASE_URL}/sign-up`, body, httpOptions)
-      .map(data => data);
   }
 
   activeAccount(key: string): Observable<any> {
@@ -47,7 +45,6 @@ export class AuthService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
       params,
     })
-    .map(data => data);
   }
 
   /**
@@ -55,8 +52,31 @@ export class AuthService {
    * Invoking server to remove user from session
    */
   logout(): void {
+    this.http.get(`${this.BASE_URL}/logout`, httpOptions)
     localStorage.clear();
   }
 
+  requestPassword(requestPassword: RequestPassword): Observable<any> {
+    const body = JSON.stringify(requestPassword);
+    return this.http.post(`${this.BASE_URL}/request-password`, body, httpOptions)
+  }
+
+  changedRole(pw, pw1) {
+    const body = JSON.stringify({password: pw, repassword: pw1, username:localStorage.getItem('user')});
+    localStorage.clear();
+    return this.http.put(`${this.BASE_URL}/changepassword`,body,httpOptions);
+  }
+
+
+  getAccount(): Observable<any> {
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'X-Auth-Token': token });
+    return this.http.get(`${this.BASE_URL}/account` ,{ headers: headers})
+  }
+
+  onGuest(): Observable<any>{
+    console.log('ok');
+    return this.http.get(`${this.BASE_URL}/guest` ,httpOptions);
+  }
 
 }

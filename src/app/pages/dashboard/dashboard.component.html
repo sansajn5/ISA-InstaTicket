@@ -1,4 +1,5 @@
 <div class="row">
+  <button (click)="addPlace()" class="btn btn-hero-info " *ngIf="show">Dodaj Bioskop/Pozoriste</button>
     <div class="col-md-12 cardWrapper">
         <nb-card>
             <ngx-card-picker type={{cinema}} image={{cinemaImage}} url={{urlCinema}}></ngx-card-picker>

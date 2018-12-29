@@ -1,0 +1,23 @@
+:host {
+
+  table {
+    width: 100%;
+  }
+  table, th, td {
+    border: 1px solid darkgray;
+  }
+  th, td {
+    padding: 15px;
+    background: white;
+  }
+
+  .th-hall {
+    text-align: left;
+    width: 60%;
+  }
+
+  .th {
+    width: 20%;
+  }
+
+}

@@ -1,0 +1,27 @@
+<table class="table">
+
+  <thead>
+
+  </thead>
+
+  <tbody>
+
+
+
+    <tr>
+      <th><h4>{{username}}</h4></th>
+    </tr>
+
+    <tr>
+      <td *ngIf="addAllowed">
+        <button (click)="addSystemAdminRole()" class="col-md-12 btn btn-hero-success btn-lg btn-block" >Dodaj </button>
+      </td>
+      <td *ngIf="deleteAllowed">
+        <button  (click)="deleteSystemAdminRole()" class="col-md-12 btn btn-hero-danger btn-lg btn-block">Ukloni</button>
+      </td>
+    </tr>
+
+
+
+  </tbody>
+</table>

@@ -24,6 +24,14 @@
 
 :host {
 
+  .btn:focus {
+    background: lightgray;
+  }
+
+  .btn {
+    margin-bottom: 15px;
+  }
+
   .cardWrapper {
     text-align: center;
   }

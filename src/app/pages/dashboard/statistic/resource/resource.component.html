@@ -1,0 +1,24 @@
+<div>
+  <button class="btn btn-default" (click)="back()" style="width: 6%;background: #ebeff5;height: 60px"><i style="font-size: 40px" class="fa  fa-arrow-circle-left"></i></button>
+</div>
+<div  >
+  <h2 style="text-align: center;margin-top: 15px;margin-bottom: 20px">{{mode}}</h2>
+  <div  style="margin-bottom: 15px" class="row offset-3" >
+    <h3 style="margin-top: 8px;margin-right: 10px">Od:</h3>
+    <ngbd-datepicker-popup style="margin-right: 30px" id="date_picker_from"></ngbd-datepicker-popup>
+
+    <h3  style="margin-top: 8px;margin-right: 10px">Do:</h3>
+    <ngbd-datepicker-popup style="margin-right: 30px;" id="date_picker_to"></ngbd-datepicker-popup>
+
+    <button class="btn btn-hero-info" (click)="getStatistic()" >Prikazi</button>
+  </div>
+  <div *ngIf="attendence" style="margin-top: 100px">
+    <h3 style="text-align: center">Ukupno: {{sumAttendence}}</h3>
+  <chart style="height: 350px" type="bar" [data]="data" [options]="options"></chart>
+  </div>
+
+  <div *ngIf="inCome" style="margin-top: 100px">
+    <h3 style="text-align: center">Ukupno: {{sumInCome}}dinara </h3>
+    <chart style="height: 350px" type="bar" [data]="dataInCome" [options]="optionsInCome"></chart>
+  </div>
+</div>

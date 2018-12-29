@@ -1,0 +1,8 @@
+<div *ngFor="let rows of fullGrid" class="grid-container" style="display:block;">
+    <div *ngFor="let seat of rows" class="grid-item" (click)="seatPressed(seat)" style="display:inline-block;"
+    [ngClass]="{ 'red': seat.state == 'RESERVED', 'green': seat.state == 'CLASSIC', 'gold': seat.state == 'VIP', 'grey': seat.state == 'NOT SEAT','orange':seat.state == 'QUCIK'}">
+        {{seat.state}}
+    </div>
+</div>
+<button style="margin-top:15px;" *ngIf="mode == 'ADMIN'" class="btn btn-hero-success" (click)="confirmGrid()" >Sacuvaj raspored</button>
+<button style="margin-top:15px;" *ngIf="mode == 'USER'" class="btn btn-hero-success" (click)="confirmGrid()" >Sacuvaj rezervacije</button>

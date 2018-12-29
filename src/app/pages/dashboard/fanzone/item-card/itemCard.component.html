@@ -1,0 +1,27 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="../../../assets/images/kitten-cosmic.png" alt="Card image cap">
+
+  <div class="card-body">
+    <h5 class="card-title"> {{name}} </h5>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">Opis: {{description}} </p>
+  </div>
+
+  <div class="card-body">
+  <label class="card-text">Cena: {{price}} RSD</label>
+  </div>
+
+
+
+  <div class="card-body">
+    <button class="btn btn-hero-info button-res" type="button" (click)="itemReservation()"><i class="fa fa-cart-plus"></i>  Rezervisi </button>
+    <button *ngIf="actionAllowed" class="btn btn-hero-warning basic_col" (click)="editItem()"><i class="fa fa-pencil-square-o"></i></button>
+    <button *ngIf="actionAllowed" class="btn btn-hero-warning basic_col" (click)="deleteItem()"><i class="fa fa-trash-o"></i></button>
+
+
+  </div>
+</div>
+
+

@@ -15,8 +15,17 @@ export class HeaderComponent implements OnInit {
   @Input() position = 'normal';
 
   user: any;
+  roles: any;
 
-  userMenu = [{title: 'Odjavi se'}];
+
+  settingsAllowed: boolean = false;
+
+  userMenu = [
+
+    { title: 'Moj profil' },
+
+    { title: 'Odjavi se' },
+  ];
 
   constructor(private sidebarService: NbSidebarService,
               private router: Router,
@@ -25,8 +34,22 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.user = JSON.parse(localStorage.getItem('user')).username;
-    this.user = 'nemanja';
+    this.user = localStorage.getItem('user');
+
+    this.roles = localStorage.getItem('role')
+
+    var rolesSliced = this.roles.slice(1, -1);
+    var rolesSplited = rolesSliced.split(',');
+
+    for(let role of rolesSplited){
+
+      if (role.replace(/\s/g, '') === 'SUPER_ADMIN') {
+
+        this.settingsAllowed = true;
+      }
+
+    }
+
   }
 
   toggleSidebar(): boolean {
@@ -37,6 +60,21 @@ export class HeaderComponent implements OnInit {
   goToHome() {
     this.router.navigateByUrl('');
   }
+
+  menuClick(event) {
+    if(event.title === 'Odjavi se') {
+      this.logout();
+    } else if (event.title === 'Moj profil') {
+      const username = localStorage.getItem('user');
+      this.router.navigateByUrl(`dashboard/user/profile/${username}`);
+    }
+  }
+
+  settingsClick() {
+
+    this.router.navigateByUrl(`dashboard/pages/admin-settings`);
+  }
+
 
   logout() {
     this.authService.logout();

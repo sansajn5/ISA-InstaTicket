@@ -1,0 +1,19 @@
+
+<div class="row">
+  <button class="btn btn-default" (click)="back()" style="width: 6%;background: #ebeff5;height: 60px"><i style="font-size: 40px" class="fa  fa-arrow-circle-left"></i></button>
+
+  <div class="offset-1 col-md-8" >
+    <table>
+      <tr>
+        <th class="th-hall " style="background: #4CB2FF; color: white">Projekcije:</th>
+        <th class="th" style="background: #4CB2FF; color: white">Izmeni</th>
+        <th class="th" style="background: #4CB2FF; color: white">Obrisi</th>
+      </tr>
+      <tr *ngFor="let item of items">
+        <th>{{item.event.name}}</th>
+        <th (click)="openFormEditProjection(item.id)">Izmeni</th>
+        <th  (click)="deleteProjection(item.id)">Obrisi</th>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" >
+      <a [className]="class_tab1" id="official-shop-tab" data-toggle="tab" (click)="officialShopClick()" role="tab" aria-controls="home" aria-selected="true" >Zvanična prodavnica</a>
+    </li>
+    <li class="nav-item">
+      <a [className]="class_tab2" id="offers-tab" data-toggle="tab" (click)="offersClick()" role="tab" aria-controls="profile" aria-selected="false">Oglasi</a>
+    </li>
+  </ul>
+
+
+
+  <div class="tab-content" id="myTabContent">
+
+    <div *ngIf="show_items" class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="official-shop-tab">
+
+      <br>
+      <button *ngIf="actionAllowed" (click)="addNewItem()" class="btn btn-hero-info" type="button"><i class="fa fa-plus-circle"></i> Dodaj rekvizit </button>
+      <br>
+
+      <br>
+      <div class="row">
+        <div *ngFor="let item of items" class="col-md-4 col-sm-6 col-12">
+
+          <ngx-item-card (refreshList)="updateList($event)" id={{item.id}} name={{item.name}} description={{item.description}} price={{item.price}}></ngx-item-card>
+          <br>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="show_offers" class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="offers-tab">
+
+        <br>
+        <button  (click)="addNewOffer()" class="btn btn-hero-info" type="button"><i class="fa fa-plus-circle"></i> Dodaj oglas </button> <button *ngIf="actionAllowed" (click)="offersRequestsClick()" class="btn btn-hero-primary" type="button"><i class="fa fa-question-circle"></i> Zahtevi </button>
+        <br>
+        <br>
+
+        <div class="row">
+          <div *ngFor="let offer of offers" class="col-md-4 col-sm-6 col-12">
+
+            <ngx-offer-card id={{offer.id}} name={{offer.name}} description={{offer.description}} image={{offer.image}} price={{offer.startPrice}} date={{offer.endDate}} bestPrice={{offer.bestPrice}}></ngx-offer-card>
+
+          </div>
+        </div>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
